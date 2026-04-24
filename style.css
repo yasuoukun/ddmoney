@@ -250,6 +250,10 @@ h1, h2, h3, h4 {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+.navbar.scrolled + .mobile-menu {
+    top: 58px; /* Adjusted top for scrolled navbar */
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -318,7 +322,7 @@ h1, h2, h3, h4 {
 /* Mobile Menu */
 .mobile-menu {
     position: fixed;
-    top: 75px;
+    top: 68px; /* Perfectly aligned with navbar height */
     right: -100%;
     width: 250px;
     height: max-content;
