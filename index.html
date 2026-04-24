@@ -16,6 +16,7 @@
     <meta name="google-site-verification" content="E1g-QotBFHd1Fbj6K2tFdYFEmEeIhkVTCmsugR0p7Tc" />
 </head>
 <body>
+
     <!-- Floating Global Backdrop Icons -->
     <div class="global-bg-icon float-1"><i class="fa-solid fa-mobile-screen-button"></i></div>
     <div class="global-bg-icon float-2"><i class="fa-solid fa-box-open"></i></div>
@@ -33,6 +34,7 @@
                 <li><a href="#home">หน้าแรก</a></li>
                 <li><a href="#features">ทำไมต้องเรา</a></li>
                 <li><a href="#products">สินค้ายอดฮิต</a></li>
+                <li><a href="#news">โปรโมชั่น</a></li>
             </ul>
             <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary d-md-none"><i class="fa-brands fa-line"></i> แอดไลน์เลย</a>
             <div class="menu-toggle">
@@ -47,6 +49,7 @@
             <li><a href="#home" class="mobile-link">หน้าแรก</a></li>
             <li><a href="#features" class="mobile-link">ทำไมต้องเรา</a></li>
             <li><a href="#products" class="mobile-link">สินค้ายอดฮิต</a></li>
+            <li><a href="#news" class="mobile-link">โปรโมชั่น</a></li>
             <li><a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary mobile-link mt-4"><i class="fa-brands fa-line"></i> แอดไลน์เลย</a></li>
         </ul>
     </div>
@@ -236,7 +239,7 @@
     </section>
 
     <!-- News Auto Slider -->
-    <section class="news-slider section-padding">
+    <section id="news" class="news-slider section-padding">
         <div class="container text-center reveal">
             <h2 class="section-title">อัปเดตข่าวสารและโปรโมชั่น</h2>
         </div>
@@ -295,10 +298,48 @@
         </div>
     </footer>
 
+    <!-- Floating Calculator Button -->
+    <button class="floating-calc-btn" onclick="openCalc()" style="display: flex !important; visibility: visible !important;">
+        <i class="fa-solid fa-calculator"></i>
+    </button>
+    
     <!-- Floating LINE Button -->
     <a href="https://lin.ee/s3jHf19" target="_blank" class="floating-line-btn">
         <i class="fa-brands fa-line"></i>
     </a>
+
+    <!-- Calculator Modal -->
+    <div id="calcModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close" onclick="closeCalc()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--navy);"><i class="fa-solid fa-calculator text-accent"></i> คำนวณค่างวดเบื้องต้น</h3>
+            <div class="calc-form">
+                <label for="calcPrice">ราคาสินค้า (บาท)</label>
+                <input type="number" id="calcPrice" placeholder="เช่น 30000">
+                <label for="calcDown">เงินดาวน์ (บาท)</label>
+                <input type="number" id="calcDown" placeholder="ระบุ 0 ถ้าไม่ดาวน์">
+                <label for="calcInterest">ดอกเบี้ย (เปอร์เซ็นต์ % ต่อเดือน)</label>
+                <input type="number" id="calcInterest" step="0.01" value="1.25" placeholder="เช่น 1.25">
+                <label for="calcMonths">จำนวนเดือนที่ผ่อน</label>
+                <input type="number" id="calcMonths" value="12" placeholder="เช่น 6, 12, 18, 24">
+                
+                <button class="btn btn-full mt-3 pulse-anim" style="background: linear-gradient(135deg, #06b6d4, #2563eb); color: white; border: none; font-size: 1.2rem; font-weight: 600; padding: 15px; margin-top: 15px; border-radius: 12px; cursor: pointer; transition: all 0.3s; box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);" onclick="calculate()">คำนวณค่างวด</button>
+                
+                <div class="calc-result" id="calcResult" style="display:none; margin-top: 20px; padding: 15px; background: rgba(0, 168, 232, 0.1); border-radius: 10px; text-align: center;">
+                    <div style="display:flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; color: var(--navy);">
+                        <span>ยอดจัด (หลังหักดาวน์):</span> <strong id="r_principal">0</strong>
+                    </div>
+                    <div style="display:flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px; color: var(--navy);">
+                        <span>ดอกเบี้ยรวม:</span> <strong id="r_total_interest">0</strong>
+                    </div>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px dashed rgba(10, 25, 48, 0.2);">
+                    <p style="margin-bottom: 5px; color: var(--navy);">ผ่อนชำระเดือนละประมาณ:</p>
+                    <strong class="text-accent" id="calcOutput" style="font-size: 2rem;">0</strong> <span style="font-size: 0.9rem; color: var(--navy);">บาท</span>
+                    <p style="margin-top: 10px;"><small class="text-muted" style="font-size: 0.75rem;">* คำนวณเบื้องต้นแบบ Flat Rate ยอดจริงอิงจากสาขา</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
