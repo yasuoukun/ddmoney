@@ -426,7 +426,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Draggable Floating Buttons for Mobile
+// Draggable Floating Buttons for Mobile & Desktop
 document.addEventListener('DOMContentLoaded', () => {
     const floatingGroup = document.getElementById('floatingGroup');
     if (!floatingGroup) return;
@@ -436,44 +436,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let initialX, initialY;
     let hasMoved = false;
 
-    floatingGroup.addEventListener('touchstart', (e) => {
+    const startDrag = (x, y) => {
         isDragging = true;
         hasMoved = false;
         floatingGroup.classList.add('dragging');
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
+        startX = x;
+        startY = y;
         const rect = floatingGroup.getBoundingClientRect();
         initialX = rect.left;
         initialY = rect.top;
-        
-        // Disable transitions during move
         floatingGroup.style.transition = 'none';
-    }, { passive: true });
+    };
 
-    document.addEventListener('touchmove', (e) => {
+    const moveDrag = (x, y, e) => {
         if (!isDragging) return;
         
-        const currentX = e.touches[0].clientX;
-        const currentY = e.touches[0].clientY;
-        
-        const diffX = currentX - startX;
-        const diffY = currentY - startY;
+        const diffX = x - startX;
+        const diffY = y - startY;
 
-        // Threshold for movement
         if (Math.abs(diffX) > 5 || Math.abs(diffY) > 5) {
             hasMoved = true;
         }
         
-        // Prevent scrolling when dragging buttons
         if (hasMoved && e.cancelable) e.preventDefault();
 
         floatingGroup.style.left = (initialX + diffX) + 'px';
         floatingGroup.style.top = (initialY + diffY) + 'px';
         floatingGroup.style.right = 'auto';
         floatingGroup.style.bottom = 'auto';
-    }, { passive: false });
+    };
 
-    document.addEventListener('touchend', () => {
+    const endDrag = () => {
         if (!isDragging) return;
         isDragging = false;
         floatingGroup.classList.remove('dragging');
@@ -483,31 +476,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const screenHeight = window.innerHeight;
         const midPoint = screenWidth / 2;
         
-        // Add snapping animation
         floatingGroup.style.transition = 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)';
         
-        // Snap to nearest side (left or right)
         if (rect.left + rect.width / 2 < midPoint) {
             floatingGroup.style.left = '15px';
         } else {
             floatingGroup.style.left = (screenWidth - rect.width - 15) + 'px';
         }
 
-        // Boundary check for top and bottom
         if (rect.top < 20) {
             floatingGroup.style.top = '20px';
         } else if (rect.bottom > screenHeight - 20) {
             floatingGroup.style.top = (screenHeight - rect.height - 20) + 'px';
         }
         
-        // Prevent click if we were dragging
         if (hasMoved) {
             floatingGroup.style.pointerEvents = 'none';
             setTimeout(() => {
                 floatingGroup.style.pointerEvents = 'auto';
             }, 100);
         }
+    };
+
+    // Touch Events
+    floatingGroup.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    document.addEventListener('touchmove', (e) => moveDrag(e.touches[0].clientX, e.touches[0].clientY, e), { passive: false });
+    document.addEventListener('touchend', endDrag);
+
+    // Mouse Events
+    floatingGroup.addEventListener('mousedown', (e) => {
+        if (e.button !== 0) return; // Only left click
+        startDrag(e.clientX, e.clientY);
     });
+    document.addEventListener('mousemove', (e) => moveDrag(e.clientX, e.clientY, e));
+    document.addEventListener('mouseup', endDrag);
 });
 
 // Run Indexing on Load
