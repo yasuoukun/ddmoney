@@ -1367,3 +1367,53 @@ h1, h2, h3, h4 {
         font-size: 2rem;
     }
 }
+/* Brand & Partners Section */
+.brand-marquee-section {
+    padding: 60px 0;
+    position: relative;
+    background: transparent; /* Full transparency for the section */
+}
+
+.brand-glass-bar {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.15); /* High transparency */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 25px 60px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.brand-item {
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-item img {
+    height: 85px;
+    width: auto;
+    transition: var(--transition);
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1));
+}
+
+.brand-item:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .brand-glass-bar {
+        gap: 40px;
+    }
+    .brand-item img {
+        height: 60px;
+    }
+}
