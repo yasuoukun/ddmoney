@@ -502,14 +502,6 @@ document.addEventListener('DOMContentLoaded', () => {
     floatingGroup.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
     document.addEventListener('touchmove', (e) => moveDrag(e.touches[0].clientX, e.touches[0].clientY, e), { passive: false });
     document.addEventListener('touchend', endDrag);
-
-    // Mouse Events
-    floatingGroup.addEventListener('mousedown', (e) => {
-        if (e.button !== 0) return; // Only left click
-        startDrag(e.clientX, e.clientY);
-    });
-    document.addEventListener('mousemove', (e) => moveDrag(e.clientX, e.clientY, e));
-    document.addEventListener('mouseup', endDrag);
 });
 
 // Run Indexing on Load

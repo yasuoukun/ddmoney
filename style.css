@@ -1124,14 +1124,24 @@ h1, h2, h3, h4 {
     transform: scale(1.1);
 }
 
-@keyframes calcPulse {
+@keyframes orangePulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.6); }
     70% { box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
     100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
 }
 
+@keyframes greenPulse {
+    0% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(6, 199, 85, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(6, 199, 85, 0); }
+}
+
 .floating-calc-btn {
-    animation: calcPulse 2s infinite;
+    animation: orangePulse 2s infinite;
+}
+
+.floating-line-btn {
+    animation: greenPulse 2s infinite;
 }
 
 /* Calculator Modal */
