@@ -1078,36 +1078,60 @@ h1, h2, h3, h4 {
     font-size: 0.9rem;
 }
 /* Floating Calculator Button */
-.floating-calc-btn {
+/* Floating Controls Group */
+.floating-controls-group {
     position: fixed;
-    bottom: 35px;
-    right: 110px;
-    width: 65px;
-    height: 65px;
-    background: linear-gradient(135deg, #FF9800, #F57C00);
-    color: #fff;
-    border: none;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2500;
+    touch-action: none; /* Required for dragging */
+    transition: transform 0.1s ease-out, box-shadow 0.3s;
+}
+
+.floating-controls-group.dragging {
+    transition: none;
+    opacity: 0.9;
+}
+
+/* Floating Buttons Base */
+.floating-calc-btn, .floating-line-btn {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.8rem;
-    box-shadow: 0 10px 20px rgba(255, 152, 0, 0.4);
-    z-index: 2000; /* Sit below modals */
+    font-size: 1.6rem;
+    border: none;
     cursor: pointer;
     transition: var(--transition);
-    animation: calcPulse 2s infinite;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
 }
 
-.floating-calc-btn:hover {
+.floating-calc-btn {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+}
+
+.floating-line-btn {
+    background: #06C755;
+}
+
+.floating-calc-btn:hover, .floating-line-btn:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #F57C00, #E65100);
 }
 
 @keyframes calcPulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.6); }
-    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+}
+
+.floating-calc-btn {
+    animation: calcPulse 2s infinite;
 }
 
 /* Calculator Modal */
@@ -1120,7 +1144,7 @@ h1, h2, h3, h4 {
     background: rgba(10, 25, 48, 0.8);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    z-index: 1100;
+    z-index: 10000; /* Increased to stay above floating buttons */
     display: none;
     justify-content: center;
     align-items: center;
@@ -1302,20 +1326,15 @@ h1, h2, h3, h4 {
         animation: none !important;
     }
     
-    .floating-calc-btn {
-        bottom: 110px;
-        right: 30px;
-        display: flex !important;
-        visibility: visible !important;
-        z-index: 5000 !important;
+    .floating-controls-group {
+        bottom: 120px;
+        right: 20px;
     }
 
-    .floating-line-btn {
-        bottom: 30px !important;
-        right: 30px !important;
-        display: flex !important;
-        visibility: visible !important;
-        z-index: 5000 !important;
+    .floating-calc-btn, .floating-line-btn {
+        width: 48px; /* Smaller as requested */
+        height: 48px;
+        font-size: 1.3rem;
     }
     
     .hero-title {
@@ -1401,20 +1420,31 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    border: 2px solid var(--primary);
-    background: #fff;
-    color: var(--primary-dark);
-    font-size: 1rem;
+    border: 1px solid rgba(0, 168, 232, 0.2); /* Thinner and more transparent */
+    background: rgba(255, 255, 255, 0.4); /* Transparent glass effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(10, 25, 48, 0.5); /* Faded color */
+    font-size: 0.9rem;
     cursor: pointer;
-    display: flex; /* Base display */
+    display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     z-index: 20;
+}
+
+.scroll-arrow:hover {
+    background: var(--primary-dark);
+    color: #fff;
+    border-color: var(--primary-dark);
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+    box-shadow: 0 8px 20px rgba(10, 25, 48, 0.15);
 }
 
 .scroll-arrow-left {
@@ -1861,19 +1891,19 @@ h1, h2, h3, h4 {
     .scroll-arrow-right { right: 5px; }
     /* Compact Search & Tabs */
     .search-section {
-        margin-bottom: 20px !important;
+        margin-bottom: 10px !important; /* Reduced from 20px */
     }
     .price-tabs {
-        margin-bottom: 15px !important;
-        gap: 6px !important;
+        margin-bottom: 10px !important; /* Reduced from 15px */
+        gap: 5px !important; /* Reduced from 6px */
     }
     .price-tab {
-        padding: 8px 16px !important;
-        font-size: 0.85rem !important;
-        gap: 5px !important;
+        padding: 6px 12px !important; /* Reduced from 8px 16px */
+        font-size: 0.75rem !important; /* Reduced from 0.85rem */
+        gap: 4px !important; /* Reduced from 5px */
     }
     .price-tab i {
-        font-size: 0.9rem;
+        font-size: 0.8rem; /* Reduced from 0.9rem */
     }
 }
 .price-modal-overlay {
@@ -1882,7 +1912,7 @@ h1, h2, h3, h4 {
     background: rgba(10, 25, 48, 0.8);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    z-index: 3000;
+    z-index: 10000; /* Increased to stay above floating buttons */
     display: none;
     justify-content: center;
     align-items: center;
