@@ -1124,6 +1124,60 @@ h1, h2, h3, h4 {
     transform: scale(1.1);
 }
 
+/* LINE Tooltip Bubble - Droplet/LINE Icon Style */
+.line-tooltip {
+    position: absolute;
+    top: 50%;
+    background: rgba(6, 199, 85, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 12px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: 2600;
+}
+
+/* Side-aware Droplet Shapes */
+.floating-line-btn.tooltip-left .line-tooltip {
+    right: 130%;
+    transform: translateY(-50%) translateX(20px) scale(0.8);
+    border-radius: 20px 20px 2px 20px; /* Pointy bottom-right */
+}
+
+.floating-line-btn.tooltip-right .line-tooltip {
+    left: 130%;
+    transform: translateY(-50%) translateX(-20px) scale(0.8);
+    border-radius: 20px 20px 20px 2px; /* Pointy bottom-left */
+}
+
+.floating-line-btn.show-tooltip .line-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0) scale(1);
+    animation: tooltipFloat 2.5s ease-in-out infinite 0.6s;
+}
+
+@keyframes tooltipFloat {
+    0%, 100% { margin-top: 0; }
+    50% { margin-top: -5px; }
+}
+
+@media (max-width: 768px) {
+    .line-tooltip {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+        border-radius: 12px;
+    }
+}
+
 @keyframes orangePulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.6); }
     70% { box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); }
@@ -1416,6 +1470,8 @@ h1, h2, h3, h4 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     z-index: 20;
+    outline: none; /* Remove blue focus outline */
+    -webkit-tap-highlight-color: transparent; /* Remove mobile highlight */
 }
 
 .scroll-arrow:hover {

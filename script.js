@@ -508,3 +508,37 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(indexProducts, 1000); // Give time for everything to render
 });
+
+// Recurring LINE Tooltip Logic
+function toggleLineTooltip() {
+    const lineBtn = document.querySelector('.floating-line-btn');
+    if (lineBtn) {
+        // Detect side of the screen
+        const rect = lineBtn.getBoundingClientRect();
+        const midPoint = window.innerWidth / 2;
+        
+        // Remove previous position classes
+        lineBtn.classList.remove('tooltip-left', 'tooltip-right');
+        
+        // Apply new position class based on current side
+        if (rect.left + rect.width / 2 < midPoint) {
+            lineBtn.classList.add('tooltip-right'); // Button is on left, show tooltip on right
+        } else {
+            lineBtn.classList.add('tooltip-left'); // Button is on right, show tooltip on left
+        }
+        
+        lineBtn.classList.add('show-tooltip');
+        
+        setTimeout(() => {
+            lineBtn.classList.remove('show-tooltip');
+        }, 5000); // Hide after 5 seconds
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial trigger after 3 seconds
+    setTimeout(toggleLineTooltip, 3000);
+    
+    // Repeat every 30 seconds
+    setInterval(toggleLineTooltip, 30000);
+});
