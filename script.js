@@ -511,30 +511,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Recurring LINE Tooltip Logic
 function toggleLineTooltip() {
-    const lineBtn = document.querySelector('.floating-line-btn');
-    if (lineBtn) {
-        // Detect side of the screen
-        const rect = lineBtn.getBoundingClientRect();
-        const midPoint = window.innerWidth / 2;
-        
-        // Remove previous position classes
-        lineBtn.classList.remove('tooltip-left', 'tooltip-right');
-        
-        // Apply new position class based on current side
-        if (rect.left + rect.width / 2 < midPoint) {
-            lineBtn.classList.add('tooltip-right'); // Button is on left, show tooltip on right
-        } else {
-            lineBtn.classList.add('tooltip-left'); // Button is on right, show tooltip on left
-        }
-        
-        lineBtn.classList.add('show-tooltip');
-        
-        setTimeout(() => {
-            lineBtn.classList.remove('show-tooltip');
-        }, 5000); // Hide after 5 seconds
+    const floatingGroup = document.getElementById('floatingGroup');
+    if (!floatingGroup) {
+        console.log("Floating group not found, retrying...");
+        return;
     }
+
+    // Detect side of the screen
+    const rect = floatingGroup.getBoundingClientRect();
+    const midPoint = window.innerWidth / 2;
+    
+    // Remove previous position classes
+    floatingGroup.classList.remove('tooltip-left', 'tooltip-right', 'show-tooltip');
+    
+    // Forced reflow to restart animation/transition if needed
+    void floatingGroup.offsetWidth;
+    
+    // Apply new position class based on current side
+    if (rect.left + rect.width / 2 < midPoint) {
+        floatingGroup.classList.add('tooltip-right');
+    } else {
+        floatingGroup.classList.add('tooltip-left');
+    }
+    
+    floatingGroup.classList.add('show-tooltip');
+    console.log("Tooltip Shown");
+
+    setTimeout(() => {
+        floatingGroup.classList.remove('show-tooltip');
+        console.log("Tooltip Hidden");
+    }, 5000); // Hide after 5 seconds
 }
 
+// Initialize on Load
 document.addEventListener('DOMContentLoaded', () => {
     // Initial trigger after 3 seconds
     setTimeout(toggleLineTooltip, 3000);
