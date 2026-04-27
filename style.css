@@ -2150,3 +2150,367 @@ h1, h2, h3, h4 {
         display: none;
     }
 }
+
+/* ============================================================
+   NEXT-GEN LUXURY COMPARISON DASHBOARD (COMPACT EDITION)
+   ============================================================ */
+.luxury-dashboard {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 40px;
+    padding: 40px 40px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    max-width: 1100px;
+    margin: 30px auto 0;
+    position: relative;
+    /* overflow: hidden; Removed to prevent clipping dropdowns */
+}
+
+.dash-price-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 5px;
+    border: none;
+    width: 100%;
+}
+
+/* Hide native selects to show only custom UI */
+#compare-select-1, #compare-select-2, #compare-months-select {
+    display: none !important;
+}
+
+.dashboard-top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: none;
+}
+
+.month-selector-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--navy);
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 6px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(10, 25, 48, 0.08);
+}
+.month-selector-wrap i { color: #00a8e8; font-size: 1.1rem; }
+.month-selector-wrap span { white-space: nowrap; }
+
+/* Mini Custom Select for Months */
+.custom-select-container.mini {
+    width: auto;
+    min-width: 120px;
+    margin-bottom: 0;
+}
+.custom-select-container.mini .custom-select-trigger {
+    padding: 6px 15px;
+    border-radius: 20px;
+    background: var(--navy);
+    color: white;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.custom-select-container.mini .custom-select-trigger i {
+    color: #fff;
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+.dash-header-grid {
+    display: grid;
+    grid-template-columns: 1fr 130px 1fr;
+    gap: 8px;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.dash-header-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    min-width: 0; /* Prevent grid item from expanding beyond 1fr */
+    overflow: visible; /* Allow dropdown list to show outside */
+}
+
+/* Custom Select UI */
+.custom-select-container {
+    position: relative;
+    width: 100%;
+    min-width: 0; /* Prevent expanding beyond parent */
+    margin-bottom: 10px;
+}
+.custom-select-trigger {
+    background: white;
+    padding: 0 12px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid rgba(10, 25, 48, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--navy);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    font-size: 0.8rem;
+    width: 100%;
+    max-width: 100%; /* Never exceed container */
+    box-sizing: border-box;
+    overflow: hidden; /* Clip content, not the dropdown list */
+}
+.custom-select-trigger span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    text-align: left;
+    margin-right: 5px; /* Less margin */
+}
+.custom-select-trigger i {
+    font-size: 0.65rem; /* Smaller icon */
+    color: var(--navy);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+.custom-select-container.active .custom-select-trigger i {
+    transform: rotate(180deg);
+}
+.custom-options-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(10, 25, 48, 0.18);
+    z-index: 1000;
+    display: none;
+    border: 1px solid rgba(10, 25, 48, 0.12);
+    overflow: hidden; 
+}
+
+.custom-scroll-area {
+    max-height: 280px;
+    overflow-y: auto;
+    padding: 8px;
+    width: 100%;
+}
+
+/* Premium Floating Rounded Scrollbar */
+.custom-scroll-area::-webkit-scrollbar {
+    width: 10px;
+}
+.custom-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scroll-area::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+.custom-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+.custom-select-container.active .custom-options-list { display: block; }
+.custom-option {
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.72rem; /* Smaller text */
+    text-align: left;
+    line-height: 1.3;
+    transition: all 0.2s ease;
+    margin-bottom: 2px;
+}
+.custom-option:hover { background: rgba(0, 168, 232, 0.08); color: #00a8e8; }
+.custom-opt-group { 
+    font-weight: 800; 
+    color: #94a3b8; 
+    padding: 12px 14px 6px; 
+    font-size: 0.65rem; 
+    text-transform: uppercase; 
+    text-align: left; 
+    letter-spacing: 0.5px;
+}
+
+.premium-select-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.premium-select-wrap > i { display: none; } /* Only hide the direct icon child, not the chevron */
+
+.dash-visual { height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+.dash-visual img { max-height: 100%; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); transition: transform 0.4s ease; }
+
+.dash-price-box {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+}
+.dash-price-box.accent { background: none; border: none; }
+.dash-price-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.dash-price-val { font-size: 1.6rem; font-weight: 800; color: var(--navy); line-height: 1; }
+.dash-price-currency { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Central Verdict Badge (Navy Pill) */
+.dash-header-center { display: flex; justify-content: center; align-items: flex-start; padding-top: 40px; }
+.upgrade-info-pill {
+    min-width: 120px;
+    padding: 12px 16px;
+    border-radius: 25px;
+    background: var(--navy);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(10, 25, 48, 0.2);
+    text-align: center;
+}
+.pill-mid { font-size: 0.82rem; font-weight: 600; margin-bottom: 2px; white-space: nowrap; }
+.pill-price { font-size: 0.82rem; font-weight: 800; }
+.pill-price span { font-size: 1.45rem; color: #ffffff; }
+
+/* Specs Table */
+.dash-specs-body { margin-top: 6px; border-top: none; }
+.dash-row { display: grid; grid-template-columns: 1fr 100px 1fr; border-bottom: none; padding: 8px 0; align-items: center; }
+.dash-row.no-border { border-bottom: none; }
+.dash-val { font-size: 0.85rem; font-weight: 500; color: var(--text-main); }
+.val-left { text-align: right; padding-right: 20px; }
+.val-right { text-align: left; padding-left: 20px; }
+.highlight-text { color: var(--navy); font-weight: 700; }
+.dash-label-center { display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--text-muted); }
+.dash-label-center i { font-size: 0.85rem; color: #00a8e8; }
+.dash-label-center span { font-size: 0.6rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+
+/* Footer - Unified Single Button */
+.dashboard-footer { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(10, 25, 48, 0.05); display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.footer-note { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; text-align: center; max-width: 400px; line-height: 1.4; }
+.footer-note i { color: #00a8e8; }
+.btn-dash-cta { background: var(--navy); color: white; padding: 14px 45px; border-radius: 50px; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(10, 25, 48, 0.15); display: flex; align-items: center; gap: 10px; }
+.btn-dash-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(10, 25, 48, 0.25); }
+
+/* Mobile Adjustments (Ultra Compact) */
+/* Verdict States */
+.verdict-upgrade { background: linear-gradient(135deg, #0a1930 0%, #1a2c4e 100%) !important; }
+.verdict-save { background: linear-gradient(135deg, #0077b6 0%, #00a8e8 100%) !important; }
+.verdict-equal { background: #475569 !important; }
+
+/* Mobile Adjustments (Ultra Compact) */
+@media (max-width: 768px) {
+    .luxury-dashboard { 
+        padding: 30px 20px; 
+        background: rgba(255, 255, 255, 0.3); 
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+        border: 1px solid rgba(255, 255, 255, 0.4); 
+        margin-top: 20px; 
+        width: calc(100% - 10px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .dashboard-top-bar { 
+        margin-bottom: 15px; 
+        padding-bottom: 0; 
+        justify-content: center;
+    }
+    .month-selector-wrap {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.85rem;
+        gap: 8px;
+        padding: 5px 12px;
+    }
+    .custom-select-container.mini {
+        min-width: 100px;
+    }
+    .custom-select-container.mini .custom-select-trigger {
+        width: auto;
+        padding: 6px 12px;
+    }
+    
+    .dash-header-grid { 
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* บังคับให้แบ่งครึ่งเท่ากันเป๊ะ */
+        gap: 8px; 
+        margin-bottom: 10px; 
+        width: 100%;
+    }
+    .dash-header-side { padding: 5px 0; min-width: 0; width: 100%; /* overflow: hidden; Removed to prevent clipping dropdowns */ }
+    .dash-header-center { grid-column: 1 / -1; order: -1; margin-bottom: 15px; }
+    
+    .custom-select-trigger { width: 100%; height: 36px; padding: 0 8px; font-size: 0.6rem; }
+    .custom-options-list { max-height: 200px; border-radius: 15px; }
+    .custom-option { font-size: 0.6rem; padding: 8px 10px; }
+    .custom-opt-group { font-size: 0.55rem; padding: 10px 10px 4px; }
+    
+    .dash-visual { height: 90px; margin-bottom: 4px; }
+    .dash-price-box { 
+        padding: 8px 0; 
+        border: none; 
+        background: none; 
+        flex-direction: column !important; /* จัดเป็นแนวตั้งเพื่อลดการชนกัน */
+        gap: 4px !important;
+        align-items: center !important;
+    }
+    .dash-price-val { font-size: 1.1rem; line-height: 1; }
+    .dash-price-label { font-size: 0.55rem; opacity: 0.8; line-height: 1.2; text-align: center; }
+    .dash-price-currency { font-size: 0.55rem; opacity: 0.7; line-height: 1.2; text-align: center; }
+    
+    .dash-row { grid-template-columns: 1fr 80px 1fr; padding: 8px 0; }
+    .val-left { padding-right: 8px; font-size: 0.7rem; }
+    .val-right { padding-left: 8px; font-size: 0.7rem; }
+    .dash-label-center i { font-size: 0.75rem; }
+    .dash-label-center span { font-size: 0.5rem; }
+    
+    .dashboard-footer { margin-top: 15px; padding-top: 15px; }
+    .footer-note { font-size: 0.75rem; max-width: 280px; }
+    .btn-dash-cta { width: 100%; text-align: center; padding: 12px 20px; font-size: 0.9rem; justify-content: center; }
+    
+    .upgrade-info-pill {
+        background: none !important;
+        box-shadow: none !important;
+        color: var(--navy) !important;
+        padding: 5px 0 !important;
+        min-width: auto !important;
+        display: flex !important;
+        flex-direction: row !important; /* จัดให้อยู่แถวเดียวกัน */
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+    .upgrade-info-pill div {
+        color: var(--navy) !important;
+        margin: 0 !important;
+        font-size: 0.85rem !important;
+    }
+    .pill-price span {
+        color: var(--navy) !important;
+        font-size: 0.9rem !important;
+    }
+    .pill-mid { font-size: 0.85rem !important; }
+}
+
