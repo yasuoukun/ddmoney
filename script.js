@@ -284,11 +284,31 @@ document.addEventListener('DOMContentLoaded', () => {
         updateReelsArrows();
     }
 
-    // Reel overlay click to play/interact
+    // Reel overlay click to play/interact (Smart Single Click Pass-through)
     document.querySelectorAll('.reel-overlay').forEach(overlay => {
-        overlay.addEventListener('click', () => {
-            overlay.classList.add('hidden');
-        });
+        const handleStart = (e) => {
+            // We don't stop propagation here to let the browser process the interaction
+            const item = overlay.closest('.reel-item');
+            const wrapper = overlay.closest('.reels-scroll-wrapper');
+
+            if (item) {
+                // 1. Temporarily disable snapping to prevent jump
+                item.style.scrollSnapAlign = 'none';
+                if (wrapper) wrapper.style.scrollSnapType = 'none';
+                
+                // 2. Hide overlay IMMEDIATELY so the subsequent 'click' event hits the iframe below
+                overlay.classList.add('hidden');
+
+                // 3. Restore snap settings after interaction
+                setTimeout(() => {
+                    item.style.scrollSnapAlign = 'center';
+                    if (wrapper) wrapper.style.scrollSnapType = 'x proximity';
+                }, 1000);
+            }
+        };
+
+        overlay.addEventListener('mousedown', handleStart);
+        overlay.addEventListener('touchstart', handleStart, { passive: true });
     });
 
     const tabs = ['tab-new-iphone', 'tab-used-iphone', 'tab-ipad'];
@@ -304,11 +324,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Auto-stop Reels when scrolled away
-    const reelsGrid = document.querySelector('.reels-scroll-wrapper');
     if (reelsGrid) {
         const observerOptions = {
             root: reelsGrid,
-            threshold: 0.3 // Trigger when less than 30% visible
+            threshold: 0.5 // Trigger when less than 50% visible
         };
 
         const reelObserver = new IntersectionObserver((entries) => {
@@ -469,7 +488,7 @@ function selectProduct(product) {
         if (card) {
             card.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
             // Visual feedback
-            card.style.ring = '4px solid var(--primary)';
+            card.style.boxShadow = '0 0 0 4px var(--primary)';
             card.style.outline = '4px solid rgba(0, 168, 232, 0.5)';
             card.style.outlineOffset = '4px';
             card.style.transform = 'scale(1.05) translateY(-10px)';
