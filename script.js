@@ -242,8 +242,55 @@ function updateScrollArrows(tabId) {
     }
 }
 
+// FB Reels: Scroll Logic (baNANA iT Style)
+function scrollReels(direction) {
+    const grid = document.querySelector('.reels-scroll-wrapper');
+    if (!grid) return;
+    
+    const card = grid.querySelector('.reel-item');
+    const cardWidth = card ? (card.offsetWidth + 20) : 300;
+    
+    grid.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    
+    setTimeout(updateReelsArrows, 400);
+}
+
+function updateReelsArrows() {
+    const container = document.getElementById('reels-wrapper-container');
+    const grid = document.querySelector('.reels-scroll-wrapper');
+    if (!container || !grid) return;
+    
+    const leftArrow = container.querySelector('.scroll-arrow-left');
+    const rightArrow = container.querySelector('.scroll-arrow-right');
+    
+    if (!leftArrow || !rightArrow) return;
+
+    const scrollLeft = grid.scrollLeft;
+    const scrollWidth = grid.scrollWidth;
+    const clientWidth = grid.clientWidth;
+
+    if (scrollLeft <= 5) leftArrow.classList.add('hidden');
+    else leftArrow.classList.remove('hidden');
+
+    if (scrollLeft + clientWidth >= scrollWidth - 5) rightArrow.classList.add('hidden');
+    else rightArrow.classList.remove('hidden');
+}
+
 // Initialize arrow visibility and add scroll listeners
 document.addEventListener('DOMContentLoaded', () => {
+    const reelsGrid = document.querySelector('.reels-scroll-wrapper');
+    if (reelsGrid) {
+        reelsGrid.addEventListener('scroll', updateReelsArrows);
+        updateReelsArrows();
+    }
+
+    // Reel overlay click to play/interact
+    document.querySelectorAll('.reel-overlay').forEach(overlay => {
+        overlay.addEventListener('click', () => {
+            overlay.classList.add('hidden');
+        });
+    });
+
     const tabs = ['tab-new-iphone', 'tab-used-iphone', 'tab-ipad'];
     tabs.forEach(tabId => {
         const tab = document.getElementById(tabId);
