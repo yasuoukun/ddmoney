@@ -298,11 +298,44 @@ document.addEventListener('DOMContentLoaded', () => {
             const grid = tab.querySelector('.price-cards-grid');
             if (grid) {
                 grid.addEventListener('scroll', () => updateScrollArrows(tabId));
-                // Initial check
                 updateScrollArrows(tabId);
             }
         }
     });
+
+    // Auto-stop Reels when scrolled away
+    const reelsGrid = document.querySelector('.reels-scroll-wrapper');
+    if (reelsGrid) {
+        const observerOptions = {
+            root: reelsGrid,
+            threshold: 0.3 // Trigger when less than 30% visible
+        };
+
+        const reelObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    const iframe = entry.target.querySelector('iframe');
+                    const overlay = entry.target.querySelector('.reel-overlay');
+                    
+                    // If overlay is hidden (video was likely playing)
+                    if (overlay && overlay.classList.contains('hidden')) {
+                        // Reload iframe to stop video/audio
+                        if (iframe) {
+                            const currentSrc = iframe.src;
+                            iframe.src = '';
+                            iframe.src = currentSrc;
+                        }
+                        // Restore overlay
+                        overlay.classList.remove('hidden');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reel-item').forEach(item => {
+            reelObserver.observe(item);
+        });
+    }
 });
 
 // Price Modal: Open
