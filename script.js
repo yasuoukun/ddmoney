@@ -525,80 +525,152 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Draggable Floating Buttons for Mobile & Desktop
+// Messenger-Style Draggable Floating Buttons (Physics-Based)
 document.addEventListener('DOMContentLoaded', () => {
     const floatingGroup = document.getElementById('floatingGroup');
     if (!floatingGroup) return;
 
     let isDragging = false;
     let startX, startY;
-    let initialX, initialY;
-    let hasMoved = false;
+    let currentX, currentY;
+    let velocityX = 0, velocityY = 0;
+    let lastTime, lastX, lastY;
+    let rafId = null;
+
+    const updatePosition = (x, y) => {
+        floatingGroup.style.left = x + 'px';
+        floatingGroup.style.top = y + 'px';
+        floatingGroup.style.right = 'auto';
+        floatingGroup.style.bottom = 'auto';
+    };
+
+    const animate = () => {
+        if (isDragging) return;
+
+        // Apply friction/damping to velocity
+        velocityX *= 0.85;
+        velocityY *= 0.85;
+
+        const rect = floatingGroup.getBoundingClientRect();
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        const groupWidth = rect.width;
+        const groupHeight = rect.height;
+
+        currentX += velocityX;
+        currentY += velocityY;
+
+        // Edge detection and snapping
+        let targetX = currentX;
+        const midPoint = screenWidth / 2;
+        
+        // Decide which side to snap to based on position + velocity
+        const predictedX = currentX + velocityX * 10;
+        const finalTargetX = predictedX < midPoint ? 15 : (screenWidth - groupWidth - 15);
+
+        // Spring physics for snapping
+        const springK = 0.15;
+        const springDamping = 0.7;
+        
+        velocityX += (finalTargetX - currentX) * springK;
+        velocityX *= springDamping;
+
+        // Top/Bottom boundaries
+        if (currentY < 20) {
+            currentY = 20;
+            velocityY *= -0.5;
+        } else if (currentY > screenHeight - groupHeight - 20) {
+            currentY = screenHeight - groupHeight - 20;
+            velocityY *= -0.5;
+        }
+
+        updatePosition(currentX, currentY);
+
+        // Stop animation when velocity is very low and close to target
+        if (Math.abs(velocityX) < 0.1 && Math.abs(velocityY) < 0.1 && Math.abs(currentX - finalTargetX) < 0.5) {
+            currentX = finalTargetX;
+            updatePosition(currentX, currentY);
+            cancelAnimationFrame(rafId);
+            rafId = null;
+            
+            // Re-sync tooltip side
+            if (typeof toggleLineTooltip === 'function') {
+                // We don't trigger it, but we ensure the classes are correct for next time
+                floatingGroup.classList.remove('tooltip-left', 'tooltip-right');
+                if (currentX < midPoint) floatingGroup.classList.add('tooltip-right');
+                else floatingGroup.classList.add('tooltip-left');
+            }
+            return;
+        }
+
+        rafId = requestAnimationFrame(animate);
+    };
 
     const startDrag = (x, y) => {
         isDragging = true;
-        hasMoved = false;
+        if (rafId) cancelAnimationFrame(rafId);
+        
         floatingGroup.classList.add('dragging');
-        startX = x;
-        startY = y;
         const rect = floatingGroup.getBoundingClientRect();
-        initialX = rect.left;
-        initialY = rect.top;
-        floatingGroup.style.transition = 'none';
+        startX = x - rect.left;
+        startY = y - rect.top;
+        currentX = rect.left;
+        currentY = rect.top;
+        
+        lastX = x;
+        lastY = y;
+        lastTime = performance.now();
+        velocityX = 0;
+        velocityY = 0;
     };
 
     const moveDrag = (x, y, e) => {
         if (!isDragging) return;
         
-        const diffX = x - startX;
-        const diffY = y - startY;
-
-        if (Math.abs(diffX) > 5 || Math.abs(diffY) > 5) {
-            hasMoved = true;
+        const now = performance.now();
+        const dt = now - lastTime;
+        if (dt > 0) {
+            velocityX = (x - lastX) / dt * 16; // Normalize to ~60fps
+            velocityY = (y - lastY) / dt * 16;
         }
         
-        if (hasMoved && e.cancelable) e.preventDefault();
+        lastX = x;
+        lastY = y;
+        lastTime = now;
 
-        floatingGroup.style.left = (initialX + diffX) + 'px';
-        floatingGroup.style.top = (initialY + diffY) + 'px';
-        floatingGroup.style.right = 'auto';
-        floatingGroup.style.bottom = 'auto';
+        currentX = x - startX;
+        currentY = y - startY;
+
+        // Boundaries while dragging (optional, but keeps it in view)
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        currentX = Math.max(-20, Math.min(screenWidth - 40, currentX));
+        currentY = Math.max(0, Math.min(screenHeight - 60, currentY));
+
+        updatePosition(currentX, currentY);
+        
+        if (e.cancelable) e.preventDefault();
     };
 
     const endDrag = () => {
         if (!isDragging) return;
         isDragging = false;
         floatingGroup.classList.remove('dragging');
-
-        const rect = floatingGroup.getBoundingClientRect();
-        const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
-        const midPoint = screenWidth / 2;
         
-        floatingGroup.style.transition = 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)';
+        // Start the physics animation
+        rafId = requestAnimationFrame(animate);
         
-        if (rect.left + rect.width / 2 < midPoint) {
-            floatingGroup.style.left = '15px';
-        } else {
-            floatingGroup.style.left = (screenWidth - rect.width - 15) + 'px';
-        }
-
-        if (rect.top < 20) {
-            floatingGroup.style.top = '20px';
-        } else if (rect.bottom > screenHeight - 20) {
-            floatingGroup.style.top = (screenHeight - rect.height - 20) + 'px';
-        }
-        
-        if (hasMoved) {
+        // Prevent accidental clicks if moved significantly
+        if (Math.abs(velocityX) > 2 || Math.abs(velocityY) > 2) {
             floatingGroup.style.pointerEvents = 'none';
             setTimeout(() => {
                 floatingGroup.style.pointerEvents = 'auto';
-            }, 100);
+            }, 300);
         }
     };
 
-    // Touch Events
-    floatingGroup.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    // Touch Events (Mobile Only)
+    floatingGroup.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX, e.touches[0].clientY), { passive: false });
     document.addEventListener('touchmove', (e) => moveDrag(e.touches[0].clientX, e.touches[0].clientY, e), { passive: false });
     document.addEventListener('touchend', endDrag);
 });

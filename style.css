@@ -1125,11 +1125,12 @@ h1, h2, h3, h4 {
     gap: 15px;
     z-index: 2500;
     touch-action: none; /* Required for dragging */
-    transition: transform 0.1s ease-out, box-shadow 0.3s;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+    will-change: transform, left, top;
 }
 
 .floating-controls-group.dragging {
-    transition: none;
+    transition: transform 0.05s linear;
     opacity: 0.9;
 }
 
