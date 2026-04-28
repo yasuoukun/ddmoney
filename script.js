@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Reveal Animation on Scroll
+    // Reveal Animation on Scroll function
     function reveal() {
         var reveals = document.querySelectorAll('.reveal, .reveal-right');
         for (var i = 0; i < reveals.length; i++) {
