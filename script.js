@@ -938,11 +938,24 @@ const modelSpecs = {
     'iPhone 11':         { img: 'cat-iphone11.png', display: '6.1" Liquid Retina HD LCD 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP Ultrawide', battery: '3,110 mAh' },
 
     // iPad Series
-    'iPad Air 8':  { img: 'cat-ipad-air.png', display: '11" Liquid Retina IPS LCD 60Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: 'All-day Battery' },
-    'iPad Air 7':  { img: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
-    'iPad Air 6':  { img: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M2 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
-    'iPad Mini':   { img: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
-    'iPad Gen':    { img: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
+    'iPad Pro 11 M5':     { img: 'cat-ipad-pro-m5.png', display: '11" Ultra Retina Tandem OLED 120Hz', chip: 'Apple M5 Chip', camera: '12MP Rear, 12MP Front', battery: 'All-day Battery' },
+    'iPad Pro 11 M4':     { img: 'cat-ipad-pro-m4.png', display: '11" Ultra Retina Tandem OLED 120Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Front', battery: '8,160 mAh' },
+    'iPad Pro 11 M3':     { img: 'cat-ipad-pro-m3.png', display: '11" Liquid Retina 120Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Front', battery: '7,538 mAh' },
+    'iPad Pro 11 M2':     { img: 'cat-ipad-pro-m2.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple M2 Chip', camera: '12MP + 10MP Rear, 12MP Front', battery: '7,538 mAh' },
+    'iPad Pro 11 M1':     { img: 'cat-ipad-pro-m1.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple M1 Chip', camera: '12MP + 10MP Rear, 12MP Front', battery: '7,538 mAh' },
+    'iPad Pro 11 2018':   { img: 'cat-ipad-pro2018.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple A12X Bionic', camera: '12MP Rear, 7MP Front', battery: '7,812 mAh' },
+    'iPad Air 8':         { img: 'cat-ipad-air.png', display: '11" Liquid Retina IPS LCD 60Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: 'All-day Battery' },
+    'iPad Air 7':         { img: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
+    'iPad Air 6':         { img: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M2 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
+    'iPad Air 5':         { img: 'cat-ipad-air5.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple M1 Chip', camera: '12MP Rear, 12MP Front', battery: '7,606 mAh' },
+    'iPad Air 4':         { img: 'cat-ipad-air4.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple A14 Bionic', camera: '12MP Rear, 7MP Front', battery: '7,606 mAh' },
+    'iPad Mini 7':        { img: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
+    'iPad Gen 11':        { img: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
+    'iPad Gen 10':        { img: 'cat-ipad-gen10.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple A14 Bionic', camera: '12MP Rear, 12MP Front', battery: '7,606 mAh' },
+    'iPad Gen 9':         { img: 'cat-ipad-gen9.png', display: '10.2" Retina IPS LCD', chip: 'Apple A13 Bionic', camera: '8MP Rear, 12MP Front', battery: '8,557 mAh' },
+    'iPad Gen 8':         { img: 'cat-ipad-gen8.png', display: '10.2" Retina IPS LCD', chip: 'Apple A12 Bionic', camera: '8MP Rear, 1.2MP Front', battery: '8,827 mAh' },
+    'iPad Mini':          { img: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
+    'iPad Gen':           { img: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
 };
 
 // --- Comparison Logic Engine ---
@@ -962,18 +975,31 @@ function populateCompareSelects() {
         'iPhone 13 Series': [],
         'iPhone 12 Series': [],
         'iPhone 11 Series': [],
-        'iPad Series': [],
+        'iPad Series (มือหนึ่ง)': [],
+        'iPad Series (มือสอง)': [],
         'อื่นๆ': []
     };
 
     allProductsData.forEach((prod, index) => {
         let added = false;
-        for (const groupName in groups) {
-            const seriesMatch = groupName.split(' ')[0] + ' ' + groupName.split(' ')[1];
-            if (prod.name.includes(seriesMatch) || (groupName === 'iPad Series' && prod.name.includes('iPad'))) {
-                groups[groupName].push({ ...prod, index });
-                added = true;
-                break;
+        if (prod.name.includes('iPad')) {
+            if (prod.name.includes('(มือสอง)')) {
+                groups['iPad Series (มือสอง)'].push({ ...prod, index });
+            } else {
+                groups['iPad Series (มือหนึ่ง)'].push({ ...prod, index });
+            }
+            added = true;
+        } else {
+            for (const groupName in groups) {
+                if (groupName.startsWith('iPhone')) {
+                    const parts = groupName.split(' ');
+                    const seriesMatch = parts[0] + ' ' + parts[1];
+                    if (prod.name.includes(seriesMatch)) {
+                        groups[groupName].push({ ...prod, index });
+                        added = true;
+                        break;
+                    }
+                }
             }
         }
         if (!added) groups['อื่นๆ'].push({ ...prod, index });
@@ -1112,8 +1138,42 @@ function updateComparison() {
     const s1 = getSpecs(p1.name);
     const s2 = getSpecs(p2.name);
 
-    document.getElementById('comp-img-1').src = s1.img;
-    document.getElementById('comp-img-2').src = s2.img;
+    const img1 = document.getElementById('comp-img-1');
+    const img2 = document.getElementById('comp-img-2');
+    
+    if (img1) {
+        img1.src = s1.img;
+        img1.onerror = () => {
+            if (p1.name.toLowerCase().includes('ipad')) {
+                if (p1.name.toLowerCase().includes('air') || p1.name.toLowerCase().includes('pro')) {
+                    img1.src = 'cat-ipad-air.png';
+                } else if (p1.name.toLowerCase().includes('mini')) {
+                    img1.src = 'cat-ipad-mini.png';
+                } else {
+                    img1.src = 'cat-ipad-gen.png';
+                }
+            } else {
+                img1.src = 'cat-iphone13.png';
+            }
+        };
+    }
+
+    if (img2) {
+        img2.src = s2.img;
+        img2.onerror = () => {
+            if (p2.name.toLowerCase().includes('ipad')) {
+                if (p2.name.toLowerCase().includes('air') || p2.name.toLowerCase().includes('pro')) {
+                    img2.src = 'cat-ipad-air.png';
+                } else if (p2.name.toLowerCase().includes('mini')) {
+                    img2.src = 'cat-ipad-mini.png';
+                } else {
+                    img2.src = 'cat-ipad-gen.png';
+                }
+            } else {
+                img2.src = 'cat-iphone13.png';
+            }
+        };
+    }
 
     const m1Str = p1.installments[months] || "—";
     const m2Str = p2.installments[months] || "—";
