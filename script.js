@@ -1278,3 +1278,73 @@ document.addEventListener('click', (event) => {
         }
     }
 });
+
+// Smooth Infinite Auto-Scroll and Swipe/Grab Marquee Handler
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.marquee-container');
+    const track = document.querySelector('.marquee-track');
+    if (!container || !track) return;
+    
+    // Disable native CSS animations to hand control over to Javascript
+    track.style.animation = 'none';
+    container.style.overflowX = 'auto';
+    container.style.scrollBehavior = 'auto';
+    
+    let isInteracting = false;
+    let speed = 0.8; // pixels scrolled per frame (adjustable)
+    let animationFrameId = null;
+    
+    // Touch/Mouse interaction detection (Pauses auto-scroll on interaction)
+    const startInteract = () => { isInteracting = true; };
+    const stopInteract = () => { isInteracting = false; };
+    
+    container.addEventListener('touchstart', startInteract, { passive: true });
+    container.addEventListener('touchend', stopInteract, { passive: true });
+    container.addEventListener('mousedown', startInteract);
+    container.addEventListener('mouseup', stopInteract);
+    container.addEventListener('mouseleave', stopInteract);
+    
+    // Grab to scroll (Desktop mouse drag support)
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    
+    container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        container.style.cursor = 'grabbing';
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+    });
+    
+    container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 1.5; // Drag speed multiplier
+        container.scrollLeft = scrollLeft - walk;
+    });
+    
+    window.addEventListener('mouseup', () => {
+        if (isDown) {
+            isDown = false;
+            container.style.cursor = 'grab';
+        }
+    });
+    
+    // Continuous smooth animation loop
+    const animateMarquee = () => {
+        if (!isInteracting && !isDown) {
+            container.scrollLeft += speed;
+            
+            // Seamless looping math
+            const halfWidth = track.scrollWidth / 2;
+            if (container.scrollLeft >= halfWidth) {
+                container.scrollLeft = container.scrollLeft - halfWidth;
+            }
+        }
+        animationFrameId = requestAnimationFrame(animateMarquee);
+    };
+    
+    // Kickstart the auto-scroller loop
+    requestAnimationFrame(animateMarquee);
+});
