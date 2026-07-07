@@ -2095,114 +2095,106 @@ h1, h2, h3, h4 {
         font-size: 0.8rem; /* Reduced from 0.9rem */
     }
 }
-/* News Contact Bubble Overlay */
-.news-contact-bubble-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 25, 48, 0.15); /* Very light, non-obstructive overlay */
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    z-index: 9999;
+/* Sleek iOS-style Context Floating Bubble */
+.news-contact-bubble {
+    position: absolute;
     display: none;
-    justify-content: center;
-    align-items: flex-end; /* Mobile/tablet friendly bottom-sheet/bubble placement */
-    padding-bottom: 40px;
-    animation: fadeIn 0.2s ease-out;
-}
-
-.news-contact-bubble-overlay.active {
-    display: flex;
-}
-
-/* Horizontal pill-style bubble like context menus on iOS/Android */
-.news-contact-bubble-content {
-    background: rgba(10, 25, 48, 0.95);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 50px;
-    padding: 8px 16px;
-    display: flex;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 6px 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     align-items: center;
-    gap: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-    animation: slideUpBubble 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    gap: 0; /* Let dividers handle spaces */
+    z-index: 9999;
+    animation: bubblePop 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.bubble-title {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
+.news-contact-bubble.active {
+    display: flex;
+}
+
+/* Divider line like iOS select menu */
+.news-contact-bubble .bubble-divider {
+    width: 1px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+}
+
+.news-contact-bubble .bubble-btn {
+    color: #1a1a1a;
+    font-size: 0.85rem;
     font-weight: 500;
-    padding-left: 4px;
-}
-
-.bubble-btn {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 6px;
-    color: #fff;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
-.bubble-btn.line {
-    background: #06C755;
-}
-.bubble-btn.line:hover {
-    background: #05b04b;
-    transform: scale(1.05);
-}
-
-.bubble-btn.facebook {
-    background: #1877F2;
-}
-.bubble-btn.facebook:hover {
-    background: #1162ca;
-    transform: scale(1.05);
-}
-
-.bubble-close-btn {
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0 4px;
-    display: flex;
-    align-items: center;
+    padding: 4px 6px;
     transition: color 0.2s;
 }
 
-.bubble-close-btn:hover {
-    color: #fff;
+.news-contact-bubble .bubble-btn i {
+    font-size: 1.1rem;
 }
 
-@keyframes slideUpBubble {
-    0% { transform: translateY(30px) scale(0.9); opacity: 0; }
-    100% { transform: translateY(0) scale(1); opacity: 1; }
+.news-contact-bubble .bubble-btn.line i {
+    color: #06C755;
+}
+
+.news-contact-bubble .bubble-btn.facebook i {
+    color: #1877F2;
+}
+
+.news-contact-bubble .bubble-btn:hover {
+    color: #0077B6;
+}
+
+/* Little Indicator Arrow pointing to the clicked item */
+.news-contact-bubble::after {
+    content: '';
+    position: absolute;
+    border-width: 6px;
+    border-style: solid;
+}
+
+/* Arrow pointing down (when bubble sits above image) */
+.news-contact-bubble.arrow-bottom::after {
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #ffffff transparent transparent transparent;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.05));
+}
+
+/* Arrow pointing up (when bubble sits below image) */
+.news-contact-bubble.arrow-top::after {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent #ffffff transparent;
+}
+
+@keyframes bubblePop {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 @media (max-width: 1024px) {
-    .news-contact-bubble-overlay {
-        padding-bottom: 30px;
+    .news-contact-bubble {
+        padding: 5px 12px;
+        border-radius: 10px;
     }
-    .news-contact-bubble-content {
-        gap: 8px;
-        padding: 6px 12px;
+    .news-contact-bubble .bubble-divider {
+        margin: 0 8px;
+        height: 14px;
     }
-    .bubble-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
+    .news-contact-bubble .bubble-btn {
+        font-size: 0.78rem;
+        gap: 4px;
     }
-    .bubble-title {
-        font-size: 0.75rem;
+    .news-contact-bubble .bubble-btn i {
+        font-size: 0.95rem;
     }
 }
 

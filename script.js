@@ -1361,19 +1361,76 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animateMarquee);
 });
 
-// News Contact Bubble (Mobile context menu style) Handlers
-function openNewsContactBubble() {
-    const bubble = document.getElementById('news-contact-bubble');
-    if (bubble) {
-        bubble.classList.add('active');
-        document.body.style.overflow = 'hidden';
+// News Contact Bubble (iOS context menu style) Positioner and Handlers
+function openNewsContactBubble(event) {
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
     }
+    const bubble = document.getElementById('news-contact-bubble');
+    if (!bubble) return;
+    
+    // Get target element (the clicked anchor link)
+    const target = event.currentTarget;
+    const rect = target.getBoundingClientRect();
+    
+    // Show bubble temporarily to calculate its dimensions
+    bubble.classList.add('active');
+    
+    const bubbleWidth = bubble.offsetWidth;
+    const bubbleHeight = bubble.offsetHeight;
+    
+    // Document coordinates of the target element
+    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollX = window.scrollX || window.pageXOffset;
+    const targetTop = rect.top + scrollY;
+    const targetLeft = rect.left + scrollX;
+    
+    // Calculate positioning
+    let top = targetTop - bubbleHeight - 12; // 12px spacing above target
+    let left = targetLeft + (rect.width / 2) - (bubbleWidth / 2);
+    
+    bubble.classList.remove('arrow-top', 'arrow-bottom');
+    
+    // If it goes off-screen top, position below target
+    if (rect.top - bubbleHeight - 15 < 0) {
+        top = rect.bottom + scrollY + 12;
+        bubble.classList.add('arrow-top');
+    } else {
+        bubble.classList.add('arrow-bottom');
+    }
+    
+    // Keep horizontally within viewport boundaries
+    const viewportWidth = window.innerWidth;
+    const padding = 15;
+    if (left < padding) {
+        left = padding;
+    } else if (left + bubbleWidth > viewportWidth - padding) {
+        left = viewportWidth - bubbleWidth - padding;
+    }
+    
+    bubble.style.top = `${top}px`;
+    bubble.style.left = `${left}px`;
+    
+    // Attach event listeners for closing
+    window.addEventListener('scroll', closeNewsContactBubble, { passive: true });
 }
 
 function closeNewsContactBubble() {
     const bubble = document.getElementById('news-contact-bubble');
-    if (bubble) {
+    if (bubble && bubble.classList.contains('active')) {
         bubble.classList.remove('active');
-        document.body.style.overflow = '';
+        window.removeEventListener('scroll', closeNewsContactBubble);
     }
 }
+
+// Close bubble when clicking anywhere else
+document.addEventListener('click', (event) => {
+    const bubble = document.getElementById('news-contact-bubble');
+    if (bubble && bubble.classList.contains('active')) {
+        const isClickInside = bubble.contains(event.target);
+        if (!isClickInside) {
+            closeNewsContactBubble();
+        }
+    }
+});
