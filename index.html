@@ -506,6 +506,15 @@
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
+                        <div class="price-cat-card" onclick="openPriceModal('modal-used-ipad')">
+                            <div class="price-cat-icon"><img src="cat-ipad-gen.png" alt="iPad มือสอง"></div>
+                            <div class="price-cat-info">
+                                <h3>iPad มือสอง</h3>
+                                <p>Gen 8/9/10/11 | Air 4/5/6/7/8 | Pro M1-M5 สภาพสวยคุ้มค่า</p>
+                                <div class="price-cat-from">เริ่มต้น <span>460</span> บาท/เดือน</div>
+                            </div>
+                            <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
+                        </div>
                     </div>
                     <button class="scroll-arrow scroll-arrow-right" onclick="scrollCards('tab-ipad', 1)"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
@@ -794,6 +803,58 @@
                         <tr><td>iPad Air 8 256GB WiFi 11"</td><td>33,900</td><td>11,900</td><td>10,020</td><td>7,960</td><td>5,890</td><td>4,670</td><td>3,980</td><td>3,370</td></tr>
                         <tr><td>iPad Air 8 128GB Cell 11"</td><td>33,900</td><td>11,900</td><td>10,020</td><td>7,960</td><td>5,890</td><td>4,670</td><td>3,980</td><td>3,370</td></tr>
                         <tr><td>iPad Air 7 256GB Cell 11"</td><td>37,900</td><td>13,300</td><td>11,200</td><td>8,890</td><td>6,590</td><td>5,210</td><td>4,450</td><td>3,770</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary btn-full mt-4"><i class="fa-brands fa-line"></i> สนใจรุ่นนี้ ทักแอดมิน</a>
+        </div>
+    </div>
+
+    <!-- iPad Used -->
+    <div id="modal-used-ipad" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-used-ipad')">
+        <div class="price-modal-content">
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-used-ipad')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPad Series — ตารางราคาผ่อน (มือสอง)</h2>
+            <div class="price-table-wrap">
+                <table class="price-table">
+                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th></tr></thead>
+                    <tbody>
+                        <tr><td>iPad Gen 8 32GB WiFi</td><td>3,590</td><td>1,400</td><td>990</td><td>790</td><td>580</td><td>460</td><td>—</td></tr>
+                        <tr><td>iPad Gen 8 128GB WiFi</td><td>3,990</td><td>1,400</td><td>1,180</td><td>930</td><td>690</td><td>550</td><td>—</td></tr>
+                        <tr><td>iPad Gen 9 64GB WiFi</td><td>4,990</td><td>1,750</td><td>1,470</td><td>1,170</td><td>870</td><td>690</td><td>—</td></tr>
+                        <tr><td>iPad Gen 9 256GB WiFi</td><td>5,990</td><td>2,100</td><td>1,770</td><td>1,400</td><td>1,040</td><td>820</td><td>—</td></tr>
+                        <tr><td>iPad Gen 10 64GB WiFi</td><td>8,990</td><td>3,150</td><td>2,650</td><td>2,110</td><td>1,560</td><td>1,240</td><td>—</td></tr>
+                        <tr><td>iPad Gen 10 256GB WiFi</td><td>9,990</td><td>3,500</td><td>2,950</td><td>2,340</td><td>1,730</td><td>1,370</td><td>1,170</td></tr>
+                        <tr><td>iPad Gen 11 128GB WiFi</td><td>12,990</td><td>4,550</td><td>3,830</td><td>3,040</td><td>2,250</td><td>1,790</td><td>1,520</td></tr>
+                        <tr><td>iPad Gen 11 256GB WiFi</td><td>14,990</td><td>5,250</td><td>4,430</td><td>3,510</td><td>2,600</td><td>2,060</td><td>1,760</td></tr>
+                        <tr><td>iPad Air 4 64GB WiFi</td><td>8,990</td><td>3,150</td><td>2,650</td><td>2,110</td><td>1,560</td><td>1,240</td><td>—</td></tr>
+                        <tr><td>iPad Air 4 256GB WiFi</td><td>9,990</td><td>3,500</td><td>2,950</td><td>2,340</td><td>1,730</td><td>1,370</td><td>1,170</td></tr>
+                        <tr><td>iPad Air 5 64GB WiFi</td><td>9,990</td><td>3,500</td><td>2,950</td><td>2,340</td><td>1,730</td><td>1,370</td><td>1,170</td></tr>
+                        <tr><td>iPad Air 5 256GB WiFi</td><td>10,990</td><td>3,850</td><td>3,240</td><td>2,570</td><td>1,910</td><td>1,510</td><td>1,290</td></tr>
+                        <tr><td>iPad Air 6 128GB WiFi 11"</td><td>13,990</td><td>4,900</td><td>4,130</td><td>3,280</td><td>2,430</td><td>1,920</td><td>1,640</td></tr>
+                        <tr><td>iPad Air 6 256GB WiFi 11"</td><td>14,990</td><td>5,250</td><td>4,430</td><td>3,510</td><td>2,600</td><td>2,060</td><td>1,760</td></tr>
+                        <tr><td>iPad Air 6 128GB WiFi 13"</td><td>15,990</td><td>5,600</td><td>4,720</td><td>3,750</td><td>2,770</td><td>2,200</td><td>1,870</td></tr>
+                        <tr><td>iPad Air 6 256GB WiFi 13"</td><td>16,990</td><td>5,950</td><td>5,020</td><td>3,980</td><td>2,950</td><td>2,340</td><td>1,990</td></tr>
+                        <tr><td>iPad Air 7 128GB WiFi 11"</td><td>17,990</td><td>6,300</td><td>5,310</td><td>4,210</td><td>3,120</td><td>2,470</td><td>2,110</td></tr>
+                        <tr><td>iPad Air 7 256GB WiFi 11"</td><td>18,990</td><td>6,650</td><td>5,610</td><td>4,450</td><td>3,290</td><td>2,610</td><td>2,220</td></tr>
+                        <tr><td>iPad Air 7 128GB WiFi 13"</td><td>18,990</td><td>6,650</td><td>5,610</td><td>4,450</td><td>3,290</td><td>2,610</td><td>2,220</td></tr>
+                        <tr><td>iPad Air 7 256GB WiFi 13"</td><td>22,990</td><td>8,050</td><td>6,790</td><td>5,390</td><td>3,990</td><td>3,160</td><td>2,690</td></tr>
+                        <tr><td>iPad Air 8 128GB WiFi 11"</td><td>22,990</td><td>8,050</td><td>6,790</td><td>5,390</td><td>3,990</td><td>3,160</td><td>2,690</td></tr>
+                        <tr><td>iPad Air 8 256GB WiFi 11"</td><td>24,990</td><td>8,750</td><td>7,380</td><td>5,850</td><td>4,340</td><td>3,440</td><td>2,930</td></tr>
+                        <tr><td>iPad Air 8 128GB WiFi 13"</td><td>24,990</td><td>8,750</td><td>7,380</td><td>5,850</td><td>4,340</td><td>3,440</td><td>2,930</td></tr>
+                        <tr><td>iPad Air 8 256GB WiFi 13"</td><td>26,990</td><td>9,450</td><td>7,970</td><td>6,320</td><td>4,680</td><td>3,710</td><td>3,160</td></tr>
+                        <tr><td>iPad Pro 11 2018 64GB WiFi</td><td>9,990</td><td>3,500</td><td>2,950</td><td>2,340</td><td>1,730</td><td>1,370</td><td>1,170</td></tr>
+                        <tr><td>iPad Pro 11 2018 256GB WiFi</td><td>10,990</td><td>3,850</td><td>3,240</td><td>2,570</td><td>1,910</td><td>1,510</td><td>1,290</td></tr>
+                        <tr><td>iPad Pro 11 M1 128GB WiFi</td><td>17,990</td><td>6,300</td><td>5,310</td><td>4,210</td><td>3,120</td><td>2,470</td><td>2,110</td></tr>
+                        <tr><td>iPad Pro 11 M1 256GB WiFi</td><td>18,990</td><td>6,650</td><td>5,610</td><td>4,450</td><td>3,290</td><td>2,610</td><td>2,220</td></tr>
+                        <tr><td>iPad Pro 11 M2 128GB WiFi</td><td>19,990</td><td>7,000</td><td>5,900</td><td>4,680</td><td>3,470</td><td>2,750</td><td>2,340</td></tr>
+                        <tr><td>iPad Pro 11 M2 256GB WiFi</td><td>20,990</td><td>7,350</td><td>6,200</td><td>4,920</td><td>3,640</td><td>2,890</td><td>2,460</td></tr>
+                        <tr><td>iPad Pro 11 M3 128GB WiFi</td><td>สอบถามแอดมิน</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr><td>iPad Pro 11 M3 256GB WiFi</td><td>21,990</td><td>7,700</td><td>6,490</td><td>5,150</td><td>3,820</td><td>3,020</td><td>2,580</td></tr>
+                        <tr><td>iPad Pro 11 M4 128GB WiFi</td><td>สอบถามแอดมิน</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr><td>iPad Pro 11 M4 256GB WiFi</td><td>22,990</td><td>8,050</td><td>6,790</td><td>5,390</td><td>3,990</td><td>3,160</td><td>2,690</td></tr>
+                        <tr><td>iPad Pro 11 M5 128GB WiFi</td><td>สอบถามแอดมิน</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                        <tr><td>iPad Pro 11 M5 256GB WiFi</td><td>32,990</td><td>11,550</td><td>9,740</td><td>7,730</td><td>5,720</td><td>4,540</td><td>3,860</td></tr>
                     </tbody>
                 </table>
             </div>
