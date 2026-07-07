@@ -2756,5 +2756,74 @@ h1, h2, h3, h4 {
     }
 }
 
+/* Local Video Reels Stylings */
+.local-reel {
+    position: relative;
+    background: #000;
+}
+
+.reel-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
+}
+
+.reel-sound-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 12;
+    transition: background 0.2s, transform 0.2s;
+    font-size: 16px;
+    padding: 0;
+}
+
+.reel-sound-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.1);
+}
+
+.reel-play-state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.local-reel.paused .reel-play-state {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.local-reel:not(.paused) .reel-play-state {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.4);
+}
+
 
 

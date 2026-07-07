@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Auto-stop Reels when scrolled away
+    // Auto-stop/play Reels when scrolled away/into view
     if (reelsGrid) {
         const observerOptions = {
             root: reelsGrid,
@@ -332,20 +332,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const reelObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    const iframe = entry.target.querySelector('iframe');
-                    const overlay = entry.target.querySelector('.reel-overlay');
-                    
-                    // If overlay is hidden (video was likely playing)
-                    if (overlay && overlay.classList.contains('hidden')) {
-                        // Reload iframe to stop video/audio
-                        if (iframe) {
-                            const currentSrc = iframe.src;
-                            iframe.src = '';
-                            iframe.src = currentSrc;
+                const isLocal = entry.target.classList.contains('local-reel');
+                if (isLocal) {
+                    const video = entry.target.querySelector('.reel-video');
+                    if (video) {
+                        if (entry.isIntersecting) {
+                            video.play().catch(err => console.log('Autoplay failed:', err));
+                            entry.target.classList.remove('paused');
+                        } else {
+                            video.pause();
+                            entry.target.classList.add('paused');
                         }
-                        // Restore overlay
-                        overlay.classList.remove('hidden');
+                    }
+                } else {
+                    if (!entry.isIntersecting) {
+                        const iframe = entry.target.querySelector('iframe');
+                        const overlay = entry.target.querySelector('.reel-overlay');
+                        
+                        // If overlay is hidden (video was likely playing)
+                        if (overlay && overlay.classList.contains('hidden')) {
+                            // Reload iframe to stop video/audio
+                            if (iframe) {
+                                const currentSrc = iframe.src;
+                                iframe.src = '';
+                                iframe.src = currentSrc;
+                            }
+                            // Restore overlay
+                            overlay.classList.remove('hidden');
+                        }
                     }
                 }
             });
@@ -353,6 +367,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelectorAll('.reel-item').forEach(item => {
             reelObserver.observe(item);
+        });
+
+        // --- Local Reels Interaction Logic ---
+        document.querySelectorAll('.local-reel').forEach(reel => {
+            const video = reel.querySelector('.reel-video');
+            const soundBtn = reel.querySelector('.reel-sound-btn');
+            const soundIcon = soundBtn ? soundBtn.querySelector('i') : null;
+
+            // Play/Pause toggle on clicking the reel item (except the sound button)
+            reel.addEventListener('click', (e) => {
+                if (e.target.closest('.reel-sound-btn')) return;
+
+                if (video.paused) {
+                    video.play().catch(err => console.log('Playback failed:', err));
+                    reel.classList.remove('paused');
+                } else {
+                    video.pause();
+                    reel.classList.add('paused');
+                }
+            });
+
+            // Sound toggle
+            if (soundBtn && soundIcon) {
+                soundBtn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // prevent play/pause toggle
+                    video.muted = !video.muted;
+                    if (video.muted) {
+                        soundIcon.className = 'fa-solid fa-volume-xmark';
+                    } else {
+                        soundIcon.className = 'fa-solid fa-volume-high';
+                    }
+                });
+            }
         });
     }
 });
