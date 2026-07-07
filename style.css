@@ -1121,7 +1121,8 @@ h1, h2, h3, h4 {
     bottom: 30px;
     right: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse; /* Stack options above the trigger */
+    align-items: center;
     gap: 15px;
     z-index: 2500;
     touch-action: none; /* Required for dragging */
@@ -1134,84 +1135,121 @@ h1, h2, h3, h4 {
     opacity: 0.9;
 }
 
-/* Floating Buttons Base */
-.floating-calc-btn, .floating-contact-trigger {
-    position: relative;
+/* Main Trigger Button */
+.fab-main-trigger {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00A8E8, #0077B6);
+    box-shadow: 0 8px 25px rgba(0, 168, 232, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    color: #fff;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10;
 }
 
-.floating-calc-btn {
-    background: linear-gradient(135deg, #FF9800, #F57C00);
+.fab-main-trigger:hover {
+    transform: scale(1.05);
 }
 
-.floating-calc-btn:hover, .floating-contact-trigger:hover {
-    transform: scale(1.1);
-}
-
-/* Floating Contact Menu */
-.floating-contact-menu {
-    position: relative;
+/* Options Container (Hidden by default, slides up on expand) */
+.fab-options {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-}
-
-.floating-contact-trigger {
-    background: linear-gradient(135deg, #00A8E8, #0077B6);
-    z-index: 2;
-}
-
-.floating-contact-options {
-    position: absolute;
-    right: 75px;
-    display: flex;
-    gap: 12px;
+    gap: 15px;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(20px);
-    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 1;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 9;
 }
 
-.floating-contact-menu.expanded .floating-contact-options {
+.floating-controls-group.expanded .fab-options {
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
+    transform: translateY(0) scale(1);
 }
 
-.contact-option-btn {
+/* Individual Option Buttons */
+.fab-option-btn {
+    position: relative;
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    border: none;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4rem;
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-option-btn:hover {
-    transform: scale(1.15);
+.fab-option-btn:hover {
+    transform: scale(1.1);
 }
 
-.contact-option-btn.line-btn {
+.fab-option-btn.line-btn {
     background: #06C755;
+    box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3);
 }
 
-.contact-option-btn.fb-btn {
+.fab-option-btn.fb-btn {
     background: #1877F2;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+}
+
+.fab-option-btn.calc-btn {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    box-shadow: 0 5px 15px rgba(245, 124, 0, 0.3);
+}
+
+/* Tooltips for Options */
+.fab-tooltip {
+    position: absolute;
+    background: #0a1930;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Tooltip positions based on screen sides */
+.floating-controls-group.tooltip-left .fab-tooltip {
+    right: 65px;
+    left: auto;
+    transform: translateX(10px);
+}
+.floating-controls-group.tooltip-left .fab-option-btn:hover .fab-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.floating-controls-group.tooltip-right .fab-tooltip {
+    left: 65px;
+    right: auto;
+    transform: translateX(-10px);
+}
+.floating-controls-group.tooltip-right .fab-option-btn:hover .fab-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
 }
 
 /* LINE Tooltip Bubble - Exact Droplet Style from Screenshot */
@@ -1446,19 +1484,18 @@ h1, h2, h3, h4 {
         right: 20px;
     }
 
-    .floating-calc-btn, .floating-contact-trigger {
-        width: 48px; /* Smaller as requested */
-        height: 48px;
-        font-size: 1.3rem;
+    .fab-main-trigger {
+        width: 50px; /* Smaller as requested */
+        height: 50px;
+        font-size: 1.35rem;
     }
-    .contact-option-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
+    .fab-option-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.15rem;
     }
-    .floating-contact-options {
-        right: 60px;
-        gap: 8px;
+    .fab-tooltip {
+        right: 58px;
     }
     
     .hero-title {

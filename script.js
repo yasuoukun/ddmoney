@@ -1242,16 +1242,16 @@ function updateComparison() {
 
 setTimeout(populateCompareSelects, 500);
 
-// Floating Contact Menu Toggle Handler
-function toggleFloatingContactMenu(event) {
+// Floating Action Button (FAB) Menu Toggle Handler
+function toggleFabMenu(event) {
     if (event) {
         event.stopPropagation();
     }
-    const menu = document.getElementById('floatingContactMenu');
-    if (!menu) return;
+    const group = document.getElementById('floatingGroup');
+    if (!group) return;
     
-    const isExpanded = menu.classList.toggle('expanded');
-    const triggerIcon = menu.querySelector('.floating-contact-trigger i');
+    const isExpanded = group.classList.toggle('expanded');
+    const triggerIcon = group.querySelector('.fab-main-trigger i');
     
     // Change icon when menu expands
     if (triggerIcon) {
@@ -1263,14 +1263,14 @@ function toggleFloatingContactMenu(event) {
     }
 }
 
-// Close expanded floating contact menu on click outside
+// Close expanded FAB menu on click outside
 document.addEventListener('click', (event) => {
-    const menu = document.getElementById('floatingContactMenu');
-    if (menu && menu.classList.contains('expanded')) {
-        const trigger = menu.querySelector('.floating-contact-trigger');
-        const options = menu.querySelector('.floating-contact-options');
+    const group = document.getElementById('floatingGroup');
+    if (group && group.classList.contains('expanded')) {
+        const trigger = group.querySelector('.fab-main-trigger');
+        const options = group.querySelector('.fab-options');
         if (!trigger.contains(event.target) && !options.contains(event.target)) {
-            menu.classList.remove('expanded');
+            group.classList.remove('expanded');
             const triggerIcon = trigger.querySelector('i');
             if (triggerIcon) {
                 triggerIcon.className = 'fa-solid fa-comments';
