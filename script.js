@@ -982,20 +982,46 @@ function populateCompareSelects() {
         'iPhone 13 Series': [],
         'iPhone 12 Series': [],
         'iPhone 11 Series': [],
-        'iPad Series': [],
+        'iPad Pro Series': [],
+        'iPad Air Series': [],
+        'iPad Gen Series': [],
+        'iPad Mini Series': [],
         'อื่นๆ': []
     };
 
     allProductsData.forEach((prod, index) => {
         let added = false;
-        for (const groupName in groups) {
-            const seriesMatch = groupName.split(' ')[0] + ' ' + groupName.split(' ')[1];
-            if (prod.name.includes(seriesMatch) || (groupName === 'iPad Series' && prod.name.includes('iPad'))) {
-                groups[groupName].push({ ...prod, index });
+        
+        if (prod.name.includes('iPad')) {
+            if (prod.name.includes('Pro')) {
+                groups['iPad Pro Series'].push({ ...prod, index });
                 added = true;
-                break;
+            } else if (prod.name.includes('Air')) {
+                groups['iPad Air Series'].push({ ...prod, index });
+                added = true;
+            } else if (prod.name.includes('Gen')) {
+                groups['iPad Gen Series'].push({ ...prod, index });
+                added = true;
+            } else if (prod.name.includes('Mini')) {
+                groups['iPad Mini Series'].push({ ...prod, index });
+                added = true;
             }
         }
+        
+        if (!added) {
+            for (const groupName in groups) {
+                if (groupName.startsWith('iPhone')) {
+                    const parts = groupName.split(' ');
+                    const seriesMatch = parts[0] + ' ' + parts[1];
+                    if (prod.name.includes(seriesMatch)) {
+                        groups[groupName].push({ ...prod, index });
+                        added = true;
+                        break;
+                    }
+                }
+            }
+        }
+        
         if (!added) groups['อื่นๆ'].push({ ...prod, index });
     });
 
