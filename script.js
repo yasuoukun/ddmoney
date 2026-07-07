@@ -1250,6 +1250,18 @@ function toggleFabMenu(event) {
     const group = document.getElementById('floatingGroup');
     if (!group) return;
     
+    // Calculate vertical expand direction based on screen height
+    const rect = group.getBoundingClientRect();
+    const screenHeight = window.innerHeight;
+    const centerY = screenHeight / 2;
+    
+    group.classList.remove('expand-up', 'expand-down');
+    if (rect.top < centerY) {
+        group.classList.add('expand-down');
+    } else {
+        group.classList.add('expand-up');
+    }
+    
     const isExpanded = group.classList.toggle('expanded');
     const triggerIcon = group.querySelector('.fab-main-trigger i');
     

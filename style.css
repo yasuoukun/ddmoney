@@ -1120,9 +1120,8 @@ h1, h2, h3, h4 {
     bottom: 30px;
     right: 30px;
     display: flex;
-    flex-direction: column-reverse; /* Stack options above the trigger */
+    justify-content: center;
     align-items: center;
-    gap: 15px;
     z-index: 2500;
     touch-action: none; /* Required for dragging */
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
@@ -1156,20 +1155,37 @@ h1, h2, h3, h4 {
     transform: scale(1.05);
 }
 
-/* Options Container (Hidden by default, slides up on expand) */
+/* Options Container (Absolute Positioned relative to group) */
 .fab-options {
+    position: absolute;
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
     gap: 15px;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(20px) scale(0.8);
     transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 9;
 }
 
-.floating-controls-group.expanded .fab-options {
+/* Expand Up State (Options above the trigger button) */
+.floating-controls-group.expand-up .fab-options {
+    bottom: 75px;
+    flex-direction: column-reverse;
+    transform: translateY(20px) scale(0.8);
+}
+.floating-controls-group.expand-up.expanded .fab-options {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* Expand Down State (Options below the trigger button) */
+.floating-controls-group.expand-down .fab-options {
+    top: 75px;
+    flex-direction: column;
+    transform: translateY(-20px) scale(0.8);
+}
+.floating-controls-group.expand-down.expanded .fab-options {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0) scale(1);
@@ -1226,6 +1242,7 @@ h1, h2, h3, h4 {
     transition: all 0.2s ease;
     pointer-events: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 20;
 }
 
 /* Tooltip positions based on screen sides */
