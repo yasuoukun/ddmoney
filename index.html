@@ -351,7 +351,10 @@
                     <i class="fa-solid fa-recycle"></i> iPhone มือสอง
                 </button>
                 <button class="price-tab" onclick="switchTab('ipad')">
-                    <i class="fa-solid fa-tablet-screen-button"></i> iPad
+                    <i class="fa-solid fa-tablet-screen-button"></i> iPad มือหนึ่ง
+                </button>
+                <button class="price-tab" onclick="switchTab('used-ipad')">
+                    <i class="fa-solid fa-recycle"></i> iPad มือสอง
                 </button>
             </div>
 
@@ -506,6 +509,16 @@
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
+                    </div>
+                    <button class="scroll-arrow scroll-arrow-right" onclick="scrollCards('tab-ipad', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- ===== USED IPAD TAB ===== -->
+            <div id="tab-used-ipad" class="price-tab-content">
+                <div class="price-scroll-wrapper">
+                    <button class="scroll-arrow scroll-arrow-left" onclick="scrollCards('tab-used-ipad', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="price-cards-grid" id="grid-used-ipad">
                         <div class="price-cat-card" onclick="openPriceModal('modal-used-ipad')">
                             <div class="price-cat-icon"><img src="cat-ipad-gen.png" alt="iPad มือสอง"></div>
                             <div class="price-cat-info">
@@ -516,7 +529,7 @@
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
                     </div>
-                    <button class="scroll-arrow scroll-arrow-right" onclick="scrollCards('tab-ipad', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="scroll-arrow scroll-arrow-right" onclick="scrollCards('tab-used-ipad', 1)"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
 

@@ -186,7 +186,14 @@ function switchTab(tabId) {
         content.classList.add('active');
         updateScrollArrows(targetId);
     }
-    event.currentTarget.classList.add('active');
+    
+    const cleanId = tabId.replace('tab-', '');
+    const tabBtn = document.querySelector(`.price-tab[onclick*="${cleanId}"]`);
+    if (tabBtn) {
+        tabBtn.classList.add('active');
+    } else if (typeof event !== 'undefined' && event && event.currentTarget && event.currentTarget.classList.contains('price-tab')) {
+        event.currentTarget.classList.add('active');
+    }
 }
 
 // Price Catalog: Arrow Scroll
@@ -975,31 +982,18 @@ function populateCompareSelects() {
         'iPhone 13 Series': [],
         'iPhone 12 Series': [],
         'iPhone 11 Series': [],
-        'iPad Series (มือหนึ่ง)': [],
-        'iPad Series (มือสอง)': [],
+        'iPad Series': [],
         'อื่นๆ': []
     };
 
     allProductsData.forEach((prod, index) => {
         let added = false;
-        if (prod.name.includes('iPad')) {
-            if (prod.name.includes('(มือสอง)')) {
-                groups['iPad Series (มือสอง)'].push({ ...prod, index });
-            } else {
-                groups['iPad Series (มือหนึ่ง)'].push({ ...prod, index });
-            }
-            added = true;
-        } else {
-            for (const groupName in groups) {
-                if (groupName.startsWith('iPhone')) {
-                    const parts = groupName.split(' ');
-                    const seriesMatch = parts[0] + ' ' + parts[1];
-                    if (prod.name.includes(seriesMatch)) {
-                        groups[groupName].push({ ...prod, index });
-                        added = true;
-                        break;
-                    }
-                }
+        for (const groupName in groups) {
+            const seriesMatch = groupName.split(' ')[0] + ' ' + groupName.split(' ')[1];
+            if (prod.name.includes(seriesMatch) || (groupName === 'iPad Series' && prod.name.includes('iPad'))) {
+                groups[groupName].push({ ...prod, index });
+                added = true;
+                break;
             }
         }
         if (!added) groups['อื่นๆ'].push({ ...prod, index });
