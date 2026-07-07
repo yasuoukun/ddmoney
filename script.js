@@ -1360,3 +1360,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Kickstart the auto-scroller loop
     requestAnimationFrame(animateMarquee);
 });
+
+// News Contact Bubble (Mobile context menu style) Handlers
+function openNewsContactBubble() {
+    const bubble = document.getElementById('news-contact-bubble');
+    if (bubble) {
+        bubble.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeNewsContactBubble() {
+    const bubble = document.getElementById('news-contact-bubble');
+    if (bubble) {
+        bubble.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
