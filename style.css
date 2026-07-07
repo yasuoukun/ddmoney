@@ -2836,14 +2836,12 @@ h1, h2, h3, h4 {
     }
     .reels-grid { 
         gap: 20px; 
-        padding: 0;
+        padding: 0 24px; 
         justify-content: flex-start;
         display: flex;
     }
     .reels-grid::before, .reels-grid::after {
-        content: '';
-        flex: 0 0 calc(50vw - 120px); /* (Screen width / 2) - (Reel width / 2) */
-        width: calc(50vw - 120px);
+        display: none !important;
     }
     
     .reels-section .scroll-arrow {
