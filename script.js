@@ -1241,3 +1241,40 @@ function updateComparison() {
 }
 
 setTimeout(populateCompareSelects, 500);
+
+// Floating Contact Menu Toggle Handler
+function toggleFloatingContactMenu(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    const menu = document.getElementById('floatingContactMenu');
+    if (!menu) return;
+    
+    const isExpanded = menu.classList.toggle('expanded');
+    const triggerIcon = menu.querySelector('.floating-contact-trigger i');
+    
+    // Change icon when menu expands
+    if (triggerIcon) {
+        if (isExpanded) {
+            triggerIcon.className = 'fa-solid fa-xmark';
+        } else {
+            triggerIcon.className = 'fa-solid fa-comments';
+        }
+    }
+}
+
+// Close expanded floating contact menu on click outside
+document.addEventListener('click', (event) => {
+    const menu = document.getElementById('floatingContactMenu');
+    if (menu && menu.classList.contains('expanded')) {
+        const trigger = menu.querySelector('.floating-contact-trigger');
+        const options = menu.querySelector('.floating-contact-options');
+        if (!trigger.contains(event.target) && !options.contains(event.target)) {
+            menu.classList.remove('expanded');
+            const triggerIcon = trigger.querySelector('i');
+            if (triggerIcon) {
+                triggerIcon.className = 'fa-solid fa-comments';
+            }
+        }
+    }
+});

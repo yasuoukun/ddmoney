@@ -286,30 +286,6 @@
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </div>
-                        <div class="reel-item">
-                            <div class="reel-overlay"></div>
-                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2616882248505888&show_text=false&t=0&autoplay=true&mute=true" 
-                                width="267" height="476" scrolling="no" frameborder="0" allowfullscreen="true" tabindex="-1"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                        </div>
-                        <div class="reel-item">
-                            <div class="reel-overlay"></div>
-                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1237330837291488&show_text=false&t=0&autoplay=true&mute=true" 
-                                width="267" height="476" scrolling="no" frameborder="0" allowfullscreen="true" tabindex="-1"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                        </div>
-                        <div class="reel-item">
-                            <div class="reel-overlay"></div>
-                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F658831455764766&show_text=false&t=0&autoplay=true&mute=true" 
-                                width="267" height="476" scrolling="no" frameborder="0" allowfullscreen="true" tabindex="-1"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                        </div>
-                        <div class="reel-item">
-                            <div class="reel-overlay"></div>
-                            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F830982441203884&show_text=false&t=0&autoplay=true&mute=true" 
-                                width="267" height="476" scrolling="no" frameborder="0" allowfullscreen="true" tabindex="-1"
-                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                        </div>
                     </div>
                 </div>
                 <button class="scroll-arrow scroll-arrow-right" onclick="scrollReels(1)"><i class="fa-solid fa-chevron-right"></i></button>
@@ -925,6 +901,24 @@
         </div>
     </div>
 
+    <!-- Contact Choice Modal -->
+    <div id="modal-contact-choice" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-contact-choice')">
+        <div class="price-modal-content contact-choice-modal" style="max-width: 400px; text-align: center; padding: 40px 30px; border-radius: 20px;">
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-contact-choice')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="font-size: 1.6rem; margin-bottom: 10px; color: var(--navy); display: flex; align-items: center; justify-content: center; gap: 8px;"><i class="fa-solid fa-comments text-accent"></i> ติดต่อแอดมิน</h3>
+            <p style="color: var(--slate); margin-bottom: 25px; font-size: 0.95rem;">เลือกช่องทางการติดต่อสะดวกรวดเร็วทาง Facebook หรือ Line</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-large" style="background: #06C755; color: #fff; width: 100%; border: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; padding: 14px 20px; border-radius: 12px;">
+                    <i class="fa-brands fa-line" style="font-size: 1.6rem;"></i> ติดต่อทาง Line Official
+                </a>
+                <a href="https://www.facebook.com/ba.na.na.xithi.chayphumi" target="_blank" class="btn btn-large" style="background: #1877F2; color: #fff; width: 100%; border: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: 600; padding: 14px 20px; border-radius: 12px;">
+                    <i class="fa-brands fa-facebook" style="font-size: 1.6rem;"></i> ติดต่อทาง Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works section-padding">
@@ -1237,17 +1231,27 @@
             <div class="marquee-track">
                 <!-- Group 1 -->
                 <div class="marquee-content">
-                    <a href="https://www.facebook.com/share/p/18XxtgBMTy/" target="_blank"><img src="news-1.png" alt="อัปเดตข่าวสาร 1"></a>
-                    <a href="https://www.facebook.com/share/p/1CqYbCNTjT/" target="_blank"><img src="news-2.png" alt="อัปเดตข่าวสาร 2"></a>
-                    <a href="https://www.facebook.com/share/p/18YbUxUraa/" target="_blank"><img src="news-3.png" alt="อัปเดตข่าวสาร 3"></a>
-                    <a href="https://www.facebook.com/share/p/1BBHFifWjE/" target="_blank"><img src="news-4.png" alt="อัปเดตข่าวสาร 4"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="IMG_8115.PNG" alt="อัปเดตข่าวสาร 1"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="i 15 128 GB (1).png" alt="อัปเดตข่าวสาร 2"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="มันนี่  12.png" alt="อัปเดตข่าวสาร 3"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="มันนี่ 000. (1).png" alt="อัปเดตข่าวสาร 4"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="มันนี่ 15 pm มส.png" alt="อัปเดตข่าวสาร 5"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="มันนี่ 15.png" alt="อัปเดตข่าวสาร 6"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="มันนี่ 16 +.png" alt="อัปเดตข่าวสาร 7"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="มันนี่ 17 pm .png" alt="อัปเดตข่าวสาร 8"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')"><img src="โฟน 17 pm .png" alt="อัปเดตข่าวสาร 9"></a>
                 </div>
                 <!-- Group 2 (Duplicate for seamless scroll) -->
                 <div class="marquee-content" aria-hidden="true">
-                    <a href="https://www.facebook.com/share/p/18XxtgBMTy/" target="_blank" tabindex="-1"><img src="news-1.png" alt="อัปเดตข่าวสาร 1"></a>
-                    <a href="https://www.facebook.com/share/p/1CqYbCNTjT/" target="_blank" tabindex="-1"><img src="news-2.png" alt="อัปเดตข่าวสาร 2"></a>
-                    <a href="https://www.facebook.com/share/p/18YbUxUraa/" target="_blank" tabindex="-1"><img src="news-3.png" alt="อัปเดตข่าวสาร 3"></a>
-                    <a href="https://www.facebook.com/share/p/1BBHFifWjE/" target="_blank" tabindex="-1"><img src="news-4.png" alt="อัปเดตข่าวสาร 4"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="IMG_8115.PNG" alt="อัปเดตข่าวสาร 1"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="i 15 128 GB (1).png" alt="อัปเดตข่าวสาร 2"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="มันนี่  12.png" alt="อัปเดตข่าวสาร 3"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="มันนี่ 000. (1).png" alt="อัปเดตข่าวสาร 4"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="มันนี่ 15 pm มส.png" alt="อัปเดตข่าวสาร 5"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="มันนี่ 15.png" alt="อัปเดตข่าวสาร 6"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="มันนี่ 16 +.png" alt="อัปเดตข่าวสาร 7"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="มันนี่ 17 pm .png" alt="อัปเดตข่าวสาร 8"></a>
+                    <a href="javascript:void(0)" onclick="openPriceModal('modal-contact-choice')" tabindex="-1"><img src="โฟน 17 pm .png" alt="อัปเดตข่าวสาร 9"></a>
                 </div>
             </div>
         </div>
@@ -1317,10 +1321,20 @@
             <i class="fa-solid fa-calculator"></i>
         </button>
         
-        <!-- Floating LINE Button -->
-        <a href="https://lin.ee/s3jHf19" target="_blank" class="floating-line-btn">
-            <i class="fa-brands fa-line"></i>
-        </a>
+        <!-- Floating Contact Menu (Pops out Line & Facebook options) -->
+        <div class="floating-contact-menu" id="floatingContactMenu">
+            <div class="floating-contact-options">
+                <a href="https://lin.ee/s3jHf19" target="_blank" class="contact-option-btn line-btn" title="แอด Line">
+                    <i class="fa-brands fa-line"></i>
+                </a>
+                <a href="https://www.facebook.com/ba.na.na.xithi.chayphumi" target="_blank" class="contact-option-btn fb-btn" title="ไปที่ Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+            <button class="floating-contact-trigger" onclick="toggleFloatingContactMenu(event)" aria-label="ติดต่อเรา">
+                <i class="fa-solid fa-comments"></i>
+            </button>
+        </div>
     </div>
 
     <!-- Calculator Modal -->
