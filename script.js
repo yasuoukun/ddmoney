@@ -1269,42 +1269,47 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastTime = null;
     let animationFrameId = null;
     
-    // Touch/Mouse interaction detection (Pauses auto-scroll on interaction)
-    const startInteract = () => { isInteracting = true; };
-    const stopInteract = () => { isInteracting = false; };
-    
-    container.addEventListener('touchstart', startInteract, { passive: true });
-    container.addEventListener('touchend', stopInteract, { passive: true });
-    container.addEventListener('mousedown', startInteract);
-    container.addEventListener('mouseup', stopInteract);
-    container.addEventListener('mouseleave', stopInteract);
-    
     // Grab to scroll (Desktop mouse drag support)
     let isDown = false;
     let startX;
     let scrollLeft;
     
-    container.addEventListener('mousedown', (e) => {
+    // Unify mouse and touch using Pointer Events
+    container.addEventListener('pointerdown', (e) => {
+        isInteracting = true;
+        if (e.pointerType === 'touch') {
+            // Touch device: let native swipe handle scrolling
+            return;
+        }
+        // Mouse device: enable grab-to-scroll
         isDown = true;
         container.style.cursor = 'grabbing';
         startX = e.pageX - container.offsetLeft;
         scrollLeft = container.scrollLeft;
+        container.setPointerCapture(e.pointerId); // Keep tracking pointer even if it leaves container
     });
     
-    container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
+    container.addEventListener('pointermove', (e) => {
+        if (!isDown || e.pointerType === 'touch') return;
         const x = e.pageX - container.offsetLeft;
         const walk = (x - startX) * 1.5; // Drag speed multiplier
         container.scrollLeft = scrollLeft - walk;
     });
     
-    window.addEventListener('mouseup', () => {
+    const endInteraction = (e) => {
+        isInteracting = false;
         if (isDown) {
             isDown = false;
             container.style.cursor = 'grab';
+            try {
+                container.releasePointerCapture(e.pointerId);
+            } catch (err) {}
         }
-    });
+    };
+    
+    container.addEventListener('pointerup', endInteraction);
+    container.addEventListener('pointercancel', endInteraction);
+    container.addEventListener('pointerleave', endInteraction);
     
     // Continuous smooth animation loop using high-precision timestamps
     const animateMarquee = (timestamp) => {
