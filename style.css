@@ -1272,45 +1272,49 @@ h1, h2, h3, h4 {
 
 /* --- STAGGERED ANIMATION DELAYS --- */
 
-/* Delays when OPENING: Pop out one-by-one sequentially */
-.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(1) {
+/* Delays when OPENING: Pop out one-by-one starting from nearest to main button */
+/* For expand-up: 3 is nearest (bottom), 1 is furthest (top) */
+.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(3) {
     transition-delay: 0.05s;
 }
 .floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(2) {
     transition-delay: 0.12s;
 }
-.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(3) {
+.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(1) {
     transition-delay: 0.19s;
 }
 
+/* For expand-down: 1 is nearest (top), 3 is furthest (bottom) */
 .floating-controls-group.expand-down.expanded .fab-options .fab-option-btn:nth-child(1) {
-    transition-delay: 0.19s;
+    transition-delay: 0.05s;
 }
 .floating-controls-group.expand-down.expanded .fab-options .fab-option-btn:nth-child(2) {
     transition-delay: 0.12s;
 }
 .floating-controls-group.expand-down.expanded .fab-options .fab-option-btn:nth-child(3) {
-    transition-delay: 0.05s;
+    transition-delay: 0.19s;
 }
 
-/* Delays when CLOSING: Collapse back in reverse sequence */
-.floating-controls-group.expand-up:not(.expanded) .fab-options .fab-option-btn:nth-child(3) {
+/* Delays when CLOSING: Collapse back in reverse sequence (furthest collapses first, nearest collapses last) */
+/* For expand-up: 1 (top) collapses first, 3 (bottom) collapses last */
+.floating-controls-group.expand-up:not(.expanded) .fab-options .fab-option-btn:nth-child(1) {
     transition-delay: 0s;
 }
 .floating-controls-group.expand-up:not(.expanded) .fab-options .fab-option-btn:nth-child(2) {
     transition-delay: 0.06s;
 }
-.floating-controls-group.expand-up:not(.expanded) .fab-options .fab-option-btn:nth-child(1) {
+.floating-controls-group.expand-up:not(.expanded) .fab-options .fab-option-btn:nth-child(3) {
     transition-delay: 0.12s;
 }
 
-.floating-controls-group.expand-down:not(.expanded) .fab-options .fab-option-btn:nth-child(1) {
+/* For expand-down: 3 (bottom) collapses first, 1 (top) collapses last */
+.floating-controls-group.expand-down:not(.expanded) .fab-options .fab-option-btn:nth-child(3) {
     transition-delay: 0s;
 }
 .floating-controls-group.expand-down:not(.expanded) .fab-options .fab-option-btn:nth-child(2) {
     transition-delay: 0.06s;
 }
-.floating-controls-group.expand-down:not(.expanded) .fab-options .fab-option-btn:nth-child(3) {
+.floating-controls-group.expand-down:not(.expanded) .fab-options .fab-option-btn:nth-child(1) {
     transition-delay: 0.12s;
 }
 
