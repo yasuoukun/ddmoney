@@ -113,6 +113,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// News Slider Auto-Scroll + Interactive for Mobile
+document.addEventListener('DOMContentLoaded', () => {
+    const marquee = document.querySelector('.marquee-container');
+    if (marquee && window.innerWidth <= 768) {
+        let isInteracting = false;
+        let scrollSpeed = 1;
+        let scrollInterval;
+
+        const startAutoScroll = () => {
+            stopAutoScroll();
+            scrollInterval = setInterval(() => {
+                if (!isInteracting) {
+                    marquee.scrollLeft += scrollSpeed;
+                    
+                    if (marquee.scrollLeft >= (marquee.scrollWidth / 2) - 1) {
+                        marquee.scrollLeft = 0;
+                    }
+                }
+            }, 30);
+        };
+
+        const stopAutoScroll = () => {
+            clearInterval(scrollInterval);
+        };
+
+        marquee.addEventListener('touchstart', () => {
+            isInteracting = true;
+        }, { passive: true });
+
+        marquee.addEventListener('touchend', () => {
+            setTimeout(() => {
+                isInteracting = false;
+            }, 1000); 
+        }, { passive: true });
+
+        startAutoScroll();
+    }
+});
 
 // FAQ Accordion Logic
 document.addEventListener('DOMContentLoaded', () => {
@@ -1265,71 +1303,57 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.scrollBehavior = 'auto';
     
     let isInteracting = false;
-    let pixelsPerSecond = 50; // uniform scroll speed in pixels per second
-    let lastTime = null;
+    let speed = 0.8; // pixels scrolled per frame (adjustable)
     let animationFrameId = null;
+    
+    // Touch/Mouse interaction detection (Pauses auto-scroll on interaction)
+    const startInteract = () => { isInteracting = true; };
+    const stopInteract = () => { isInteracting = false; };
+    
+    container.addEventListener('touchstart', startInteract, { passive: true });
+    container.addEventListener('touchend', stopInteract, { passive: true });
+    container.addEventListener('mousedown', startInteract);
+    container.addEventListener('mouseup', stopInteract);
+    container.addEventListener('mouseleave', stopInteract);
     
     // Grab to scroll (Desktop mouse drag support)
     let isDown = false;
     let startX;
     let scrollLeft;
     
-    // Unify mouse and touch using Pointer Events
-    container.addEventListener('pointerdown', (e) => {
-        isInteracting = true;
-        if (e.pointerType === 'touch') {
-            // Touch device: let native swipe handle scrolling
-            return;
-        }
-        // Mouse device: enable grab-to-scroll
+    container.addEventListener('mousedown', (e) => {
         isDown = true;
         container.style.cursor = 'grabbing';
         startX = e.pageX - container.offsetLeft;
         scrollLeft = container.scrollLeft;
-        container.setPointerCapture(e.pointerId); // Keep tracking pointer even if it leaves container
     });
     
-    container.addEventListener('pointermove', (e) => {
-        if (!isDown || e.pointerType === 'touch') return;
+    container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
         const x = e.pageX - container.offsetLeft;
         const walk = (x - startX) * 1.5; // Drag speed multiplier
         container.scrollLeft = scrollLeft - walk;
     });
     
-    const endInteraction = (e) => {
-        isInteracting = false;
+    window.addEventListener('mouseup', () => {
         if (isDown) {
             isDown = false;
             container.style.cursor = 'grab';
-            try {
-                container.releasePointerCapture(e.pointerId);
-            } catch (err) {}
         }
-    };
+    });
     
-    container.addEventListener('pointerup', endInteraction);
-    container.addEventListener('pointercancel', endInteraction);
-    container.addEventListener('pointerleave', endInteraction);
-    
-    // Continuous smooth animation loop using high-precision timestamps
-    const animateMarquee = (timestamp) => {
-        if (!lastTime) lastTime = timestamp;
-        const elapsed = timestamp - lastTime;
-        lastTime = timestamp;
-        
+    // Continuous smooth animation loop
+    const animateMarquee = () => {
         if (!isInteracting && !isDown) {
-            // Precise frame-rate independent calculation
-            container.scrollLeft += pixelsPerSecond * (elapsed / 1000);
+            container.scrollLeft += speed;
+            
+            // Seamless looping math
+            const halfWidth = track.scrollWidth / 2;
+            if (container.scrollLeft >= halfWidth) {
+                container.scrollLeft = container.scrollLeft - halfWidth;
+            }
         }
-        
-        // Seamless looping math (always active so swiping loops too!)
-        const halfWidth = track.scrollWidth / 2;
-        if (container.scrollLeft >= halfWidth) {
-            container.scrollLeft = container.scrollLeft - halfWidth;
-        } else if (container.scrollLeft < 0) {
-            container.scrollLeft = container.scrollLeft + halfWidth;
-        }
-        
         animationFrameId = requestAnimationFrame(animateMarquee);
     };
     
