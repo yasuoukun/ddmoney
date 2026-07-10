@@ -1135,6 +1135,7 @@ h1, h2, h3, h4 {
 
 /* Main Trigger Button */
 .fab-main-trigger {
+    position: relative;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -1149,6 +1150,54 @@ h1, h2, h3, h4 {
     align-items: center;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 10;
+}
+
+/* Pulsating wave rings behind the FAB to indicate activity */
+.fab-main-trigger::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: inherit;
+    z-index: -1;
+    opacity: 0.6;
+    animation: fabPulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes fabPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Spin and color change on click when expanded */
+.floating-controls-group.expanded .fab-main-trigger {
+    transform: rotate(90deg) scale(0.95);
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%) !important; /* Premium red close button */
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5) !important;
+}
+
+.floating-controls-group.expanded .fab-main-trigger::before {
+    animation: none; /* Pause pulsing when open */
+    opacity: 0;
+}
+
+/* Tactile press active feedback for FAB trigger */
+.fab-main-trigger:active {
+    transform: scale(0.88);
+}
+.floating-controls-group.expanded .fab-main-trigger:active {
+    transform: rotate(90deg) scale(0.88);
 }
 
 .fab-main-trigger:hover {
@@ -1205,11 +1254,56 @@ h1, h2, h3, h4 {
     justify-content: center;
     align-items: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy expand */
+    transform: scale(0.9);
+}
+
+/* Staggered popping out delays for option buttons when expanding */
+.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(1) {
+    transition-delay: 0.04s;
+}
+.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(2) {
+    transition-delay: 0.08s;
+}
+.floating-controls-group.expand-up.expanded .fab-options .fab-option-btn:nth-child(3) {
+    transition-delay: 0.12s;
+}
+
+.floating-controls-group.expand-down.expanded .fab-options .fab-option-btn:nth-child(1) {
+    transition-delay: 0.12s;
+}
+.floating-controls-group.expand-down.expanded .fab-options .fab-option-btn:nth-child(2) {
+    transition-delay: 0.08s;
+}
+.floating-controls-group.expand-down.expanded .fab-options .fab-option-btn:nth-child(3) {
+    transition-delay: 0.04s;
+}
+
+/* Outer hover ring glow */
+.fab-option-btn::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.fab-option-btn:hover::after {
+    opacity: 0.6;
+    transform: scale(1);
 }
 
 .fab-option-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.fab-option-btn:active {
+    transform: scale(0.88) !important;
 }
 
 .fab-option-btn.line-btn {
@@ -1230,12 +1324,15 @@ h1, h2, h3, h4 {
 /* Tooltips for Options */
 .fab-tooltip {
     position: absolute;
-    background: #0a1930;
+    background: rgba(10, 25, 48, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
     padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    border-radius: 20px; /* More rounded */
+    font-size: 0.78rem;
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
