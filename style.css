@@ -3037,3 +3037,124 @@ h1, h2, h3, h4 {
     text-decoration: none;
     outline: none;
 }
+
+/* iPad & Tablet Optimizations for 'How It Works' Section */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .how-wrapper {
+        flex-direction: row !important; /* Keep side-by-side layout on iPad */
+        gap: 30px !important;
+        align-items: center;
+    }
+    
+    .how-img {
+        flex: 1 !important;
+    }
+    
+    .how-img img {
+        max-width: 100%;
+        border-radius: 16px;
+    }
+    
+    .how-content {
+        flex: 1.2 !important;
+        text-align: left !important;
+        display: block !important;
+    }
+    
+    .how-content h2 {
+        font-size: 2rem !important;
+        margin-bottom: 25px !important;
+        text-align: left !important;
+    }
+    
+    .how-content .badge {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+    }
+    
+    .step-item {
+        gap: 15px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .step-num {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.25rem !important;
+    }
+    
+    .step-item:not(:last-child)::after {
+        top: 44px !important;
+        left: 21px !important;
+        height: calc(100% - 15px) !important;
+    }
+    
+    .step-text h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 4px !important;
+    }
+    
+    .step-text p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .how-content .btn {
+        margin: 15px 0 0 !important;
+        font-size: 0.95rem !important;
+        padding: 12px 24px !important;
+    }
+}
+
+/* Mobile Optimizations for 'How It Works' Section */
+@media (max-width: 767px) {
+    .how-content {
+        text-align: left !important;
+        display: block !important;
+    }
+    
+    .how-content h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 30px !important;
+        text-align: center !important;
+    }
+    
+    .how-content .badge {
+        margin: 0 auto 15px !important;
+        display: table !important;
+    }
+    
+    .step-item {
+        gap: 15px !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .step-num {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .step-item:not(:last-child)::after {
+        top: 40px !important;
+        left: 19px !important;
+        height: calc(100% - 15px) !important;
+    }
+    
+    .step-text h3 {
+        font-size: 1.05rem !important;
+    }
+    
+    .step-text p {
+        font-size: 0.85rem !important;
+    }
+    
+    .how-content .btn {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 25px auto 0 !important;
+    }
+}
