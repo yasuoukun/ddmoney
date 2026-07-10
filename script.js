@@ -113,44 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// News Slider Auto-Scroll + Interactive for Mobile
-document.addEventListener('DOMContentLoaded', () => {
-    const marquee = document.querySelector('.marquee-container');
-    if (marquee && window.innerWidth <= 768) {
-        let isInteracting = false;
-        let scrollSpeed = 1;
-        let scrollInterval;
-
-        const startAutoScroll = () => {
-            stopAutoScroll();
-            scrollInterval = setInterval(() => {
-                if (!isInteracting) {
-                    marquee.scrollLeft += scrollSpeed;
-                    
-                    if (marquee.scrollLeft >= (marquee.scrollWidth / 2) - 1) {
-                        marquee.scrollLeft = 0;
-                    }
-                }
-            }, 30);
-        };
-
-        const stopAutoScroll = () => {
-            clearInterval(scrollInterval);
-        };
-
-        marquee.addEventListener('touchstart', () => {
-            isInteracting = true;
-        }, { passive: true });
-
-        marquee.addEventListener('touchend', () => {
-            setTimeout(() => {
-                isInteracting = false;
-            }, 1000); 
-        }, { passive: true });
-
-        startAutoScroll();
-    }
-});
 
 // FAQ Accordion Logic
 document.addEventListener('DOMContentLoaded', () => {
@@ -1303,7 +1265,8 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.scrollBehavior = 'auto';
     
     let isInteracting = false;
-    let speed = 0.8; // pixels scrolled per frame (adjustable)
+    let pixelsPerSecond = 50; // uniform scroll speed in pixels per second
+    let lastTime = null;
     let animationFrameId = null;
     
     // Touch/Mouse interaction detection (Pauses auto-scroll on interaction)
@@ -1343,17 +1306,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Continuous smooth animation loop
-    const animateMarquee = () => {
+    // Continuous smooth animation loop using high-precision timestamps
+    const animateMarquee = (timestamp) => {
+        if (!lastTime) lastTime = timestamp;
+        const elapsed = timestamp - lastTime;
+        lastTime = timestamp;
+        
         if (!isInteracting && !isDown) {
-            container.scrollLeft += speed;
-            
-            // Seamless looping math
-            const halfWidth = track.scrollWidth / 2;
-            if (container.scrollLeft >= halfWidth) {
-                container.scrollLeft = container.scrollLeft - halfWidth;
-            }
+            // Precise frame-rate independent calculation
+            container.scrollLeft += pixelsPerSecond * (elapsed / 1000);
         }
+        
+        // Seamless looping math (always active so swiping loops too!)
+        const halfWidth = track.scrollWidth / 2;
+        if (container.scrollLeft >= halfWidth) {
+            container.scrollLeft = container.scrollLeft - halfWidth;
+        } else if (container.scrollLeft < 0) {
+            container.scrollLeft = container.scrollLeft + halfWidth;
+        }
+        
         animationFrameId = requestAnimationFrame(animateMarquee);
     };
     
