@@ -2033,7 +2033,7 @@ h1, h2, h3, h4 {
     background: var(--primary-dark);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
     .price-cat-card {
         flex: 0 0 88% !important;
         min-width: 280px !important;
@@ -2313,7 +2313,7 @@ h1, h2, h3, h4 {
     background: rgba(0, 168, 232, 0.06);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
     .price-cat-icon {
         height: 130px;
     }
@@ -3233,6 +3233,69 @@ h1, h2, h3, h4 {
     
     .dash-label-center span {
         font-size: 0.65rem !important;
+    }
+
+    /* iPad Price Category Card Adjustments */
+    .price-cat-card {
+        margin: 0 !important;
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+    }
+    
+    .price-cat-icon {
+        height: 260px !important; /* Proper height for tablet cards */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px !important;
+    }
+    
+    .price-cat-icon img {
+        height: 220px !important; /* Scale up image to fill space beautifully */
+        width: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        transform: none !important; /* Reset mobile 2.6 zoom scale */
+        padding: 0 !important;
+    }
+    
+    .price-cat-info {
+        padding: 15px 20px 10px !important;
+        text-align: center !important;
+    }
+    
+    .price-cat-info h3 {
+        font-size: 1.15rem !important;
+        min-height: auto !important;
+        margin-bottom: 6px !important;
+    }
+    
+    .price-cat-info p {
+        font-size: 0.85rem !important;
+        min-height: auto !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .price-cat-from {
+        font-size: 0.9rem !important;
+        margin-top: auto !important;
+    }
+    
+    .price-cat-from span {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* iPad Portrait-specific Price Card Layout */
+@media (min-width: 768px) and (max-width: 992px) {
+    .price-cat-card {
+        flex: 0 0 calc((100% - 20px) / 2) !important; /* 2 cards per row */
+    }
+}
+
+/* iPad Landscape-specific Price Card Layout */
+@media (min-width: 993px) and (max-width: 1024px) {
+    .price-cat-card {
+        flex: 0 0 calc((100% - 40px) / 3) !important; /* 3 cards per row */
     }
 }
 
