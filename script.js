@@ -1031,71 +1031,71 @@ const allProductsData = [
 // --- Specification Database ---
 const modelSpecs = {
     // iPhone 18 Series & Duo
-    'iPhone 18 Pro Max': { img: 'iphone18-promax.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A20 Pro', camera: '48MP Quad Camera system', battery: '5,200 mAh' },
-    'iPhone 18 Pro':     { img: 'iphone18-pro.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A20 Pro', camera: '48MP Quad Camera system', battery: '4,400 mAh' },
-    'iPhone Duo':        { img: 'iphone-duo.png', display: '7.9" Dual Super Retina OLED', chip: 'Apple A20 Pro Dual', camera: '48MP Dual Main System', battery: '5,500 mAh' },
+    'iPhone 18 Pro Max': { img: 'iphone18-promax.png', fallback: 'cat-iphone18.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A20 Pro', camera: '48MP Quad Camera system', battery: '5,200 mAh' },
+    'iPhone 18 Pro':     { img: 'iphone18-pro.png', fallback: 'cat-iphone18.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A20 Pro', camera: '48MP Quad Camera system', battery: '4,400 mAh' },
+    'iPhone Duo':        { img: 'iphone-duo.png', fallback: 'cat-iphone18.png', display: '7.9" Dual Super Retina OLED', chip: 'Apple A20 Pro Dual', camera: '48MP Dual Main System', battery: '5,500 mAh' },
 
     // iPhone 17 Series & Air
-    'iPhone 17 Pro Max': { img: 'iphone17-promax.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '5,088 mAh' },
-    'iPhone 17 Pro':     { img: 'iphone17-pro.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '4,252 mAh' },
-    'iPhone 17':         { img: 'iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A19 Bionic', camera: '48MP Dual Camera system', battery: '3,692 mAh' },
-    'iPhone 17E':        { img: 'iphone17e.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Single Fusion Camera', battery: '3,149 mAh' },
-    'iPhone Air':        { img: 'iphone-air.png', display: '6.6" Ultra-thin OLED Display', chip: 'Apple A19 Air', camera: '48MP Fusion Camera system', battery: '4,000 mAh' },
+    'iPhone 17 Pro Max': { img: 'iphone17-promax.png', fallback: 'cat-iphone17.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '5,088 mAh' },
+    'iPhone 17 Pro':     { img: 'iphone17-pro.png', fallback: 'cat-iphone17.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '4,252 mAh' },
+    'iPhone 17':         { img: 'iphone17.png', fallback: 'cat-iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A19 Bionic', camera: '48MP Dual Camera system', battery: '3,692 mAh' },
+    'iPhone 17E':        { img: 'iphone17e.png', fallback: 'cat-iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Single Fusion Camera', battery: '3,149 mAh' },
+    'iPhone Air':        { img: 'iphone-air.png', fallback: 'cat-iphone17.png', display: '6.6" Ultra-thin OLED Display', chip: 'Apple A19 Air', camera: '48MP Fusion Camera system', battery: '4,000 mAh' },
 
     // iPhone 16 Series
-    'iPhone 16 Pro Max': { img: 'cat-iphone16.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A18 Pro', camera: '48MP Fusion + 48MP UW + 12MP 5x', battery: '4,685 mAh' },
-    'iPhone 16 Pro':     { img: 'cat-iphone16.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A18 Pro', camera: '48MP Fusion + 48MP UW + 12MP 5x', battery: '3,582 mAh' },
-    'iPhone 16 Plus':    { img: 'cat-iphone16.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Fusion + 12MP Ultrawide', battery: '4,674 mAh' },
-    'iPhone 16e':        { img: 'cat-iphone16.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Fusion Camera system', battery: '3,561 mAh' },
-    'iPhone 16':         { img: 'cat-iphone16.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Fusion + 12MP Ultrawide', battery: '3,561 mAh' },
+    'iPhone 16 Pro Max': { img: 'iphone16-promax.png', fallback: 'cat-iphone16.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A18 Pro', camera: '48MP Fusion + 48MP UW + 12MP 5x', battery: '4,685 mAh' },
+    'iPhone 16 Pro':     { img: 'iphone16-pro.png', fallback: 'cat-iphone16.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A18 Pro', camera: '48MP Fusion + 48MP UW + 12MP 5x', battery: '3,582 mAh' },
+    'iPhone 16 Plus':    { img: 'iphone16-plus.png', fallback: 'cat-iphone16.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Fusion + 12MP Ultrawide', battery: '4,674 mAh' },
+    'iPhone 16e':        { img: 'iphone16e.png', fallback: 'cat-iphone16.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Fusion Camera system', battery: '3,561 mAh' },
+    'iPhone 16':         { img: 'iphone16.png', fallback: 'cat-iphone16.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Fusion + 12MP Ultrawide', battery: '3,561 mAh' },
 
     // iPhone 15 Series
-    'iPhone 15 Pro Max': { img: 'cat-iphone15.png', display: '6.7" Super Retina XDR ProMotion 120Hz', chip: 'Apple A17 Pro (3nm)', camera: '48MP Main + 12MP UW + 12MP 5x', battery: '4,422 mAh' },
-    'iPhone 15 Pro':     { img: 'cat-iphone15.png', display: '6.1" Super Retina XDR ProMotion 120Hz', chip: 'Apple A17 Pro (3nm)', camera: '48MP Main + 12MP UW + 12MP 3x', battery: '3,274 mAh' },
-    'iPhone 15 Plus':    { img: 'cat-iphone15.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A16 Bionic', camera: '48MP Main + 12MP Ultrawide', battery: '4,383 mAh' },
-    'iPhone 15':         { img: 'cat-iphone15.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A16 Bionic', camera: '48MP Main + 12MP Ultrawide', battery: '3,349 mAh' },
+    'iPhone 15 Pro Max': { img: 'iphone15-promax.png', fallback: 'cat-iphone15.png', display: '6.7" Super Retina XDR ProMotion 120Hz', chip: 'Apple A17 Pro (3nm)', camera: '48MP Main + 12MP UW + 12MP 5x', battery: '4,422 mAh' },
+    'iPhone 15 Pro':     { img: 'iphone15-pro.png', fallback: 'cat-iphone15.png', display: '6.1" Super Retina XDR ProMotion 120Hz', chip: 'Apple A17 Pro (3nm)', camera: '48MP Main + 12MP UW + 12MP 3x', battery: '3,274 mAh' },
+    'iPhone 15 Plus':    { img: 'iphone15-plus.png', fallback: 'cat-iphone15.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A16 Bionic', camera: '48MP Main + 12MP Ultrawide', battery: '4,383 mAh' },
+    'iPhone 15':         { img: 'iphone15.png', fallback: 'cat-iphone15.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A16 Bionic', camera: '48MP Main + 12MP Ultrawide', battery: '3,349 mAh' },
 
     // iPhone 14 Series
-    'iPhone 14 Pro Max': { img: 'cat-iphone14.png', display: '6.7" Super Retina XDR ProMotion 120Hz', chip: 'Apple A16 Bionic (4nm)', camera: '48MP Main + 12MP UW + 12MP 3x', battery: '4,323 mAh' },
-    'iPhone 14 Pro':     { img: 'cat-iphone14.png', display: '6.1" Super Retina XDR ProMotion 120Hz', chip: 'Apple A16 Bionic (4nm)', camera: '48MP Main + 12MP UW + 12MP 3x', battery: '3,200 mAh' },
-    'iPhone 14 Plus':    { img: 'cat-iphone14.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A15 Bionic (5nm)', camera: '12MP Main + 12MP Ultrawide', battery: '4,325 mAh' },
-    'iPhone 14':         { img: 'cat-iphone14.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A15 Bionic (5nm)', camera: '12MP Main + 12MP Ultrawide', battery: '3,279 mAh' },
+    'iPhone 14 Pro Max': { img: 'iphone14-promax.png', fallback: 'cat-iphone14.png', display: '6.7" Super Retina XDR ProMotion 120Hz', chip: 'Apple A16 Bionic (4nm)', camera: '48MP Main + 12MP UW + 12MP 3x', battery: '4,323 mAh' },
+    'iPhone 14 Pro':     { img: 'iphone14-pro.png', fallback: 'cat-iphone14.png', display: '6.1" Super Retina XDR ProMotion 120Hz', chip: 'Apple A16 Bionic (4nm)', camera: '48MP Main + 12MP UW + 12MP 3x', battery: '3,200 mAh' },
+    'iPhone 14 Plus':    { img: 'iphone14-plus.png', fallback: 'cat-iphone14.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A15 Bionic (5nm)', camera: '12MP Main + 12MP Ultrawide', battery: '4,325 mAh' },
+    'iPhone 14':         { img: 'iphone14.png', fallback: 'cat-iphone14.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A15 Bionic (5nm)', camera: '12MP Main + 12MP Ultrawide', battery: '3,279 mAh' },
 
     // iPhone 13 Series
-    'iPhone 13 Pro Max': { img: 'cat-iphone13.png', display: '6.7" Super Retina XDR ProMotion 120Hz', chip: 'Apple A15 Bionic (5-core GPU)', camera: '12MP Main + 12MP UW + 12MP 3x', battery: '4,352 mAh' },
-    'iPhone 13 Pro':     { img: 'cat-iphone13.png', display: '6.1" Super Retina XDR ProMotion 120Hz', chip: 'Apple A15 Bionic (5-core GPU)', camera: '12MP Main + 12MP UW + 12MP 3x', battery: '3,095 mAh' },
-    'iPhone 13':         { img: 'cat-iphone13.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A15 Bionic (4-core GPU)', camera: '12MP Main + 12MP Ultrawide', battery: '3,227 mAh' },
+    'iPhone 13 Pro Max': { img: 'iphone13-promax.png', fallback: 'cat-iphone13.png', display: '6.7" Super Retina XDR ProMotion 120Hz', chip: 'Apple A15 Bionic (5-core GPU)', camera: '12MP Main + 12MP UW + 12MP 3x', battery: '4,352 mAh' },
+    'iPhone 13 Pro':     { img: 'iphone13-pro.png', fallback: 'cat-iphone13.png', display: '6.1" Super Retina XDR ProMotion 120Hz', chip: 'Apple A15 Bionic (5-core GPU)', camera: '12MP Main + 12MP UW + 12MP 3x', battery: '3,095 mAh' },
+    'iPhone 13':         { img: 'iphone13.png', fallback: 'cat-iphone13.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A15 Bionic (4-core GPU)', camera: '12MP Main + 12MP Ultrawide', battery: '3,227 mAh' },
 
     // iPhone 12 Series
-    'iPhone 12 Pro Max': { img: 'cat-iphone12.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A14 Bionic (5nm)', camera: '12MP Main + 12MP UW + 12MP 2.5x', battery: '3,687 mAh' },
-    'iPhone 12 Pro':     { img: 'cat-iphone12.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A14 Bionic (5nm)', camera: '12MP Main + 12MP UW + 12MP 2x', battery: '2,815 mAh' },
-    'iPhone 12':         { img: 'cat-iphone12.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A14 Bionic (5nm)', camera: '12MP Main + 12MP Ultrawide', battery: '2,815 mAh' },
+    'iPhone 12 Pro Max': { img: 'iphone12-promax.png', fallback: 'cat-iphone12.png', display: '6.7" Super Retina XDR OLED 60Hz', chip: 'Apple A14 Bionic (5nm)', camera: '12MP Main + 12MP UW + 12MP 2.5x', battery: '3,687 mAh' },
+    'iPhone 12 Pro':     { img: 'iphone12-pro.png', fallback: 'cat-iphone12.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A14 Bionic (5nm)', camera: '12MP Main + 12MP UW + 12MP 2x', battery: '2,815 mAh' },
+    'iPhone 12':         { img: 'iphone12.png', fallback: 'cat-iphone12.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A14 Bionic (5nm)', camera: '12MP Main + 12MP Ultrawide', battery: '2,815 mAh' },
 
     // iPhone 11 Series
-    'iPhone 11 Pro Max': { img: 'cat-iphone11.png', display: '6.5" Super Retina XDR OLED 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP UW + 12MP 2x', battery: '3,969 mAh' },
-    'iPhone 11 Pro':     { img: 'cat-iphone11.png', display: '5.8" Super Retina XDR OLED 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP UW + 12MP 2x', battery: '3,046 mAh' },
-    'iPhone 11':         { img: 'cat-iphone11.png', display: '6.1" Liquid Retina HD LCD 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP Ultrawide', battery: '3,110 mAh' },
+    'iPhone 11 Pro Max': { img: 'iphone11-promax.png', fallback: 'cat-iphone11.png', display: '6.5" Super Retina XDR OLED 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP UW + 12MP 2x', battery: '3,969 mAh' },
+    'iPhone 11 Pro':     { img: 'iphone11-pro.png', fallback: 'cat-iphone11.png', display: '5.8" Super Retina XDR OLED 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP UW + 12MP 2x', battery: '3,046 mAh' },
+    'iPhone 11':         { img: 'iphone11.png', fallback: 'cat-iphone11.png', display: '6.1" Liquid Retina HD LCD 60Hz', chip: 'Apple A13 Bionic', camera: '12MP Main + 12MP Ultrawide', battery: '3,110 mAh' },
 
     // iPad Series
-    'iPad Pro 11 M5':     { img: 'cat-ipad-pro-m5.png', display: '11" Ultra Retina Tandem OLED 120Hz', chip: 'Apple M5 Chip', camera: '12MP Rear, 12MP Front', battery: 'All-day Battery' },
-    'iPad Pro 11 M4':     { img: 'cat-ipad-pro-m4.png', display: '11" Ultra Retina Tandem OLED 120Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Front', battery: '8,160 mAh' },
-    'iPad Pro 11 M3':     { img: 'cat-ipad-pro-m3.png', display: '11" Liquid Retina 120Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Front', battery: '7,538 mAh' },
-    'iPad Pro 11 M2':     { img: 'cat-ipad-pro-m2.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple M2 Chip', camera: '12MP + 10MP Rear, 12MP Front', battery: '7,538 mAh' },
-    'iPad Pro 11 M1':     { img: 'cat-ipad-pro-m1.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple M1 Chip', camera: '12MP + 10MP Rear, 12MP Front', battery: '7,538 mAh' },
-    'iPad Pro 11 2018':   { img: 'cat-ipad-pro2018.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple A12X Bionic', camera: '12MP Rear, 7MP Front', battery: '7,812 mAh' },
-    'iPad Air 8':         { img: 'cat-ipad-air.png', display: '11" Liquid Retina IPS LCD 60Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: 'All-day Battery' },
-    'iPad Air 7':         { img: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
-    'iPad Air 6':         { img: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M2 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
-    'iPad Air 5':         { img: 'cat-ipad-air5.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple M1 Chip', camera: '12MP Rear, 12MP Front', battery: '7,606 mAh' },
-    'iPad Air 4':         { img: 'cat-ipad-air4.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple A14 Bionic', camera: '12MP Rear, 7MP Front', battery: '7,606 mAh' },
-    'iPad Mini 7':        { img: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
-    'iPad Gen 11':        { img: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
-    'iPad Gen 10':        { img: 'cat-ipad-gen10.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple A14 Bionic', camera: '12MP Rear, 12MP Front', battery: '7,606 mAh' },
-    'iPad Gen 9':         { img: 'cat-ipad-gen9.png', display: '10.2" Retina IPS LCD', chip: 'Apple A13 Bionic', camera: '8MP Rear, 12MP Front', battery: '8,557 mAh' },
-    'iPad Gen 8':         { img: 'cat-ipad-gen8.png', display: '10.2" Retina IPS LCD', chip: 'Apple A12 Bionic', camera: '8MP Rear, 1.2MP Front', battery: '8,827 mAh' },
-    'iPad Mini':          { img: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
-    'iPad Gen':           { img: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
-    'Macbook NEO':        { img: 'macbook-neo.png', display: '13.3" Retina Display', chip: 'Apple M-series Silicon', camera: '1080p FaceTime HD Camera', battery: 'Up to 18 hours' },
+    'iPad Pro 11 M5':     { img: 'ipad-pro-m5.png', fallback: 'cat-ipad-pro-m5.png', display: '11" Ultra Retina Tandem OLED 120Hz', chip: 'Apple M5 Chip', camera: '12MP Rear, 12MP Front', battery: 'All-day Battery' },
+    'iPad Pro 11 M4':     { img: 'ipad-pro-m4.png', fallback: 'cat-ipad-pro-m4.png', display: '11" Ultra Retina Tandem OLED 120Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Front', battery: '8,160 mAh' },
+    'iPad Pro 11 M3':     { img: 'ipad-pro-m3.png', fallback: 'cat-ipad-pro-m3.png', display: '11" Liquid Retina 120Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Front', battery: '7,538 mAh' },
+    'iPad Pro 11 M2':     { img: 'ipad-pro-m2.png', fallback: 'cat-ipad-pro-m2.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple M2 Chip', camera: '12MP + 10MP Rear, 12MP Front', battery: '7,538 mAh' },
+    'iPad Pro 11 M1':     { img: 'ipad-pro-m1.png', fallback: 'cat-ipad-pro-m1.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple M1 Chip', camera: '12MP + 10MP Rear, 12MP Front', battery: '7,538 mAh' },
+    'iPad Pro 11 2018':   { img: 'ipad-pro-2018.png', fallback: 'cat-ipad-pro2018.png', display: '11" Liquid Retina IPS LCD 120Hz', chip: 'Apple A12X Bionic', camera: '12MP Rear, 7MP Front', battery: '7,812 mAh' },
+    'iPad Air 8':         { img: 'ipad-air8.png', fallback: 'cat-ipad-air.png', display: '11" Liquid Retina IPS LCD 60Hz', chip: 'Apple M4 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: 'All-day Battery' },
+    'iPad Air 7':         { img: 'ipad-air7.png', fallback: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M3 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
+    'iPad Air 6':         { img: 'ipad-air6.png', fallback: 'cat-ipad-air.png', display: '11"/13" Liquid Retina IPS LCD 60Hz', chip: 'Apple M2 Chip', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 / 10,243 mAh' },
+    'iPad Air 5':         { img: 'ipad-air5.png', fallback: 'cat-ipad-air5.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple M1 Chip', camera: '12MP Rear, 12MP Front', battery: '7,606 mAh' },
+    'iPad Air 4':         { img: 'ipad-air4.png', fallback: 'cat-ipad-air4.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple A14 Bionic', camera: '12MP Rear, 7MP Front', battery: '7,606 mAh' },
+    'iPad Mini 7':        { img: 'ipad-mini7.png', fallback: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
+    'iPad Gen 11':        { img: 'ipad-gen11.png', fallback: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
+    'iPad Gen 10':        { img: 'ipad-gen10.png', fallback: 'cat-ipad-gen10.png', display: '10.9" Liquid Retina IPS LCD', chip: 'Apple A14 Bionic', camera: '12MP Rear, 12MP Front', battery: '7,606 mAh' },
+    'iPad Gen 9':         { img: 'ipad-gen9.png', fallback: 'cat-ipad-gen9.png', display: '10.2" Retina IPS LCD', chip: 'Apple A13 Bionic', camera: '8MP Rear, 12MP Front', battery: '8,557 mAh' },
+    'iPad Gen 8':         { img: 'ipad-gen8.png', fallback: 'cat-ipad-gen8.png', display: '10.2" Retina IPS LCD', chip: 'Apple A12 Bionic', camera: '8MP Rear, 1.2MP Front', battery: '8,827 mAh' },
+    'iPad Mini':          { img: 'ipad-mini.png', fallback: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
+    'iPad Gen':           { img: 'ipad-gen.png', fallback: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
+    'Macbook NEO':        { img: 'macbook-neo.png', fallback: 'cat-macbook.png', display: '13.3" Retina Display', chip: 'Apple M-series Silicon', camera: '1080p FaceTime HD Camera', battery: 'Up to 18 hours' },
 };
 
 // --- Comparison Logic Engine ---
@@ -1304,12 +1304,18 @@ function updateComparison() {
     
     if (img1) {
         img1.src = s1.img;
-        img1.onerror = () => { img1.src = 'placeholder.svg'; };
+        img1.onerror = () => {
+            img1.onerror = () => { img1.src = 'placeholder.svg'; };
+            img1.src = s1.fallback || 'placeholder.svg';
+        };
     }
 
     if (img2) {
         img2.src = s2.img;
-        img2.onerror = () => { img2.src = 'placeholder.svg'; };
+        img2.onerror = () => {
+            img2.onerror = () => { img2.src = 'placeholder.svg'; };
+            img2.src = s2.fallback || 'placeholder.svg';
+        };
     }
 
     const m1Str = p1.installments[months] || "—";
