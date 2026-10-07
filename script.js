@@ -1036,10 +1036,10 @@ const modelSpecs = {
     'iPhone Duo':        { img: 'iphone-duo.png', display: '7.9" Dual Super Retina OLED', chip: 'Apple A20 Pro Dual', camera: '48MP Dual Main System', battery: '5,500 mAh' },
 
     // iPhone 17 Series & Air
-    'iPhone 17 Pro Max': { img: 'cat-iphone17.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '5,088 mAh' },
-    'iPhone 17 Pro':     { img: 'cat-iphone17.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '4,252 mAh' },
-    'iPhone 17':         { img: 'cat-iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A19 Bionic', camera: '48MP Dual Camera system', battery: '3,692 mAh' },
-    'iPhone 17E':        { img: 'cat-iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Single Fusion Camera', battery: '3,149 mAh' },
+    'iPhone 17 Pro Max': { img: 'iphone17-promax.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '5,088 mAh' },
+    'iPhone 17 Pro':     { img: 'iphone17-pro.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '4,252 mAh' },
+    'iPhone 17':         { img: 'iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A19 Bionic', camera: '48MP Dual Camera system', battery: '3,692 mAh' },
+    'iPhone 17E':        { img: 'iphone17e.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Single Fusion Camera', battery: '3,149 mAh' },
     'iPhone Air':        { img: 'iphone-air.png', display: '6.6" Ultra-thin OLED Display', chip: 'Apple A19 Air', camera: '48MP Fusion Camera system', battery: '4,000 mAh' },
 
     // iPhone 16 Series
