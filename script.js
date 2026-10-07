@@ -779,61 +779,187 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Full Data Engine (allProductsData) ---
 const allProductsData = [
-    // iPhone 17 Series (New)
-    { name: 'iPhone 17 Pro Max 512GB', installments: { '18': '3,950', '12': '5,220', '10': '6,160', '9': '7,220', '6': '9,120', '4': '12,310', '3': '15,500' } },
-    { name: 'iPhone 17 Pro Max 256GB', installments: { '18': '3,470', '12': '4,580', '10': '5,400', '9': '6,330', '6': '8,000', '4': '10,800', '3': '13,600' } },
-    { name: 'iPhone 17 Pro Max 256GB (ดาวน์น้อย)', installments: { '12': '4,960', '10': '5,850', '9': '6,860', '6': '8,670', '4': '11,700', '3': '14,730' } },
-    { name: 'iPhone 17 Pro 512GB', installments: { '18': '3,610', '12': '4,760', '10': '5,620', '9': '6,590', '6': '8,320', '4': '11,230', '3': '14,140' } },
-    { name: 'iPhone 17 Pro 256GB', installments: { '12': '4,360', '10': '5,150', '9': '6,040', '6': '7,630', '4': '10,300', '3': '12,970' } },
-    { name: 'iPhone 17 256GB', installments: { '12': '2,970', '10': '3,510', '9': '4,120', '6': '5,200', '4': '7,020', '3': '8,840' } },
-    { name: 'iPhone 17E 256GB', installments: { '12': '2,280', '10': '2,690', '9': '3,160', '6': '3,990', '4': '5,380', '3': '6,780' } },
+    // iPhone 18 Series & Duo (New)
+    { name: 'iPhone 18 Pro 256GB', installments: { '24': '2,419', '18': '3,051', '15': '3,556', '12': '4,314', '9': '5,578', '6': '8,105' } },
+    { name: 'iPhone 18 Pro 512GB', installments: { '24': '2,780', '18': '3,507', '15': '4,088', '12': '4,959', '9': '6,412', '6': '9,317' } },
+    { name: 'iPhone 18 Pro 1TB', installments: { '24': '3,592', '18': '4,530', '15': '5,280', '12': '6,406', '9': '8,282', '6': '12,035' } },
+    { name: 'iPhone 18 Pro Max 256GB', installments: { '24': '2,600', '18': '3,279', '15': '3,822', '12': '4,637', '9': '5,995', '6': '8,711' } },
+    { name: 'iPhone 18 Pro Max 512GB', installments: { '24': '3,049', '18': '3,846', '15': '4,483', '12': '5,439', '9': '7,032', '6': '10,218' } },
+    { name: 'iPhone 18 Pro Max 1TB', installments: { '24': '3,773', '18': '4,758', '15': '5,546', '12': '6,729', '9': '8,699', '6': '12,641' } },
+    { name: 'iPhone 18 Pro Max 2TB', installments: { '24': '4,742', '18': '5,980', '15': '6,971', '12': '8,457', '9': '10,935', '6': '15,889' } },
+    { name: 'iPhone Duo 256GB', installments: { '24': '3,908', '18': '4,929', '15': '5,745', '12': '6,970', '9': '9,012', '6': '13,095' } },
+    { name: 'iPhone Duo 512GB', installments: { '24': '4,335', '18': '5,467', '15': '6,373', '12': '7,732', '9': '9,997', '6': '14,526' } },
+    { name: 'iPhone Duo 1TB', installments: { '24': '5,150', '18': '6,495', '15': '7,571', '12': '9,185', '9': '11,875', '6': '17,256' } },
+
+    // iPhone 17 Series & Air (New)
+    { name: 'iPhone 17 256GB', installments: { '24': '1,754', '18': '2,212', '15': '2,578', '12': '3,127', '9': '4,043', '6': '5,875' } },
+    { name: 'iPhone 17 512GB', installments: { '24': '2,148', '18': '2,709', '15': '3,158', '12': '3,831', '9': '4,953', '6': '7,196' } },
+    { name: 'iPhone 17e 256GB', installments: { '24': '1,392', '18': '1,756', '15': '2,046', '12': '2,483', '9': '3,210', '6': '4,664' } },
+    { name: 'iPhone 17e 512GB', installments: { '24': '1,754', '18': '2,212', '15': '2,578', '12': '3,127', '9': '4,043', '6': '5,875' } },
+    { name: 'iPhone 17 Pro 256GB', installments: { '24': '2,193', '18': '2,766', '15': '3,224', '12': '3,911', '9': '5,057', '6': '7,348' } },
+    { name: 'iPhone 17 Pro 512GB', installments: { '24': '2,555', '18': '3,222', '15': '3,755', '12': '4,556', '9': '5,891', '6': '8,559' } },
+    { name: 'iPhone 17 Pro 1TB', installments: { '24': '2,916', '18': '3,678', '15': '4,287', '12': '5,201', '9': '6,724', '6': '9,771' } },
+    { name: 'iPhone 17 Pro Max 256GB', installments: { '24': '2,419', '18': '3,051', '15': '3,556', '12': '4,314', '9': '5,578', '6': '8,105' } },
+    { name: 'iPhone 17 Pro Max 512GB', installments: { '24': '2,780', '18': '3,507', '15': '4,088', '12': '4,959', '9': '6,412', '6': '9,317' } },
+    { name: 'iPhone 17 Pro Max 1TB', installments: { '24': '3,230', '18': '4,074', '15': '4,749', '12': '5,761', '9': '7,449', '6': '10,824' } },
+    { name: 'iPhone 17 Pro Max 2TB', installments: { '24': '4,019', '18': '5,068', '15': '5,908', '12': '7,168', '9': '9,267', '6': '13,466' } },
+    { name: 'iPhone Air 256GB', installments: { '24': '2,193', '18': '2,766', '15': '3,224', '12': '3,911', '9': '5,057', '6': '7,348' } },
+    { name: 'iPhone Air 512GB', installments: { '24': '2,555', '18': '3,222', '15': '3,755', '12': '4,556', '9': '5,891', '6': '8,559' } },
+    { name: 'iPhone Air 1TB', installments: { '24': '3,366', '18': '4,245', '15': '4,948', '12': '6,003', '9': '7,761', '6': '11,278' } },
     
     // iPhone 16 Series (New)
-    { name: 'iPhone 16 Plus 128GB', installments: { '12': '2,970', '10': '3,510', '9': '4,120', '6': '5,200', '4': '7,020', '3': '8,840' } },
-    { name: 'iPhone 16 128GB', installments: { '12': '2,680', '10': '3,160', '9': '3,710', '6': '4,680', '4': '6,320', '3': '7,960' } },
-    { name: 'iPhone 16e 128GB', installments: { '12': '1,980', '10': '2,340', '9': '2,740', '6': '3,470', '4': '4,680', '3': '5,890' } },
-    
+    { name: 'iPhone 16 128GB', installments: { '24': '1,573', '18': '1,984', '15': '2,312', '12': '2,805', '9': '3,626', '6': '5,269' } },
+    { name: 'iPhone 16 256GB', installments: { '24': '1,555', '18': '1,961', '15': '2,286', '12': '2,773', '9': '3,585', '6': '5,209' } },
+    { name: 'iPhone 16e 128GB', installments: { '24': '1,005', '18': '1,267', '15': '1,477', '12': '1,792', '9': '2,317', '6': '3,366' } },
+    { name: 'iPhone 16e 256GB', installments: { '24': '1,234', '18': '1,556', '15': '1,814', '12': '2,200', '9': '2,845', '6': '4,134' } },
+    { name: 'iPhone 16e 512GB', installments: { '24': '1,754', '18': '2,212', '15': '2,578', '12': '3,127', '9': '4,043', '6': '5,875' } },
+    { name: 'iPhone 16 Plus 128GB', installments: { '24': '1,510', '18': '1,904', '15': '2,219', '12': '2,692', '9': '3,481', '6': '5,057' } },
+    { name: 'iPhone 16 Plus 256GB', installments: { '24': '1,690', '18': '2,132', '15': '2,485', '12': '3,015', '9': '3,897', '6': '5,663' } },
+    { name: 'iPhone 16 Plus 512GB', installments: { '24': '2,103', '18': '2,652', '15': '3,091', '12': '3,750', '9': '4,848', '6': '7,045' } },
+    { name: 'iPhone 16 Pro 128GB', installments: { '24': '1,699', '18': '2,143', '15': '2,498', '12': '3,031', '9': '3,918', '6': '5,693' } },
+    { name: 'iPhone 16 Pro 256GB', installments: { '24': '1,880', '18': '2,371', '15': '2,764', '12': '3,353', '9': '4,335', '6': '6,299' } },
+    { name: 'iPhone 16 Pro 512GB', installments: { '24': '2,274', '18': '2,868', '15': '3,344', '12': '4,056', '9': '5,244', '6': '7,620' } },
+    { name: 'iPhone 16 Pro 1TB', installments: { '24': '2,636', '18': '3,324', '15': '3,875', '12': '4,701', '9': '6,078', '6': '8,832' } },
+    { name: 'iPhone 16 Pro Max 256GB', installments: { '24': '2,094', '18': '2,640', '15': '3,078', '12': '3,734', '9': '4,827', '6': '7,015' } },
+    { name: 'iPhone 16 Pro Max 512GB', installments: { '24': '2,455', '18': '3,096', '15': '3,609', '12': '4,379', '9': '5,661', '6': '8,226' } },
+    { name: 'iPhone 16 Pro Max 1TB', installments: { '24': '2,817', '18': '3,552', '15': '4,141', '12': '5,024', '9': '6,495', '6': '9,438' } },
+
     // iPhone 15 Series (New)
-    { name: 'iPhone 15 Plus 128GB', installments: { '12': '2,870', '10': '3,390', '9': '3,980', '6': '5,030', '4': '6,790', '3': '8,550' } },
-    { name: 'iPhone 15 128GB', installments: { '12': '2,380', '10': '2,810', '9': '3,290', '6': '4,160', '4': '5,620', '3': '7,070' } },
+    { name: 'iPhone 15 128GB', installments: { '24': '1,383', '18': '1,744', '15': '2,033', '12': '2,466', '9': '3,189', '6': '4,633' } },
+    { name: 'iPhone 15 Plus 128GB', installments: { '24': '1,302', '18': '1,642', '15': '1,913', '12': '2,321', '9': '3,001', '6': '4,361' } },
+    { name: 'iPhone 15 Pro 128GB', installments: { '24': '1,482', '18': '1,870', '15': '2,179', '12': '2,644', '9': '3,418', '6': '4,967' } },
+    { name: 'iPhone 15 Pro 512GB', installments: { '24': '1,934', '18': '2,440', '15': '2,844', '12': '3,450', '9': '4,460', '6': '6,481' } },
+    { name: 'iPhone 15 Pro Max 256GB', installments: { '24': '1,799', '18': '2,269', '15': '2,644', '12': '3,208', '9': '4,148', '6': '6,027' } },
+    { name: 'iPhone 15 Pro Max 512GB', installments: { '24': '2,148', '18': '2,709', '15': '3,158', '12': '3,831', '9': '4,953', '6': '7,196' } },
     
     // iPhone 14 Series (New)
-    { name: 'iPhone 14 128GB', installments: { '12': '1,980', '10': '2,340', '9': '2,740', '6': '3,470', '4': '4,680', '3': '5,890' } },
+    { name: 'iPhone 14 128GB', installments: { '24': '1,027', '18': '1,296', '15': '1,510', '12': '1,832', '9': '2,369', '6': '3,442' } },
+    { name: 'iPhone 14 256GB', installments: { '24': '1,166', '18': '1,471', '15': '1,714', '12': '2,080', '9': '2,689', '6': '3,906' } },
 
-    // Used iPhone 17 Series
-    { name: 'iPhone 17 Pro Max 512GB (มือสอง)', installments: { '10': '5,730', '9': '6,720', '6': '8,490', '4': '11,470', '3': '14,440' } },
-    { name: 'iPhone 17 Pro Max 256GB (มือสอง)', installments: { '10': '5,270', '9': '6,180', '6': '7,800', '4': '10,530', '3': '13,260' } },
-    { name: 'iPhone 17 Pro 256GB (มือสอง)', installments: { '10': '4,330', '9': '5,080', '6': '6,410', '4': '8,660', '3': '10,900' } },
-    { name: 'iPhone 17 256GB (มือสอง)', installments: { '10': '3,040', '9': '3,570', '6': '4,510', '4': '6,080', '3': '7,660' } },
+    // iPhone 13 Series (New)
+    { name: 'iPhone 13 128GB', installments: { '24': '815', '18': '1,028', '15': '1,198', '12': '1,453', '9': '1,879', '6': '2,730' } },
+
+    // iPad Mini 7 (New)
+    { name: 'iPad Mini WiFi 128GB', installments: { '24': '1,166', '18': '1,471', '15': '1,714', '12': '2,080', '9': '2,689', '6': '3,906' } },
+    { name: 'iPad Mini WiFi 256GB', installments: { '24': '1,347', '18': '1,699', '15': '1,980', '12': '2,402', '9': '3,105', '6': '4,512' } },
+    { name: 'iPad Mini Cellular 128GB', installments: { '24': '1,437', '18': '1,813', '15': '2,113', '12': '2,563', '9': '3,314', '6': '4,815' } },
+    { name: 'iPad Mini Cellular 256GB', installments: { '24': '1,618', '18': '2,041', '15': '2,379', '12': '2,886', '9': '3,731', '6': '5,421' } },
+    { name: 'iPad Mini 7 WiFi 512GB', installments: { '24': '1,482', '18': '1,870', '15': '2,179', '12': '2,644', '9': '3,418', '6': '4,967' } },
+
+    // iPad Gen 10 & 11 (New)
+    { name: 'iPad Gen 10 WiFi 64GB', installments: { '24': '493', '18': '622', '15': '725', '12': '879', '9': '1,137', '6': '1,651' } },
+    { name: 'iPad Gen 10 WiFi 256GB', installments: { '24': '666', '18': '840', '15': '979', '12': '1,187', '9': '1,535', '6': '2,231' } },
+    { name: 'iPad Gen 10 Cellular 64GB', installments: { '24': '756', '18': '954', '15': '1,112', '12': '1,349', '9': '1,744', '6': '2,533' } },
+    { name: 'iPad Gen 10 Cellular 256GB', installments: { '24': '892', '18': '1,125', '15': '1,311', '12': '1,591', '9': '2,056', '6': '2,988' } },
+    { name: 'iPad Gen 11 (A16) WiFi 128GB', installments: { '24': '892', '18': '1,125', '15': '1,311', '12': '1,591', '9': '2,056', '6': '2,988' } },
+    { name: 'iPad Gen 11 (A16) WiFi 256GB', installments: { '24': '1,121', '18': '1,414', '15': '1,648', '12': '1,999', '9': '2,584', '6': '3,755' } },
+    { name: 'iPad Gen 11 (A16) WiFi 512GB', installments: { '24': '1,437', '18': '1,813', '15': '2,113', '12': '2,563', '9': '3,314', '6': '4,815' } },
+    { name: 'iPad Gen 11 (A16) Cellular 128GB', installments: { '24': '1,211', '18': '1,528', '15': '1,781', '12': '2,160', '9': '2,793', '6': '4,058' } },
+    { name: 'iPad Gen 11 (A16) Cellular 256GB', installments: { '24': '1,392', '18': '1,756', '15': '2,046', '12': '2,483', '9': '3,210', '6': '4,664' } },
+    { name: 'iPad Gen 11 (A16) Cellular 512GB', installments: { '24': '1,708', '18': '2,155', '15': '2,511', '12': '3,047', '9': '3,939', '6': '5,724' } },
+
+    // iPad Air Series (New)
+    { name: 'iPad Air (M3) WiFi 11" 128GB', installments: { '24': '982', '18': '1,239', '15': '1,444', '12': '1,752', '9': '2,265', '6': '3,291' } },
+    { name: 'iPad Air (M3) WiFi 11" 256GB', installments: { '24': '1,211', '18': '1,528', '15': '1,781', '12': '2,160', '9': '2,793', '6': '4,058' } },
+    { name: 'iPad Air (M3) Cellular 11" 128GB', installments: { '24': '1,302', '18': '1,642', '15': '1,913', '12': '2,321', '9': '3,001', '6': '4,361' } },
+    { name: 'iPad Air (M3) Cellular 11" 256GB', installments: { '24': '1,482', '18': '1,870', '15': '2,179', '12': '2,644', '9': '3,418', '6': '4,967' } },
+    { name: 'iPad Air (M3) WiFi 13" 128GB', installments: { '24': '1,347', '18': '1,699', '15': '1,980', '12': '2,402', '9': '3,105', '6': '4,512' } },
+    { name: 'iPad Air (M3) WiFi 13" 256GB', installments: { '24': '1,528', '18': '1,927', '15': '2,246', '12': '2,724', '9': '3,522', '6': '5,118' } },
+    { name: 'iPad Air (M3) Cellular 13" 128GB', installments: { '24': '1,618', '18': '2,041', '15': '2,379', '12': '2,886', '9': '3,731', '6': '5,421' } },
+    { name: 'iPad Air (M3) Cellular 13" 256GB', installments: { '24': '1,799', '18': '2,269', '15': '2,644', '12': '3,208', '9': '4,148', '6': '6,027' } },
+    { name: 'iPad Air (M4) WiFi 11" 128GB', installments: { '24': '1,437', '18': '1,813', '15': '2,113', '12': '2,563', '9': '3,314', '6': '4,815' } },
+    { name: 'iPad Air (M4) WiFi 11" 256GB', installments: { '24': '1,618', '18': '2,041', '15': '2,379', '12': '2,886', '9': '3,731', '6': '5,421' } },
+    { name: 'iPad Air (M4) WiFi 11" 512GB', installments: { '24': '1,934', '18': '2,440', '15': '2,844', '12': '3,450', '9': '4,460', '6': '6,481' } },
+    { name: 'iPad Air (M4) WiFi 11" 1TB', installments: { '24': '2,464', '18': '3,108', '15': '3,623', '12': '4,395', '9': '5,682', '6': '8,256' } },
+    { name: 'iPad Air (M4) WiFi 13" 128GB', installments: { '24': '1,754', '18': '2,212', '15': '2,578', '12': '3,127', '9': '4,043', '6': '5,875' } },
+    { name: 'iPad Air (M4) WiFi 13" 256GB', installments: { '24': '1,934', '18': '2,440', '15': '2,844', '12': '3,450', '9': '4,460', '6': '6,481' } },
+    { name: 'iPad Air (M4) WiFi 13" 512GB', installments: { '24': '2,283', '18': '2,880', '15': '3,357', '12': '4,072', '9': '5,265', '6': '7,651' } },
+    { name: 'iPad Air (M4) WiFi 13" 1TB', installments: { '24': '2,780', '18': '3,507', '15': '4,088', '12': '4,959', '9': '6,412', '6': '9,317' } },
+    { name: 'iPad Air (M4) Cellular 11" 128GB', installments: { '24': '1,708', '18': '2,155', '15': '2,511', '12': '3,047', '9': '3,939', '6': '5,724' } },
+    { name: 'iPad Air (M4) Cellular 11" 256GB', installments: { '24': '1,889', '18': '2,383', '15': '2,777', '12': '3,369', '9': '4,356', '6': '6,330' } },
+    { name: 'iPad Air (M4) Cellular 13" 128GB', installments: { '24': '2,057', '18': '2,595', '15': '3,025', '12': '3,669', '9': '4,744', '6': '6,893' } },
+    { name: 'iPad Air (M4) Cellular 13" 256GB', installments: { '24': '2,238', '18': '2,823', '15': '3,290', '12': '3,992', '9': '5,161', '6': '7,499' } },
+
+    // iPad Pro Series (New)
+    { name: 'iPad Pro (M4) WiFi 11" 256GB', installments: { '24': '1,528', '18': '1,927', '15': '2,246', '12': '2,724', '9': '3,522', '6': '5,118' } },
+    { name: 'iPad Pro (M4) Cellular 11" 256GB', installments: { '24': '1,754', '18': '2,212', '15': '2,578', '12': '3,127', '9': '4,043', '6': '5,875' } },
+    { name: 'iPad Pro (M4) WiFi 13" 256GB', installments: { '24': '1,934', '18': '2,440', '15': '2,844', '12': '3,450', '9': '4,460', '6': '6,481' } },
+    { name: 'iPad Pro (M5) WiFi 11" 256GB', installments: { '24': '2,148', '18': '2,709', '15': '3,158', '12': '3,831', '9': '4,953', '6': '7,196' } },
+    { name: 'iPad Pro (M5) WiFi 11" 512GB', installments: { '24': '2,464', '18': '3,108', '15': '3,623', '12': '4,395', '9': '5,682', '6': '8,256' } },
+    { name: 'iPad Pro (M5) WiFi 11" 1TB', installments: { '24': '3,547', '18': '4,473', '15': '5,214', '12': '6,326', '9': '8,178', '6': '11,884' } },
+    { name: 'iPad Pro (M5) WiFi 13" 256GB', installments: { '24': '2,690', '18': '3,393', '15': '3,955', '12': '4,798', '9': '6,203', '6': '9,014' } },
+    { name: 'iPad Pro (M5) WiFi 13" 512GB', installments: { '24': '3,095', '18': '3,903', '15': '4,550', '12': '5,519', '9': '7,136', '6': '10,369' } },
+    { name: 'iPad Pro (M5) Cellular 11" 256GB', installments: { '24': '2,464', '18': '3,108', '15': '3,623', '12': '4,395', '9': '5,682', '6': '8,256' } },
+    { name: 'iPad Pro (M5) Cellular 13" 256GB', installments: { '24': '3,095', '18': '3,903', '15': '4,550', '12': '5,519', '9': '7,136', '6': '10,369' } },
+
+    // MacBook Series (New)
+    { name: 'MacBook NEO 13 256GB', installments: { '24': '1,234', '18': '1,556', '15': '1,814', '12': '2,200', '9': '2,845', '6': '4,134' } },
+    { name: 'MacBook NEO 13 512GB', installments: { '24': '1,369', '18': '1,727', '15': '2,013', '12': '2,442', '9': '3,157', '6': '4,588' } },
+
+    // Used iPhone 17 Series & Air
+    { name: 'iPhone 17 Pro Max 2TB (มือสอง)', installments: { '18': '4,327', '15': '5,043', '12': '6,119', '9': '7,911', '6': '11,495' } },
+    { name: 'iPhone 17 Pro Max 1TB (มือสอง)', installments: { '18': '3,415', '15': '3,980', '12': '4,829', '9': '6,243', '6': '9,072' } },
+    { name: 'iPhone 17 Pro Max 512GB (มือสอง)', installments: { '18': '3,016', '15': '3,515', '12': '4,265', '9': '5,514', '6': '8,012' } },
+    { name: 'iPhone 17 Pro Max 256GB (มือสอง)', installments: { '18': '2,560', '15': '2,984', '12': '3,620', '9': '4,680', '6': '6,800' } },
+    { name: 'iPhone 17 Pro 1TB (มือสอง)', installments: { '18': '3,187', '15': '3,715', '12': '4,507', '9': '5,826', '6': '8,466' } },
+    { name: 'iPhone 17 Pro 512GB (มือสอง)', installments: { '18': '2,731', '15': '3,183', '12': '3,862', '9': '4,993', '6': '7,255' } },
+    { name: 'iPhone 17 Pro 256GB (มือสอง)', installments: { '18': '2,275', '15': '2,652', '12': '3,217', '9': '4,159', '6': '6,043' } },
+    { name: 'iPhone 17 512GB (มือสอง)', installments: { '18': '1,933', '15': '2,253', '12': '2,733', '9': '3,534', '6': '5,134' } },
+    { name: 'iPhone 17 256GB (มือสอง)', installments: { '18': '1,477', '15': '1,721', '12': '2,088', '9': '2,700', '6': '3,923' } },
+    { name: 'iPhone Air 1TB (มือสอง)', installments: { '18': '1,824', '15': '2,127', '12': '2,580', '9': '3,336', '6': '4,847' } },
+    { name: 'iPhone Air 512GB (มือสอง)', installments: { '18': '1,710', '15': '1,994', '12': '2,419', '9': '3,127', '6': '4,544' } },
+    { name: 'iPhone Air 256GB (มือสอง)', installments: { '18': '1,534', '15': '1,788', '12': '2,169', '9': '2,804', '6': '4,074' } },
     
     // Used iPhone 16 Series
-    { name: 'iPhone 16 Pro Max 512GB (มือสอง)', installments: { '10': '4,100', '9': '4,800', '6': '6,070', '4': '8,190', '3': '10,310' } },
-    { name: 'iPhone 16 Pro Max 256GB (มือสอง)', installments: { '10': '3,980', '9': '4,670', '6': '5,890', '4': '7,960', '3': '10,020' } },
-    { name: 'iPhone 16 Pro 256GB (มือสอง)', installments: { '10': '3,280', '9': '3,840', '6': '4,850', '4': '6,550', '3': '8,250' } },
-    { name: 'iPhone 16 Pro 128GB (มือสอง)', installments: { '10': '3,160', '9': '3,710', '6': '4,680', '4': '6,320', '3': '7,960' } },
-    { name: 'iPhone 16 Plus 128GB (มือสอง)', installments: { '10': '2,690', '9': '3,160', '6': '3,990', '4': '5,380', '3': '6,780' } },
-    { name: 'iPhone 16 128GB (มือสอง)', installments: { '10': '2,570', '9': '3,020', '6': '3,810', '4': '5,150', '3': '6,480' } },
+    { name: 'iPhone 16 Pro Max 1TB (มือสอง)', installments: { '18': '2,223', '15': '2,592', '12': '3,144', '9': '4,065', '6': '5,907' } },
+    { name: 'iPhone 16 Pro Max 512GB (มือสอง)', installments: { '18': '2,109', '15': '2,459', '12': '2,983', '9': '3,857', '6': '5,604' } },
+    { name: 'iPhone 16 Pro Max 256GB (มือสอง)', installments: { '18': '1,990', '15': '2,319', '12': '2,814', '9': '3,638', '6': '5,286' } },
+    { name: 'iPhone 16 Pro 1TB (มือสอง)', installments: { '18': '1,938', '15': '2,260', '12': '2,741', '9': '3,544', '6': '5,150' } },
+    { name: 'iPhone 16 Pro 512GB (มือสอง)', installments: { '18': '1,824', '15': '2,127', '12': '2,580', '9': '3,336', '6': '4,847' } },
+    { name: 'iPhone 16 Pro 256GB (มือสอง)', installments: { '18': '1,767', '15': '2,060', '12': '2,499', '9': '3,231', '6': '4,695' } },
+    { name: 'iPhone 16 Pro 128GB (มือสอง)', installments: { '18': '1,596', '15': '1,861', '12': '2,258', '9': '2,919', '6': '4,241' } },
+    { name: 'iPhone 16 Plus 512GB (มือสอง)', installments: { '18': '1,625', '15': '1,894', '12': '2,298', '9': '2,971', '6': '4,317' } },
+    { name: 'iPhone 16 Plus 256GB (มือสอง)', installments: { '18': '1,568', '15': '1,828', '12': '2,217', '9': '2,867', '6': '4,165' } },
+    { name: 'iPhone 16 Plus 128GB (มือสอง)', installments: { '18': '1,368', '15': '1,595', '12': '1,935', '9': '2,502', '6': '3,635' } },
+    { name: 'iPhone 16 256GB (มือสอง)', installments: { '18': '1,368', '15': '1,595', '12': '1,935', '9': '2,502', '6': '3,635' } },
+    { name: 'iPhone 16 128GB (มือสอง)', installments: { '18': '1,197', '15': '1,396', '12': '1,693', '9': '2,189', '6': '3,181' } },
+    { name: 'iPhone 16e 512GB (มือสอง)', installments: { '18': '1,083', '15': '1,263', '12': '1,532', '9': '1,981', '6': '2,878' } },
+    { name: 'iPhone 16e 256GB (มือสอง)', installments: { '18': '1,026', '15': '1,196', '12': '1,451', '9': '1,876', '6': '2,726' } },
+    { name: 'iPhone 16e 128GB (มือสอง)', installments: { '18': '912', '15': '1,064', '12': '1,290', '9': '1,668', '6': '2,424' } },
     
     // Used iPhone 15 Series
-    { name: 'iPhone 15 Pro Max 256GB (มือสอง)', installments: { '10': '3,040', '9': '3,570', '6': '4,510', '4': '6,080', '3': '7,660' } },
-    { name: 'iPhone 15 Pro 256GB (มือสอง)', installments: { '10': '2,570', '9': '3,020', '6': '3,810', '4': '5,150', '3': '6,480' } },
-    { name: 'iPhone 15 Pro 128GB (มือสอง)', installments: { '10': '2,460', '9': '2,880', '6': '3,640', '4': '4,910', '3': '6,190' } },
-    { name: 'iPhone 15 Plus 128GB (มือสอง)', installments: { '10': '2,340', '9': '2,740', '6': '3,470', '4': '4,680', '3': '5,890' } },
-    { name: 'iPhone 15 128GB (มือสอง)', installments: { '10': '2,110', '9': '2,470', '6': '3,120', '4': '4,210', '3': '5,300' } },
+    { name: 'iPhone 15 Pro Max 1TB (มือสอง)', installments: { '18': '1,824', '15': '2,127', '12': '2,580', '9': '3,336', '6': '4,847' } },
+    { name: 'iPhone 15 Pro Max 512GB (มือสอง)', installments: { '18': '1,762', '15': '2,054', '12': '2,491', '9': '3,221', '6': '4,680' } },
+    { name: 'iPhone 15 Pro Max 256GB (มือสอง)', installments: { '18': '1,653', '15': '1,927', '12': '2,338', '9': '3,023', '6': '4,392' } },
+    { name: 'iPhone 15 Pro 512GB (มือสอง)', installments: { '18': '1,482', '15': '1,728', '12': '2,096', '9': '2,710', '6': '3,938' } },
+    { name: 'iPhone 15 Pro 256GB (มือสอง)', installments: { '18': '1,425', '15': '1,662', '12': '2,016', '9': '2,606', '6': '3,787' } },
+    { name: 'iPhone 15 Pro 128GB (มือสอง)', installments: { '18': '1,368', '15': '1,595', '12': '1,935', '9': '2,502', '6': '3,635' } },
+    { name: 'iPhone 15 Plus 256GB (มือสอง)', installments: { '18': '1,249', '15': '1,456', '12': '1,766', '9': '2,283', '6': '3,317' } },
+    { name: 'iPhone 15 Plus 128GB (มือสอง)', installments: { '18': '1,197', '15': '1,396', '12': '1,693', '9': '2,189', '6': '3,181' } },
+    { name: 'iPhone 15 256GB (มือสอง)', installments: { '18': '1,169', '15': '1,363', '12': '1,653', '9': '2,137', '6': '3,105' } },
+    { name: 'iPhone 15 128GB (มือสอง)', installments: { '18': '1,078', '15': '1,256', '12': '1,524', '9': '1,970', '6': '2,863' } },
     
     // Used iPhone 14 Series
-    { name: 'iPhone 14 Pro Max 256GB (มือสอง)', installments: { '10': '2,340', '9': '2,740', '6': '3,470', '4': '4,680', '3': '5,890' } },
-    { name: 'iPhone 14 Pro Max 128GB (มือสอง)', installments: { '10': '2,220', '9': '2,610', '6': '3,290', '4': '4,450', '3': '5,600' } },
-    { name: 'iPhone 14 Pro 256GB (มือสอง)', installments: { '10': '2,110', '9': '2,470', '6': '3,120', '4': '4,210', '3': '5,300' } },
-    { name: 'iPhone 14 Pro 128GB (มือสอง)', installments: { '10': '1,990', '9': '2,330', '6': '2,950', '4': '3,980', '3': '5,010' } },
-    { name: 'iPhone 14 128GB (มือสอง)', installments: { '10': '1,640', '9': '1,920', '6': '2,430', '4': '3,280', '3': '4,130' } },
+    { name: 'iPhone 14 Pro Max 512GB (มือสอง)', installments: { '18': '1,425', '15': '1,662', '12': '2,016', '9': '2,606', '6': '3,787' } },
+    { name: 'iPhone 14 Pro Max 256GB (มือสอง)', installments: { '18': '1,363', '15': '1,588', '12': '1,927', '9': '2,491', '6': '3,620' } },
+    { name: 'iPhone 14 Pro Max 128GB (มือสอง)', installments: { '18': '1,249', '15': '1,456', '12': '1,766', '9': '2,283', '6': '3,317' } },
+    { name: 'iPhone 14 Pro 256GB (มือสอง)', installments: { '18': '1,192', '15': '1,389', '12': '1,685', '9': '2,179', '6': '3,166' } },
+    { name: 'iPhone 14 Pro 128GB (มือสอง)', installments: { '18': '1,078', '15': '1,256', '12': '1,524', '9': '1,970', '6': '2,863' } },
+    { name: 'iPhone 14 Plus 256GB (มือสอง)', installments: { '18': '1,026', '15': '1,196', '12': '1,451', '9': '1,876', '6': '2,726' } },
+    { name: 'iPhone 14 Plus 128GB (มือสอง)', installments: { '18': '969', '15': '1,130', '12': '1,371', '9': '1,772', '6': '2,575' } },
+    { name: 'iPhone 14 512GB (มือสอง)', installments: { '18': '912', '15': '1,064', '12': '1,290', '9': '1,668', '6': '2,424' } },
+    { name: 'iPhone 14 256GB (มือสอง)', installments: { '18': '855', '15': '997', '12': '1,210', '9': '1,564', '6': '2,272' } },
+    { name: 'iPhone 14 128GB (มือสอง)', installments: { '18': '798', '15': '931', '12': '1,129', '9': '1,460', '6': '2,121' } },
     
     // Used iPhone 13 Series
-    { name: 'iPhone 13 Pro Max 256GB (มือสอง)', installments: { '10': '2,110', '9': '2,470', '6': '3,120', '4': '4,210', '3': '5,300' } },
-    { name: 'iPhone 13 Pro Max 128GB (มือสอง)', installments: { '10': '1,990', '9': '2,330', '6': '2,950', '4': '3,980', '3': '5,010' } },
-    { name: 'iPhone 13 Pro 128GB (มือสอง)', installments: { '10': '1,640', '9': '1,920', '6': '2,430', '4': '3,280', '3': '4,130' } },
-    { name: 'iPhone 13 256GB (มือสอง)', installments: { '10': '1,640', '9': '1,920', '6': '2,430', '4': '3,280', '3': '4,130' } },
-    { name: 'iPhone 13 128GB (มือสอง)', installments: { '10': '1,520', '9': '1,780', '6': '2,260', '4': '3,050', '3': '3,830' } },
+    { name: 'iPhone 13 Pro Max 512GB (มือสอง)', installments: { '18': '1,140', '15': '1,329', '12': '1,613', '9': '2,085', '6': '3,029' } },
+    { name: 'iPhone 13 Pro Max 256GB (มือสอง)', installments: { '18': '1,083', '15': '1,263', '12': '1,532', '9': '1,981', '6': '2,878' } },
+    { name: 'iPhone 13 Pro Max 128GB (มือสอง)', installments: { '18': '1,026', '15': '1,196', '12': '1,451', '9': '1,876', '6': '2,726' } },
+    { name: 'iPhone 13 Pro 512GB (มือสอง)', installments: { '18': '964', '15': '1,123', '12': '1,363', '9': '1,762', '6': '2,560' } },
+    { name: 'iPhone 13 Pro 256GB (มือสอง)', installments: { '18': '912', '15': '1,064', '12': '1,290', '9': '1,668', '6': '2,424' } },
+    { name: 'iPhone 13 Pro 128GB (มือสอง)', installments: { '18': '855', '15': '997', '12': '1,210', '9': '1,564', '6': '2,272' } },
+    { name: 'iPhone 13 256GB (มือสอง)', installments: { '18': '741', '15': '864', '12': '1,048', '9': '1,355', '6': '1,969' } },
+    { name: 'iPhone 13 128GB (มือสอง)', installments: { '18': '713', '15': '831', '12': '1,008', '9': '1,303', '6': '1,894' } },
     
     // Used iPhone 12 Series
     { name: 'iPhone 12 Pro Max 256GB (มือสอง)', installments: { '10': '1,520', '9': '1,780', '6': '2,260', '4': '3,050', '3': '3,830' } },
@@ -904,11 +1030,17 @@ const allProductsData = [
 
 // --- Specification Database ---
 const modelSpecs = {
-    // iPhone 17 Series
+    // iPhone 18 Series & Duo
+    'iPhone 18 Pro Max': { img: 'iphone18-promax.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A20 Pro', camera: '48MP Quad Camera system', battery: '5,200 mAh' },
+    'iPhone 18 Pro':     { img: 'iphone18-pro.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A20 Pro', camera: '48MP Quad Camera system', battery: '4,400 mAh' },
+    'iPhone Duo':        { img: 'iphone-duo.png', display: '7.9" Dual Super Retina OLED', chip: 'Apple A20 Pro Dual', camera: '48MP Dual Main System', battery: '5,500 mAh' },
+
+    // iPhone 17 Series & Air
     'iPhone 17 Pro Max': { img: 'cat-iphone17.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '5,088 mAh' },
     'iPhone 17 Pro':     { img: 'cat-iphone17.png', display: '6.3" Super Retina XDR ProMotion 120Hz', chip: 'Apple A19 Pro', camera: '48MP Triple (Main, UW, 8x Tele)', battery: '4,252 mAh' },
     'iPhone 17':         { img: 'cat-iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A19 Bionic', camera: '48MP Dual Camera system', battery: '3,692 mAh' },
     'iPhone 17E':        { img: 'cat-iphone17.png', display: '6.1" Super Retina XDR OLED 60Hz', chip: 'Apple A18 Bionic', camera: '48MP Single Fusion Camera', battery: '3,149 mAh' },
+    'iPhone Air':        { img: 'iphone-air.png', display: '6.6" Ultra-thin OLED Display', chip: 'Apple A19 Air', camera: '48MP Fusion Camera system', battery: '4,000 mAh' },
 
     // iPhone 16 Series
     'iPhone 16 Pro Max': { img: 'cat-iphone16.png', display: '6.9" Super Retina XDR ProMotion 120Hz', chip: 'Apple A18 Pro', camera: '48MP Fusion + 48MP UW + 12MP 5x', battery: '4,685 mAh' },
@@ -963,6 +1095,7 @@ const modelSpecs = {
     'iPad Gen 8':         { img: 'cat-ipad-gen8.png', display: '10.2" Retina IPS LCD', chip: 'Apple A12 Bionic', camera: '8MP Rear, 1.2MP Front', battery: '8,827 mAh' },
     'iPad Mini':          { img: 'cat-ipad-mini.png', display: '8.3" Liquid Retina IPS LCD 60Hz', chip: 'Apple A17 Pro Chip', camera: '12MP Rear, 12MP Ultra Wide Front', battery: '5,078 mAh' },
     'iPad Gen':           { img: 'cat-ipad-gen.png', display: '10.9" Liquid Retina IPS LCD 60Hz', chip: 'Apple A16 Bionic', camera: '12MP Rear, 12MP Landscape Front', battery: '7,606 mAh' },
+    'Macbook NEO':        { img: 'macbook-neo.png', display: '13.3" Retina Display', chip: 'Apple M-series Silicon', camera: '1080p FaceTime HD Camera', battery: 'Up to 18 hours' },
 };
 
 // --- Comparison Logic Engine ---
@@ -975,6 +1108,7 @@ function populateCompareSelects() {
     s2.innerHTML = '';
     
     const groups = {
+        'iPhone 18 Series': [],
         'iPhone 17 Series': [],
         'iPhone 16 Series': [],
         'iPhone 15 Series': [],
@@ -986,6 +1120,7 @@ function populateCompareSelects() {
         'iPad Air Series': [],
         'iPad Gen Series': [],
         'iPad Mini Series': [],
+        'MacBook Series': [],
         'อื่นๆ': []
     };
 
@@ -1006,6 +1141,12 @@ function populateCompareSelects() {
                 groups['iPad Mini Series'].push({ ...prod, index });
                 added = true;
             }
+        } else if (prod.name.toLowerCase().includes('macbook')) {
+            groups['MacBook Series'].push({ ...prod, index });
+            added = true;
+        } else if (prod.name.includes('iPhone Duo')) {
+            groups['iPhone 18 Series'].push({ ...prod, index });
+            added = true;
         }
         
         if (!added) {
@@ -1053,7 +1194,7 @@ function populateCompareSelects() {
     s1.value = idx1;
     s2.value = idx2;
     if (document.getElementById('compare-months-select')) {
-        document.getElementById('compare-months-select').value = '10';
+        document.getElementById('compare-months-select').value = '12';
     }
 
     initCustomSelect('compare-select-1');
@@ -1163,36 +1304,12 @@ function updateComparison() {
     
     if (img1) {
         img1.src = s1.img;
-        img1.onerror = () => {
-            if (p1.name.toLowerCase().includes('ipad')) {
-                if (p1.name.toLowerCase().includes('air') || p1.name.toLowerCase().includes('pro')) {
-                    img1.src = 'cat-ipad-air.png';
-                } else if (p1.name.toLowerCase().includes('mini')) {
-                    img1.src = 'cat-ipad-mini.png';
-                } else {
-                    img1.src = 'cat-ipad-gen.png';
-                }
-            } else {
-                img1.src = 'cat-iphone13.png';
-            }
-        };
+        img1.onerror = () => { img1.src = 'placeholder.svg'; };
     }
 
     if (img2) {
         img2.src = s2.img;
-        img2.onerror = () => {
-            if (p2.name.toLowerCase().includes('ipad')) {
-                if (p2.name.toLowerCase().includes('air') || p2.name.toLowerCase().includes('pro')) {
-                    img2.src = 'cat-ipad-air.png';
-                } else if (p2.name.toLowerCase().includes('mini')) {
-                    img2.src = 'cat-ipad-mini.png';
-                } else {
-                    img2.src = 'cat-ipad-gen.png';
-                }
-            } else {
-                img2.src = 'cat-iphone13.png';
-            }
-        };
+        img2.onerror = () => { img2.src = 'placeholder.svg'; };
     }
 
     const m1Str = p1.installments[months] || "—";

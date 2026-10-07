@@ -275,26 +275,18 @@
                 <!-- Group 1 -->
                 <div class="marquee-content">
                     <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="IMG_8115.PNG" alt="อัปเดตข่าวสาร 1"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="i 15 128 GB (1).png" alt="อัปเดตข่าวสาร 2"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่  12.png" alt="อัปเดตข่าวสาร 3"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่ 000. (1).png" alt="อัปเดตข่าวสาร 4"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่ 15 pm มส.png" alt="อัปเดตข่าวสาร 5"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่ 15.png" alt="อัปเดตข่าวสาร 6"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่ 16 +.png" alt="อัปเดตข่าวสาร 7"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่ 17 pm .png" alt="อัปเดตข่าวสาร 8"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="โฟน 17 pm .png" alt="อัปเดตข่าวสาร 9"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="มันนี่ 000. (1).png" alt="อัปเดตข่าวสาร 2"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="news-1.png" alt="อัปเดตข่าวสาร 3"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="news-2.png" alt="อัปเดตข่าวสาร 4"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)"><img src="news-3.png" alt="อัปเดตข่าวสาร 5"></a>
                 </div>
                 <!-- Group 2 (Duplicate for seamless scroll) -->
                 <div class="marquee-content" aria-hidden="true">
                     <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="IMG_8115.PNG" alt="อัปเดตข่าวสาร 1"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="i 15 128 GB (1).png" alt="อัปเดตข่าวสาร 2"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่  12.png" alt="อัปเดตข่าวสาร 3"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่ 000. (1).png" alt="อัปเดตข่าวสาร 4"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่ 15 pm มส.png" alt="อัปเดตข่าวสาร 5"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่ 15.png" alt="อัปเดตข่าวสาร 6"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่ 16 +.png" alt="อัปเดตข่าวสาร 7"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่ 17 pm .png" alt="อัปเดตข่าวสาร 8"></a>
-                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="โฟน 17 pm .png" alt="อัปเดตข่าวสาร 9"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="มันนี่ 000. (1).png" alt="อัปเดตข่าวสาร 2"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="news-1.png" alt="อัปเดตข่าวสาร 3"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="news-2.png" alt="อัปเดตข่าวสาร 4"></a>
+                    <a href="javascript:void(0)" onclick="openNewsContactBubble(event)" tabindex="-1"><img src="news-3.png" alt="อัปเดตข่าวสาร 5"></a>
                 </div>
             </div>
         </div>
@@ -370,6 +362,9 @@
                 <button class="price-tab" onclick="switchTab('used-ipad')">
                     <i class="fa-solid fa-recycle"></i> iPad มือสอง
                 </button>
+                <button class="price-tab" onclick="switchTab('macbook')">
+                    <i class="fa-solid fa-laptop"></i> MacBook มือหนึ่ง
+                </button>
             </div>
 
             <!-- ===== NEW IPHONE TAB ===== -->
@@ -377,12 +372,21 @@
                 <div class="price-scroll-wrapper">
                     <button class="scroll-arrow scroll-arrow-left" onclick="scrollCards('tab-new-iphone', -1)"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="price-cards-grid" id="grid-new-iphone">
+                        <div class="price-cat-card" onclick="openPriceModal('modal-ip13')">
+                            <div class="price-cat-icon"><img src="cat-iphone13.png" alt="iPhone 13"></div>
+                            <div class="price-cat-info">
+                                <h3>iPhone 13</h3>
+                                <p>128GB | ชิป A15 Bionic แบตอึดคุ้มค่า</p>
+                                <div class="price-cat-from">เริ่มต้น <span>815</span> บาท/เดือน</div>
+                            </div>
+                            <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
+                        </div>
                         <div class="price-cat-card" onclick="openPriceModal('modal-ip14')">
                             <div class="price-cat-icon"><img src="cat-iphone14.png" alt="iPhone 14"></div>
                             <div class="price-cat-info">
-                                <h3>iPhone 14</h3>
-                                <p>128GB | แบตอึดตลอดวัน ระบบปลอดภัยอัจฉริยะ</p>
-                                <div class="price-cat-from">เริ่มต้น <span>1,980</span> บาท/เดือน</div>
+                                <h3>iPhone 14 Series</h3>
+                                <p>14 / 14 256GB | ดีไซน์ยอดนิยม ระบบปลอดภัย</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,027</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -390,8 +394,8 @@
                             <div class="price-cat-icon"><img src="cat-iphone15.png" alt="iPhone 15"></div>
                             <div class="price-cat-info">
                                 <h3>iPhone 15 Series</h3>
-                                <p>15 / 15 Plus | พอร์ต USB-C และ Dynamic Island</p>
-                                <div class="price-cat-from">เริ่มต้น <span>2,380</span> บาท/เดือน</div>
+                                <p>15 / Plus / Pro / Pro Max | พอร์ต USB-C และ Dynamic Island</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,302</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -399,17 +403,26 @@
                             <div class="price-cat-icon"><img src="cat-iphone16.png" alt="iPhone 16"></div>
                             <div class="price-cat-info">
                                 <h3>iPhone 16 Series</h3>
-                                <p>16 / 16 Plus / 16e | ปุ่ม Camera Control ล่าสุด</p>
-                                <div class="price-cat-from">เริ่มต้น <span>1,980</span> บาท/เดือน</div>
+                                <p>16 / Plus / Pro / Pro Max / 16e | ปุ่ม Camera Control</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,005</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
                         <div class="price-cat-card" onclick="openPriceModal('modal-ip17')">
                             <div class="price-cat-icon"><img src="cat-iphone17.png" alt="iPhone 17"></div>
                             <div class="price-cat-info">
-                                <h3>iPhone 17 Series</h3>
-                                <p>17 / 17E / Pro / Pro Max รุ่นล่าสุด</p>
-                                <div class="price-cat-from">เริ่มต้น <span>2,280</span> บาท/เดือน</div>
+                                <h3>iPhone 17 Series & Air</h3>
+                                <p>17 / 17e / Air / Pro / Pro Max รุ่นล่าสุด</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,392</span> บาท/เดือน</div>
+                            </div>
+                            <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
+                        </div>
+                        <div class="price-cat-card" onclick="openPriceModal('modal-ip18')">
+                            <div class="price-cat-icon"><img src="cat-iphone18.png" alt="iPhone 18"></div>
+                            <div class="price-cat-info">
+                                <h3>iPhone 18 Series & Duo</h3>
+                                <p>18 Pro / Pro Max / Duo นวัตกรรมขั้นสุด</p>
+                                <div class="price-cat-from">เริ่มต้น <span>2,419</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -446,7 +459,7 @@
                             <div class="price-cat-info">
                                 <h3>iPhone 13 Series</h3>
                                 <p>13 Series | แบตอึดขึ้น กล้องเทพในราคามือสอง</p>
-                                <div class="price-cat-from">เริ่มต้น <span>1,520</span> บาท/เดือน</div>
+                                <div class="price-cat-from">เริ่มต้น <span>713</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -455,7 +468,7 @@
                             <div class="price-cat-info">
                                 <h3>iPhone 14 Series</h3>
                                 <p>14 Series | หน้าจอสวยงาม ฟีเจอร์ครบครัน</p>
-                                <div class="price-cat-from">เริ่มต้น <span>1,640</span> บาท/เดือน</div>
+                                <div class="price-cat-from">เริ่มต้น <span>798</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -464,7 +477,7 @@
                             <div class="price-cat-info">
                                 <h3>iPhone 15 Series</h3>
                                 <p>15 Series | สภาพนางฟ้า เทคโนโลยีล้ำสมัย</p>
-                                <div class="price-cat-from">เริ่มต้น <span>2,110</span> บาท/เดือน</div>
+                                <div class="price-cat-from">เริ่มต้น <span>1,078</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -472,17 +485,17 @@
                             <div class="price-cat-icon"><img src="cat-iphone16.png" alt="iPhone 16"></div>
                             <div class="price-cat-info">
                                 <h3>iPhone 16 Series</h3>
-                                <p>16 / 16 Plus / 16 Pro / 16 Pro Max</p>
-                                <div class="price-cat-from">เริ่มต้น <span>2,570</span> บาท/เดือน</div>
+                                <p>16 / 16 Plus / 16 Pro / 16 Pro Max / 16e</p>
+                                <div class="price-cat-from">เริ่มต้น <span>912</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
                         <div class="price-cat-card" onclick="openPriceModal('modal-used-ip17')">
                             <div class="price-cat-icon"><img src="cat-iphone17.png" alt="iPhone 17"></div>
                             <div class="price-cat-info">
-                                <h3>iPhone 17 Series</h3>
-                                <p>17 / 17 Pro / 17 Pro Max</p>
-                                <div class="price-cat-from">เริ่มต้น <span>3,040</span> บาท/เดือน</div>
+                                <h3>iPhone 17 Series & Air</h3>
+                                <p>17 / 17 Pro / 17 Pro Max / iPhone Air</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,477</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -496,12 +509,12 @@
                 <div class="price-scroll-wrapper">
                     <button class="scroll-arrow scroll-arrow-left" onclick="scrollCards('tab-ipad', -1)"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="price-cards-grid" id="grid-ipad">
-                        <div class="price-cat-card" onclick="openPriceModal('modal-ipad-gen11')">
-                            <div class="price-cat-icon"><img src="cat-ipad-gen.png" alt="iPad Gen 11"></div>
+                        <div class="price-cat-card" onclick="openPriceModal('modal-ipad-gen')">
+                            <div class="price-cat-icon"><img src="cat-ipad-gen.png" alt="iPad Gen"></div>
                             <div class="price-cat-info">
-                                <h3>iPad Gen 11</h3>
-                                <p>จอใหญ่ 128/256GB | เรียน/เล่น ครบจบในเครื่องเดียว</p>
-                                <div class="price-cat-from">เริ่มต้น <span>1,690</span> บาท/เดือน</div>
+                                <h3>iPad Gen 10 & 11</h3>
+                                <p>Gen 10 / Gen 11 (A16) | จอใหญ่ เรียน/เล่น ครบจบ</p>
+                                <div class="price-cat-from">เริ่มต้น <span>493</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -509,8 +522,8 @@
                             <div class="price-cat-icon"><img src="cat-ipad-mini.png" alt="iPad Mini 7"></div>
                             <div class="price-cat-info">
                                 <h3>iPad Mini 7</h3>
-                                <p>128/256GB | เล็กพริกขี้หนู สเปกแรง พกพาง่าย</p>
-                                <div class="price-cat-from">เริ่มต้น <span>2,180</span> บาท/เดือน</div>
+                                <p>128/256/512GB | เล็กพริกขี้หนู สเปกแรง พกพาง่าย</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,166</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -518,8 +531,17 @@
                             <div class="price-cat-icon"><img src="cat-ipad-air.png" alt="iPad Air"></div>
                             <div class="price-cat-info">
                                 <h3>iPad Air Series</h3>
-                                <p>Air 6 / Air 7 / Air 8 ประสิทธิภาพชิปตระกูล M</p>
-                                <div class="price-cat-from">เริ่มต้น <span>2,480</span> บาท/เดือน</div>
+                                <p>Air (M3) / Air (M4) | ประสิทธิภาพชิปตระกูล M</p>
+                                <div class="price-cat-from">เริ่มต้น <span>982</span> บาท/เดือน</div>
+                            </div>
+                            <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
+                        </div>
+                        <div class="price-cat-card" onclick="openPriceModal('modal-ipad-pro')">
+                            <div class="price-cat-icon"><img src="cat-ipad-pro.png" alt="iPad Pro"></div>
+                            <div class="price-cat-info">
+                                <h3>iPad Pro Series</h3>
+                                <p>Pro (M4) / Pro (M5) | หน้าจอขั้นสุด สเปกแรงระดับโปร</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,528</span> บาท/เดือน</div>
                             </div>
                             <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
                         </div>
@@ -565,22 +587,59 @@
                 </div>
             </div>
 
+            <!-- ===== MACBOOK TAB ===== -->
+            <div id="tab-macbook" class="price-tab-content">
+                <div class="price-scroll-wrapper">
+                    <button class="scroll-arrow scroll-arrow-left" onclick="scrollCards('tab-macbook', -1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="price-cards-grid" id="grid-macbook">
+                        <div class="price-cat-card" onclick="openPriceModal('modal-macbook')">
+                            <div class="price-cat-icon"><img src="cat-macbook.png" alt="MacBook NEO"></div>
+                            <div class="price-cat-info">
+                                <h3>MacBook NEO 13</h3>
+                                <p>256GB / 512GB | ชิปสเปกแรง ทำงานลื่นไหล น้ำหนักเบา</p>
+                                <div class="price-cat-from">เริ่มต้น <span>1,234</span> บาท/เดือน</div>
+                            </div>
+                            <div class="price-cat-btn"><i class="fa-solid fa-table-list"></i> ดูตารางราคา</div>
+                        </div>
+                    </div>
+                    <button class="scroll-arrow scroll-arrow-right" onclick="scrollCards('tab-macbook', 1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
         </div>
     </section>
 
 
     <!-- ===== PRICE MODALS ===== -->
 
+    <!-- iPhone 13 New -->
+    <div id="modal-ip13" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ip13')">
+        <div class="price-modal-content">
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-ip13')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 13 — ตารางราคาผ่อน (มือหนึ่ง)</h2>
+            <div class="price-table-wrap">
+                <table class="price-table">
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
+                    <tbody>
+                        <tr><td>iPhone 13 128 GB</td><td>2,430</td><td>15,220</td><td>2,730</td><td>1,879</td><td>1,453</td><td>1,198</td><td>1,028</td><td>815</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary btn-full mt-4"><i class="fa-brands fa-line"></i> สนใจรุ่นนี้ ทักแอดมิน</a>
+        </div>
+    </div>
+
     <!-- iPhone 14 New -->
     <div id="modal-ip14" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ip14')">
         <div class="price-modal-content">
             <button class="price-modal-close" onclick="closePriceModalBtn('modal-ip14')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 14 — ตารางราคาผ่อน (มือหนึ่ง)</h2>
+            <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 14 Series — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th><th>18 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 14 128GB</td><td>19,900</td><td>7,000</td><td>5,890</td><td>4,680</td><td>3,470</td><td>2,740</td><td>2,340</td><td>1,980</td><td>—</td></tr>
+                        <tr><td>iPhone 14 128 GB</td><td>3,135</td><td>19,215</td><td>3,442</td><td>2,369</td><td>1,832</td><td>1,510</td><td>1,296</td><td>1,027</td></tr>
+                        <tr><td>iPhone 14 256 GB</td><td>3,510</td><td>21,790</td><td>3,906</td><td>2,689</td><td>2,080</td><td>1,714</td><td>1,471</td><td>1,166</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -595,10 +654,14 @@
             <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 15 Series — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th><th>18 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 15 128GB</td><td>23,900</td><td>8,400</td><td>7,070</td><td>5,620</td><td>4,160</td><td>3,290</td><td>2,810</td><td>2,380</td><td>—</td></tr>
-                        <tr><td>iPhone 15 Plus 128GB</td><td>28,900</td><td>10,150</td><td>8,550</td><td>6,790</td><td>5,030</td><td>3,980</td><td>3,390</td><td>2,870</td><td>—</td></tr>
+                        <tr><td>iPhone 15 128 GB</td><td>4,230</td><td>25,870</td><td>4,633</td><td>3,189</td><td>2,466</td><td>2,033</td><td>1,744</td><td>1,383</td></tr>
+                        <tr><td>iPhone 15 Plus 128 GB</td><td>3,960</td><td>24,340</td><td>4,361</td><td>3,001</td><td>2,321</td><td>1,913</td><td>1,642</td><td>1,302</td></tr>
+                        <tr><td>iPhone 15 Pro 128 GB</td><td>4,560</td><td>27,740</td><td>4,967</td><td>3,418</td><td>2,644</td><td>2,179</td><td>1,870</td><td>1,482</td></tr>
+                        <tr><td>iPhone 15 Pro 512 GB</td><td>6,060</td><td>36,240</td><td>6,481</td><td>4,460</td><td>3,450</td><td>2,844</td><td>2,440</td><td>1,934</td></tr>
+                        <tr><td>iPhone 15 Pro Max 256 GB</td><td>5,610</td><td>33,690</td><td>6,027</td><td>4,148</td><td>3,208</td><td>2,644</td><td>2,269</td><td>1,799</td></tr>
+                        <tr><td>iPhone 15 Pro Max 512 GB</td><td>6,660</td><td>40,215</td><td>7,196</td><td>4,953</td><td>3,831</td><td>3,158</td><td>2,709</td><td>2,148</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -613,11 +676,23 @@
             <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 16 Series — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th><th>18 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 16 128GB</td><td>26,900</td><td>9,450</td><td>7,960</td><td>6,320</td><td>4,680</td><td>3,710</td><td>3,160</td><td>2,680</td><td>—</td></tr>
-                        <tr><td>iPhone 16 Plus 128GB</td><td>29,900</td><td>10,500</td><td>8,840</td><td>7,020</td><td>5,200</td><td>4,120</td><td>3,510</td><td>2,970</td><td>—</td></tr>
-                        <tr><td>iPhone 16e 128GB</td><td>19,900</td><td>7,000</td><td>5,890</td><td>4,680</td><td>3,470</td><td>2,740</td><td>2,340</td><td>1,980</td><td>—</td></tr>
+                        <tr><td>iPhone 16 128 GB</td><td>4,860</td><td>29,440</td><td>5,269</td><td>3,626</td><td>2,805</td><td>2,312</td><td>1,984</td><td>1,573</td></tr>
+                        <tr><td>iPhone 16 256 GB</td><td>4,800</td><td>29,100</td><td>5,209</td><td>3,585</td><td>2,773</td><td>2,286</td><td>1,961</td><td>1,555</td></tr>
+                        <tr><td>iPhone 16e 128 GB</td><td>3,060</td><td>18,790</td><td>3,366</td><td>2,317</td><td>1,792</td><td>1,477</td><td>1,267</td><td>1,005</td></tr>
+                        <tr><td>iPhone 16e 256 GB</td><td>3,735</td><td>23,065</td><td>4,134</td><td>2,845</td><td>2,200</td><td>1,814</td><td>1,556</td><td>1,234</td></tr>
+                        <tr><td>iPhone 16e 512 GB</td><td>5,460</td><td>32,840</td><td>5,875</td><td>4,043</td><td>3,127</td><td>2,578</td><td>2,212</td><td>1,754</td></tr>
+                        <tr><td>iPhone 16 Plus 128 GB</td><td>4,650</td><td>28,250</td><td>5,057</td><td>3,481</td><td>2,692</td><td>2,219</td><td>1,904</td><td>1,510</td></tr>
+                        <tr><td>iPhone 16 Plus 256 GB</td><td>5,250</td><td>31,650</td><td>5,663</td><td>3,897</td><td>3,015</td><td>2,485</td><td>2,132</td><td>1,690</td></tr>
+                        <tr><td>iPhone 16 Plus 512 GB</td><td>6,510</td><td>39,365</td><td>7,045</td><td>4,848</td><td>3,750</td><td>3,091</td><td>2,652</td><td>2,103</td></tr>
+                        <tr><td>iPhone 16 Pro 128 GB</td><td>5,280</td><td>31,820</td><td>5,693</td><td>3,918</td><td>3,031</td><td>2,498</td><td>2,143</td><td>1,699</td></tr>
+                        <tr><td>iPhone 16 Pro 256 GB</td><td>5,880</td><td>35,220</td><td>6,299</td><td>4,335</td><td>3,353</td><td>2,764</td><td>2,371</td><td>1,880</td></tr>
+                        <tr><td>iPhone 16 Pro 512 GB</td><td>7,080</td><td>42,595</td><td>7,620</td><td>5,244</td><td>4,056</td><td>3,344</td><td>2,868</td><td>2,274</td></tr>
+                        <tr><td>iPhone 16 Pro 1 TB</td><td>8,280</td><td>49,395</td><td>8,832</td><td>6,078</td><td>4,701</td><td>3,875</td><td>3,324</td><td>2,636</td></tr>
+                        <tr><td>iPhone 16 Pro Max 256 GB</td><td>6,480</td><td>39,195</td><td>7,015</td><td>4,827</td><td>3,734</td><td>3,078</td><td>2,640</td><td>2,094</td></tr>
+                        <tr><td>iPhone 16 Pro Max 512 GB</td><td>7,680</td><td>45,995</td><td>8,226</td><td>5,661</td><td>4,379</td><td>3,609</td><td>3,096</td><td>2,455</td></tr>
+                        <tr><td>iPhone 16 Pro Max 1 TB</td><td>8,880</td><td>52,795</td><td>9,438</td><td>6,495</td><td>5,024</td><td>4,141</td><td>3,552</td><td>2,817</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -629,18 +704,51 @@
     <div id="modal-ip17" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ip17')">
         <div class="price-modal-content">
             <button class="price-modal-close" onclick="closePriceModalBtn('modal-ip17')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 17 Series — ตารางราคาผ่อน (มือหนึ่ง)</h2>
+            <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 17 Series & Air — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th><th>18 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 17 256GB</td><td>29,900</td><td>10,500</td><td>8,840</td><td>7,020</td><td>5,200</td><td>4,120</td><td>3,510</td><td>2,970</td><td>—</td></tr>
-                        <tr><td>iPhone 17E 256GB</td><td>22,900</td><td>8,050</td><td>6,780</td><td>5,380</td><td>3,990</td><td>3,160</td><td>2,690</td><td>2,280</td><td>—</td></tr>
-                        <tr><td>iPhone 17 Pro 256GB</td><td>43,900</td><td>15,400</td><td>12,970</td><td>10,300</td><td>7,630</td><td>6,040</td><td>5,150</td><td>4,360</td><td>—</td></tr>
-                        <tr><td>iPhone 17 Pro 512GB</td><td>51,900</td><td>20,800</td><td>14,140</td><td>11,230</td><td>8,320</td><td>6,590</td><td>5,620</td><td>4,760</td><td>3,610</td></tr>
-                        <tr><td>iPhone 17 Pro Max 256GB</td><td>48,900</td><td>20,000</td><td>13,600</td><td>10,800</td><td>8,000</td><td>6,330</td><td>5,400</td><td>4,580</td><td>3,470</td></tr>
-                        <tr><td>iPhone 17 Pro Max 512GB</td><td>56,900</td><td>22,800</td><td>15,500</td><td>12,310</td><td>9,120</td><td>7,220</td><td>6,160</td><td>5,220</td><td>3,950</td></tr>
-                        <tr><td>iPhone 17 Pro Max 256GB (ดาวน์น้อย)</td><td>48,900</td><td>17,500</td><td>14,730</td><td>11,700</td><td>8,670</td><td>6,860</td><td>5,850</td><td>4,960</td><td>—</td></tr>
+                        <tr><td>iPhone 17 256 GB</td><td>5,460</td><td>32,840</td><td>5,875</td><td>4,043</td><td>3,127</td><td>2,578</td><td>2,212</td><td>1,754</td></tr>
+                        <tr><td>iPhone 17 512 GB</td><td>6,660</td><td>40,215</td><td>7,196</td><td>4,953</td><td>3,831</td><td>3,158</td><td>2,709</td><td>2,148</td></tr>
+                        <tr><td>iPhone 17e 256 GB</td><td>4,260</td><td>26,040</td><td>4,664</td><td>3,210</td><td>2,483</td><td>2,046</td><td>1,756</td><td>1,392</td></tr>
+                        <tr><td>iPhone 17e 512 GB</td><td>5,460</td><td>32,840</td><td>5,875</td><td>4,043</td><td>3,127</td><td>2,578</td><td>2,212</td><td>1,754</td></tr>
+                        <tr><td>iPhone 17 Pro 256 GB</td><td>6,810</td><td>41,065</td><td>7,348</td><td>5,057</td><td>3,911</td><td>3,224</td><td>2,766</td><td>2,193</td></tr>
+                        <tr><td>iPhone 17 Pro 512 GB</td><td>8,010</td><td>47,865</td><td>8,559</td><td>5,891</td><td>4,556</td><td>3,755</td><td>3,222</td><td>2,555</td></tr>
+                        <tr><td>iPhone 17 Pro 1 TB</td><td>9,210</td><td>54,665</td><td>9,771</td><td>6,724</td><td>5,201</td><td>4,287</td><td>3,678</td><td>2,916</td></tr>
+                        <tr><td>iPhone 17 Pro Max 256 GB</td><td>7,560</td><td>45,315</td><td>8,105</td><td>5,578</td><td>4,314</td><td>3,556</td><td>3,051</td><td>2,419</td></tr>
+                        <tr><td>iPhone 17 Pro Max 512 GB</td><td>8,760</td><td>52,115</td><td>9,317</td><td>6,412</td><td>4,959</td><td>4,088</td><td>3,507</td><td>2,780</td></tr>
+                        <tr><td>iPhone 17 Pro Max 1 TB</td><td>9,960</td><td>60,465</td><td>10,824</td><td>7,449</td><td>5,761</td><td>4,749</td><td>4,074</td><td>3,230</td></tr>
+                        <tr><td>iPhone 17 Pro Max 2 TB</td><td>12,360</td><td>75,215</td><td>13,466</td><td>9,267</td><td>7,168</td><td>5,908</td><td>5,068</td><td>4,019</td></tr>
+                        <tr><td>iPhone Air 256 GB</td><td>6,810</td><td>41,065</td><td>7,348</td><td>5,057</td><td>3,911</td><td>3,224</td><td>2,766</td><td>2,193</td></tr>
+                        <tr><td>iPhone Air 512 GB</td><td>8,010</td><td>47,865</td><td>8,559</td><td>5,891</td><td>4,556</td><td>3,755</td><td>3,222</td><td>2,555</td></tr>
+                        <tr><td>iPhone Air 1 TB</td><td>10,410</td><td>63,015</td><td>11,278</td><td>7,761</td><td>6,003</td><td>4,948</td><td>4,245</td><td>3,366</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary btn-full mt-4"><i class="fa-brands fa-line"></i> สนใจรุ่นนี้ ทักแอดมิน</a>
+        </div>
+    </div>
+
+    <!-- iPhone 18 New -->
+    <div id="modal-ip18" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ip18')">
+        <div class="price-modal-content">
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-ip18')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="price-modal-title"><i class="fa-brands fa-apple"></i> iPhone 18 Series & Duo — ตารางราคาผ่อน (มือหนึ่ง)</h2>
+            <div class="price-table-wrap">
+                <table class="price-table">
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
+                    <tbody>
+                        <tr><td>iPhone 18 Pro 256 GB</td><td>7,560</td><td>45,315</td><td>8,105</td><td>5,578</td><td>4,314</td><td>3,556</td><td>3,051</td><td>2,419</td></tr>
+                        <tr><td>iPhone 18 Pro 512 GB</td><td>8,760</td><td>52,115</td><td>9,317</td><td>6,412</td><td>4,959</td><td>4,088</td><td>3,507</td><td>2,780</td></tr>
+                        <tr><td>iPhone 18 Pro 1 TB</td><td>11,160</td><td>67,265</td><td>12,035</td><td>8,282</td><td>6,406</td><td>5,280</td><td>4,530</td><td>3,592</td></tr>
+                        <tr><td>iPhone 18 Pro Max 256 GB</td><td>8,160</td><td>48,715</td><td>8,711</td><td>5,995</td><td>4,637</td><td>3,822</td><td>3,279</td><td>2,600</td></tr>
+                        <tr><td>iPhone 18 Pro Max 512 GB</td><td>9,360</td><td>57,065</td><td>10,218</td><td>7,032</td><td>5,439</td><td>4,483</td><td>3,846</td><td>3,049</td></tr>
+                        <tr><td>iPhone 18 Pro Max 1 TB</td><td>11,760</td><td>70,665</td><td>12,641</td><td>8,699</td><td>6,729</td><td>5,546</td><td>4,758</td><td>3,773</td></tr>
+                        <tr><td>iPhone 18 Pro Max 2 TB</td><td>14,760</td><td>88,815</td><td>15,889</td><td>10,935</td><td>8,457</td><td>6,971</td><td>5,980</td><td>4,742</td></tr>
+                        <tr><td>iPhone Duo 256 GB</td><td>12,210</td><td>73,215</td><td>13,095</td><td>9,012</td><td>6,970</td><td>5,745</td><td>4,929</td><td>3,908</td></tr>
+                        <tr><td>iPhone Duo 512 GB</td><td>13,410</td><td>81,165</td><td>14,526</td><td>9,997</td><td>7,732</td><td>6,373</td><td>5,467</td><td>4,335</td></tr>
+                        <tr><td>iPhone Duo 1 TB</td><td>15,810</td><td>96,375</td><td>17,256</td><td>11,875</td><td>9,185</td><td>7,571</td><td>6,495</td><td>5,150</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -694,13 +802,16 @@
             <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPhone 13 Series — ตารางราคาผ่อน (มือสอง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด *มือสอง</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 13 128GB</td><td>12,990</td><td>4,550</td><td>3,830</td><td>3,050</td><td>2,260</td><td>1,780</td><td>1,520</td></tr>
-                        <tr><td>iPhone 13 256GB</td><td>13,990</td><td>4,900</td><td>4,130</td><td>3,280</td><td>2,430</td><td>1,920</td><td>1,640</td></tr>
-                        <tr><td>iPhone 13 Pro 128GB</td><td>13,990</td><td>4,900</td><td>4,130</td><td>3,280</td><td>2,430</td><td>1,920</td><td>1,640</td></tr>
-                        <tr><td>iPhone 13 Pro Max 128GB</td><td>16,990</td><td>5,950</td><td>5,010</td><td>3,980</td><td>2,950</td><td>2,330</td><td>1,990</td></tr>
-                        <tr><td>iPhone 13 Pro Max 256GB</td><td>17,990</td><td>6,300</td><td>5,300</td><td>4,210</td><td>3,120</td><td>2,470</td><td>2,110</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 128 GB</td><td>1,875</td><td>10,625</td><td>1,894</td><td>1,303</td><td>1,008</td><td>831</td><td>713</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 256 GB</td><td>1,950</td><td>11,050</td><td>1,969</td><td>1,355</td><td>1,048</td><td>864</td><td>741</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 Pro 128 GB</td><td>2,250</td><td>12,750</td><td>2,272</td><td>1,564</td><td>1,210</td><td>997</td><td>855</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 Pro 256 GB</td><td>2,400</td><td>13,600</td><td>2,424</td><td>1,668</td><td>1,290</td><td>1,064</td><td>912</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 ProMax 128 GB</td><td>2,700</td><td>15,300</td><td>2,726</td><td>1,876</td><td>1,451</td><td>1,196</td><td>1,026</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 ProMax 256 GB</td><td>2,850</td><td>16,150</td><td>2,878</td><td>1,981</td><td>1,532</td><td>1,263</td><td>1,083</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13 ProMax 512 GB</td><td>3,000</td><td>17,000</td><td>3,029</td><td>2,085</td><td>1,613</td><td>1,329</td><td>1,140</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 13Pro 512 GB</td><td>2,535</td><td>14,365</td><td>2,560</td><td>1,762</td><td>1,363</td><td>1,123</td><td>964</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -715,13 +826,18 @@
             <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPhone 14 Series — ตารางราคาผ่อน (มือสอง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด *มือสอง</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 14 128GB</td><td>13,990</td><td>4,900</td><td>4,130</td><td>3,280</td><td>2,430</td><td>1,920</td><td>1,640</td></tr>
-                        <tr><td>iPhone 14 Pro 128GB</td><td>16,990</td><td>5,950</td><td>5,010</td><td>3,980</td><td>2,950</td><td>2,330</td><td>1,990</td></tr>
-                        <tr><td>iPhone 14 Pro 256GB</td><td>17,990</td><td>6,300</td><td>5,300</td><td>4,210</td><td>3,120</td><td>2,470</td><td>2,110</td></tr>
-                        <tr><td>iPhone 14 Pro Max 128GB</td><td>18,990</td><td>6,650</td><td>5,600</td><td>4,450</td><td>3,290</td><td>2,610</td><td>2,220</td></tr>
-                        <tr><td>iPhone 14 Pro Max 256GB</td><td>19,990</td><td>7,000</td><td>5,890</td><td>4,680</td><td>3,470</td><td>2,740</td><td>2,340</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 128 GB</td><td>2,100</td><td>11,900</td><td>2,121</td><td>1,460</td><td>1,129</td><td>931</td><td>798</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 256 GB</td><td>2,250</td><td>12,750</td><td>2,272</td><td>1,564</td><td>1,210</td><td>997</td><td>855</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 512 GB</td><td>2,400</td><td>13,600</td><td>2,424</td><td>1,668</td><td>1,290</td><td>1,064</td><td>912</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 Plus 128 GB</td><td>2,550</td><td>14,450</td><td>2,575</td><td>1,772</td><td>1,371</td><td>1,130</td><td>969</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 Plus 256 GB</td><td>2,700</td><td>15,300</td><td>2,726</td><td>1,876</td><td>1,451</td><td>1,196</td><td>1,026</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 Pro 128 GB</td><td>2,835</td><td>16,065</td><td>2,863</td><td>1,970</td><td>1,524</td><td>1,256</td><td>1,078</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 Pro 256 GB</td><td>3,135</td><td>17,765</td><td>3,166</td><td>2,179</td><td>1,685</td><td>1,389</td><td>1,192</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 ProMax 128 GB</td><td>3,285</td><td>18,615</td><td>3,317</td><td>2,283</td><td>1,766</td><td>1,456</td><td>1,249</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 ProMax 256 GB</td><td>3,585</td><td>20,315</td><td>3,620</td><td>2,491</td><td>1,927</td><td>1,588</td><td>1,363</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 14 ProMax 512 GB</td><td>3,750</td><td>21,250</td><td>3,787</td><td>2,606</td><td>2,016</td><td>1,662</td><td>1,425</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -736,13 +852,18 @@
             <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPhone 15 Series — ตารางราคาผ่อน (มือสอง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด *มือสอง</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 15 128GB</td><td>17,990</td><td>6,300</td><td>5,300</td><td>4,210</td><td>3,120</td><td>2,470</td><td>2,110</td></tr>
-                        <tr><td>iPhone 15 Plus 128GB</td><td>19,990</td><td>7,000</td><td>5,890</td><td>4,680</td><td>3,470</td><td>2,740</td><td>2,340</td></tr>
-                        <tr><td>iPhone 15 Pro 128GB</td><td>20,990</td><td>7,350</td><td>6,190</td><td>4,910</td><td>3,640</td><td>2,880</td><td>2,460</td></tr>
-                        <tr><td>iPhone 15 Pro 256GB</td><td>21,990</td><td>7,700</td><td>6,480</td><td>5,150</td><td>3,810</td><td>3,020</td><td>2,570</td></tr>
-                        <tr><td>iPhone 15 Pro Max 256GB</td><td>25,990</td><td>9,100</td><td>7,660</td><td>6,080</td><td>4,510</td><td>3,570</td><td>3,040</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 128 GB</td><td>2,835</td><td>16,065</td><td>2,863</td><td>1,970</td><td>1,524</td><td>1,256</td><td>1,078</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 256 GB</td><td>3,075</td><td>17,425</td><td>3,105</td><td>2,137</td><td>1,653</td><td>1,363</td><td>1,169</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 Plus 128 GB</td><td>3,150</td><td>17,850</td><td>3,181</td><td>2,189</td><td>1,693</td><td>1,396</td><td>1,197</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 Plus 256 GB</td><td>3,285</td><td>18,615</td><td>3,317</td><td>2,283</td><td>1,766</td><td>1,456</td><td>1,249</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 Pro 128 GB</td><td>3,600</td><td>20,400</td><td>3,635</td><td>2,502</td><td>1,935</td><td>1,595</td><td>1,368</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 Pro 256 GB</td><td>3,750</td><td>21,250</td><td>3,787</td><td>2,606</td><td>2,016</td><td>1,662</td><td>1,425</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 Pro 512 GB</td><td>3,900</td><td>22,100</td><td>3,938</td><td>2,710</td><td>2,096</td><td>1,728</td><td>1,482</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 ProMax 256 GB</td><td>4,350</td><td>24,650</td><td>4,392</td><td>3,023</td><td>2,338</td><td>1,927</td><td>1,653</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15 ProMax 512 GB</td><td>4,635</td><td>26,265</td><td>4,680</td><td>3,221</td><td>2,491</td><td>2,054</td><td>1,762</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 15ProMax 1 TB</td><td>4,800</td><td>27,200</td><td>4,847</td><td>3,336</td><td>2,580</td><td>2,127</td><td>1,824</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -757,14 +878,23 @@
             <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPhone 16 Series — ตารางราคาผ่อน (มือสอง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด *มือสอง</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 16 128GB</td><td>21,990</td><td>7,700</td><td>6,480</td><td>5,150</td><td>3,810</td><td>3,020</td><td>2,570</td></tr>
-                        <tr><td>iPhone 16 Plus 128GB</td><td>22,990</td><td>8,050</td><td>6,780</td><td>5,380</td><td>3,990</td><td>3,160</td><td>2,690</td></tr>
-                        <tr><td>iPhone 16 Pro 128GB</td><td>26,990</td><td>9,450</td><td>7,960</td><td>6,320</td><td>4,680</td><td>3,710</td><td>3,160</td></tr>
-                        <tr><td>iPhone 16 Pro 256GB</td><td>27,990</td><td>9,800</td><td>8,250</td><td>6,550</td><td>4,850</td><td>3,840</td><td>3,280</td></tr>
-                        <tr><td>iPhone 16 Pro Max 256GB</td><td>33,990</td><td>11,900</td><td>10,020</td><td>7,960</td><td>5,890</td><td>4,670</td><td>3,980</td></tr>
-                        <tr><td>iPhone 16 Pro Max 512GB</td><td>34,990</td><td>12,250</td><td>10,310</td><td>8,190</td><td>6,070</td><td>4,800</td><td>4,100</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 128 GB</td><td>3,150</td><td>17,850</td><td>3,181</td><td>2,189</td><td>1,693</td><td>1,396</td><td>1,197</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 256 GB</td><td>3,600</td><td>20,400</td><td>3,635</td><td>2,502</td><td>1,935</td><td>1,595</td><td>1,368</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Plus 128 GB</td><td>3,600</td><td>20,400</td><td>3,635</td><td>2,502</td><td>1,935</td><td>1,595</td><td>1,368</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Plus 256 GB</td><td>4,125</td><td>23,375</td><td>4,165</td><td>2,867</td><td>2,217</td><td>1,828</td><td>1,568</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Plus 512 GB</td><td>4,275</td><td>24,225</td><td>4,317</td><td>2,971</td><td>2,298</td><td>1,894</td><td>1,625</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Pro 128 GB</td><td>4,200</td><td>23,800</td><td>4,241</td><td>2,919</td><td>2,258</td><td>1,861</td><td>1,596</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Pro 256 GB</td><td>4,650</td><td>26,350</td><td>4,695</td><td>3,231</td><td>2,499</td><td>2,060</td><td>1,767</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Pro 512 GB</td><td>4,800</td><td>27,200</td><td>4,847</td><td>3,336</td><td>2,580</td><td>2,127</td><td>1,824</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 Pro 1TB</td><td>5,100</td><td>28,900</td><td>5,150</td><td>3,544</td><td>2,741</td><td>2,260</td><td>1,938</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 ProMax 256 GB</td><td>5,235</td><td>29,665</td><td>5,286</td><td>3,638</td><td>2,814</td><td>2,319</td><td>1,990</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 ProMax 512 GB</td><td>5,550</td><td>31,450</td><td>5,604</td><td>3,857</td><td>2,983</td><td>2,459</td><td>2,109</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16 ProMax 1TB</td><td>5,850</td><td>33,150</td><td>5,907</td><td>4,065</td><td>3,144</td><td>2,592</td><td>2,223</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16e 128 GB</td><td>2,400</td><td>13,600</td><td>2,424</td><td>1,668</td><td>1,290</td><td>1,064</td><td>912</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16e 256 GB</td><td>2,700</td><td>15,300</td><td>2,726</td><td>1,876</td><td>1,451</td><td>1,196</td><td>1,026</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 16e 512 GB</td><td>2,850</td><td>16,150</td><td>2,878</td><td>1,981</td><td>1,532</td><td>1,263</td><td>1,083</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -776,15 +906,23 @@
     <div id="modal-used-ip17" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-used-ip17')">
         <div class="price-modal-content">
             <button class="price-modal-close" onclick="closePriceModalBtn('modal-used-ip17')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPhone 17 Series — ตารางราคาผ่อน (มือสอง)</h2>
+            <h2 class="price-modal-title"><i class="fa-solid fa-recycle"></i> iPhone 17 Series & Air — ตารางราคาผ่อน (มือสอง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด *มือสอง</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPhone 17 256GB</td><td>25,990</td><td>9,100</td><td>7,660</td><td>6,080</td><td>4,510</td><td>3,570</td><td>3,040</td></tr>
-                        <tr><td>iPhone 17 Pro 256GB</td><td>36,990</td><td>12,950</td><td>10,900</td><td>8,660</td><td>6,410</td><td>5,080</td><td>4,330</td></tr>
-                        <tr><td>iPhone 17 Pro Max 256GB</td><td>44,990</td><td>15,750</td><td>13,260</td><td>10,530</td><td>7,800</td><td>6,180</td><td>5,270</td></tr>
-                        <tr><td>iPhone 17 Pro Max 512GB</td><td>48,900</td><td>17,150</td><td>14,440</td><td>11,470</td><td>8,490</td><td>6,720</td><td>5,730</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 256 GB</td><td>3,885</td><td>22,015</td><td>3,923</td><td>2,700</td><td>2,088</td><td>1,721</td><td>1,477</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 512 GB</td><td>5,085</td><td>28,815</td><td>5,134</td><td>3,534</td><td>2,733</td><td>2,253</td><td>1,933</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 Pro 256 GB</td><td>5,985</td><td>33,915</td><td>6,043</td><td>4,159</td><td>3,217</td><td>2,652</td><td>2,275</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 Pro 512 GB</td><td>7,185</td><td>40,715</td><td>7,255</td><td>4,993</td><td>3,862</td><td>3,183</td><td>2,731</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 Pro 1TB</td><td>8,385</td><td>47,515</td><td>8,466</td><td>5,826</td><td>4,507</td><td>3,715</td><td>3,187</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 ProMax 256 GB</td><td>6,735</td><td>38,165</td><td>6,800</td><td>4,680</td><td>3,620</td><td>2,984</td><td>2,560</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 ProMax 512 GB</td><td>7,935</td><td>44,965</td><td>8,012</td><td>5,514</td><td>4,265</td><td>3,515</td><td>3,016</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 ProMax 1TB</td><td>8,985</td><td>50,915</td><td>9,072</td><td>6,243</td><td>4,829</td><td>3,980</td><td>3,415</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone 17 ProMax 2TB</td><td>11,385</td><td>64,515</td><td>11,495</td><td>7,911</td><td>6,119</td><td>5,043</td><td>4,327</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone Air 256 GB</td><td>4,035</td><td>22,865</td><td>4,074</td><td>2,804</td><td>2,169</td><td>1,788</td><td>1,534</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone Air 512 GB</td><td>4,500</td><td>25,500</td><td>4,544</td><td>3,127</td><td>2,419</td><td>1,994</td><td>1,710</td></tr>
+                        <tr><td>(มือสอง)Apple iPhone Air 1TB</td><td>4,800</td><td>27,200</td><td>4,847</td><td>3,336</td><td>2,580</td><td>2,127</td><td>1,824</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -792,19 +930,27 @@
         </div>
     </div>
 
-    <!-- iPad Gen 11 -->
-    <div id="modal-ipad-gen11" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ipad-gen11')">
+    <!-- iPad Gen Series -->
+    <div id="modal-ipad-gen" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ipad-gen')">
         <div class="price-modal-content">
-            <button class="price-modal-close" onclick="closePriceModalBtn('modal-ipad-gen11')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Gen 11 — ตารางราคาผ่อน</h2>
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-ipad-gen')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Gen 10 & 11 — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPad Gen11 128GB WiFi</td><td>16,900</td><td>5,950</td><td>5,010</td><td>3,980</td><td>2,950</td><td>2,330</td><td>1,990</td><td>1,690</td></tr>
-                        <tr><td>iPad Gen11 256GB WiFi</td><td>20,900</td><td>7,350</td><td>6,190</td><td>4,910</td><td>3,640</td><td>2,880</td><td>2,460</td><td>2,080</td></tr>
-                        <tr><td>iPad Gen11 128GB Cellular</td><td>22,900</td><td>8,050</td><td>6,780</td><td>5,380</td><td>3,990</td><td>3,160</td><td>2,690</td><td>2,280</td></tr>
-                        <tr><td>iPad Gen11 256GB Cellular</td><td>26,900</td><td>9,450</td><td>7,960</td><td>6,320</td><td>4,680</td><td>3,710</td><td>3,160</td><td>2,680</td></tr>
+                        <!-- iPad Gen 10 -->
+                        <tr><td>iPad Gen10 WiFi 64 GB</td><td>1,485</td><td>9,210</td><td>1,651</td><td>1,137</td><td>879</td><td>725</td><td>622</td><td>493</td></tr>
+                        <tr><td>iPad Gen10 WiFi 256 GB</td><td>1,935</td><td>12,415</td><td>2,231</td><td>1,535</td><td>1,187</td><td>979</td><td>840</td><td>666</td></tr>
+                        <tr><td>iPad Gen10 Cellular 64 GB</td><td>2,235</td><td>14,115</td><td>2,533</td><td>1,744</td><td>1,349</td><td>1,112</td><td>954</td><td>756</td></tr>
+                        <tr><td>iPad Gen10 Cellular 256 GB</td><td>2,685</td><td>16,665</td><td>2,988</td><td>2,056</td><td>1,591</td><td>1,311</td><td>1,125</td><td>892</td></tr>
+                        <!-- iPad Gen 11 (A16) -->
+                        <tr><td>iPad Gen11 (A16) WiFi 128 GB</td><td>2,685</td><td>16,665</td><td>2,988</td><td>2,056</td><td>1,591</td><td>1,311</td><td>1,125</td><td>892</td></tr>
+                        <tr><td>iPad Gen11 (A16) WiFi 256 GB</td><td>3,360</td><td>20,940</td><td>3,755</td><td>2,584</td><td>1,999</td><td>1,648</td><td>1,414</td><td>1,121</td></tr>
+                        <tr><td>iPad Gen11 (A16) WiFi 512 GB</td><td>4,410</td><td>26,890</td><td>4,815</td><td>3,314</td><td>2,563</td><td>2,113</td><td>1,813</td><td>1,437</td></tr>
+                        <tr><td>iPad Gen11 (A16) Cellular 128 GB</td><td>3,660</td><td>22,640</td><td>4,058</td><td>2,793</td><td>2,160</td><td>1,781</td><td>1,528</td><td>1,211</td></tr>
+                        <tr><td>iPad Gen11 (A16) Cellular 256 GB</td><td>4,260</td><td>26,040</td><td>4,664</td><td>3,210</td><td>2,483</td><td>2,046</td><td>1,756</td><td>1,392</td></tr>
+                        <tr><td>iPad Gen11 (A16) Cellular 512 GB</td><td>5,310</td><td>31,990</td><td>5,724</td><td>3,939</td><td>3,047</td><td>2,511</td><td>2,155</td><td>1,708</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -816,13 +962,16 @@
     <div id="modal-ipad-mini7" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ipad-mini7')">
         <div class="price-modal-content">
             <button class="price-modal-close" onclick="closePriceModalBtn('modal-ipad-mini7')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Mini 7 — ตารางราคาผ่อน</h2>
+            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Mini 7 — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPad Mini7 128GB WiFi</td><td>21,900</td><td>7,700</td><td>6,480</td><td>5,150</td><td>3,810</td><td>3,020</td><td>2,570</td><td>2,180</td></tr>
-                        <tr><td>iPad Mini7 256GB WiFi</td><td>25,900</td><td>9,100</td><td>7,660</td><td>6,080</td><td>4,510</td><td>3,570</td><td>3,040</td><td>2,580</td></tr>
+                        <tr><td>iPad Mini WiFi 128 GB</td><td>3,510</td><td>21,790</td><td>3,906</td><td>2,689</td><td>2,080</td><td>1,714</td><td>1,471</td><td>1,166</td></tr>
+                        <tr><td>iPad Mini WiFi 256 GB</td><td>4,110</td><td>25,190</td><td>4,512</td><td>3,105</td><td>2,402</td><td>1,980</td><td>1,699</td><td>1,347</td></tr>
+                        <tr><td>iPad Mini Cellular 128 GB</td><td>4,410</td><td>26,890</td><td>4,815</td><td>3,314</td><td>2,563</td><td>2,113</td><td>1,813</td><td>1,437</td></tr>
+                        <tr><td>iPad Mini Cellular 256 GB</td><td>5,010</td><td>30,290</td><td>5,421</td><td>3,731</td><td>2,886</td><td>2,379</td><td>2,041</td><td>1,618</td></tr>
+                        <tr><td>iPad Mini 7 WiFi 512 GB</td><td>4,560</td><td>27,740</td><td>4,967</td><td>3,418</td><td>2,644</td><td>2,179</td><td>1,870</td><td>1,482</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -834,20 +983,79 @@
     <div id="modal-ipad-air" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ipad-air')">
         <div class="price-modal-content">
             <button class="price-modal-close" onclick="closePriceModalBtn('modal-ipad-air')"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Air Series — ตารางราคาผ่อน</h2>
+            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Air Series (M3 & M4) — ตารางราคาผ่อน (มือหนึ่ง)</h2>
             <div class="price-table-wrap">
                 <table class="price-table">
-                    <thead><tr><th>รุ่น</th><th>ราคาปกติ</th><th>วางดาวน์</th><th>3 เดือน</th><th>4 เดือน</th><th>6 เดือน</th><th>9 เดือน</th><th>10 เดือน</th><th>12 เดือน</th></tr></thead>
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
                     <tbody>
-                        <tr><td>iPad Air 6 128GB WiFi 13"</td><td>24,900</td><td>8,750</td><td>7,370</td><td>5,850</td><td>4,330</td><td>3,430</td><td>2,930</td><td>2,480</td></tr>
-                        <tr><td>iPad Air 7 128GB WiFi 11"</td><td>24,900</td><td>8,750</td><td>7,370</td><td>5,850</td><td>4,330</td><td>3,430</td><td>2,930</td><td>2,480</td></tr>
-                        <tr><td>iPad Air 7 256GB WiFi 11"</td><td>29,900</td><td>10,500</td><td>8,840</td><td>7,020</td><td>5,200</td><td>4,120</td><td>3,510</td><td>2,970</td></tr>
-                        <tr><td>iPad Air 7 128GB Cell 11"</td><td>30,900</td><td>10,850</td><td>9,130</td><td>7,250</td><td>5,370</td><td>4,250</td><td>3,630</td><td>3,070</td></tr>
-                        <tr><td>iPad Air 7 256GB Cell 11" (ราคาพิเศษ)</td><td>24,900</td><td>8,750</td><td>7,370</td><td>5,850</td><td>4,330</td><td>3,430</td><td>2,930</td><td>2,480</td></tr>
-                        <tr><td>iPad Air 8 128GB WiFi 11"</td><td>27,990</td><td>9,800</td><td>8,250</td><td>6,550</td><td>4,850</td><td>3,840</td><td>3,280</td><td>2,780</td></tr>
-                        <tr><td>iPad Air 8 256GB WiFi 11"</td><td>33,900</td><td>11,900</td><td>10,020</td><td>7,960</td><td>5,890</td><td>4,670</td><td>3,980</td><td>3,370</td></tr>
-                        <tr><td>iPad Air 8 128GB Cell 11"</td><td>33,900</td><td>11,900</td><td>10,020</td><td>7,960</td><td>5,890</td><td>4,670</td><td>3,980</td><td>3,370</td></tr>
-                        <tr><td>iPad Air 7 256GB Cell 11"</td><td>37,900</td><td>13,300</td><td>11,200</td><td>8,890</td><td>6,590</td><td>5,210</td><td>4,450</td><td>3,770</td></tr>
+                        <!-- iPad Air (M3) -->
+                        <tr><td>iPad Air (M3) WiFi 11" 128 GB</td><td>2,985</td><td>18,365</td><td>3,291</td><td>2,265</td><td>1,752</td><td>1,444</td><td>1,239</td><td>982</td></tr>
+                        <tr><td>iPad Air (M3) WiFi 11" 256 GB</td><td>3,660</td><td>22,640</td><td>4,058</td><td>2,793</td><td>2,160</td><td>1,781</td><td>1,528</td><td>1,211</td></tr>
+                        <tr><td>iPad Air (M3) Cellular 11" 128 GB</td><td>3,960</td><td>24,340</td><td>4,361</td><td>3,001</td><td>2,321</td><td>1,913</td><td>1,642</td><td>1,302</td></tr>
+                        <tr><td>iPad Air (M3) Cellular 11" 256 GB</td><td>4,560</td><td>27,740</td><td>4,967</td><td>3,418</td><td>2,644</td><td>2,179</td><td>1,870</td><td>1,482</td></tr>
+                        <tr><td>iPad Air (M3) WiFi 13" 128 GB</td><td>4,110</td><td>25,190</td><td>4,512</td><td>3,105</td><td>2,402</td><td>1,980</td><td>1,699</td><td>1,347</td></tr>
+                        <tr><td>iPad Air (M3) WiFi 13" 256 GB</td><td>4,710</td><td>28,590</td><td>5,118</td><td>3,522</td><td>2,724</td><td>2,246</td><td>1,927</td><td>1,528</td></tr>
+                        <tr><td>iPad Air (M3) Cellular 13" 128 GB</td><td>5,010</td><td>30,290</td><td>5,421</td><td>3,731</td><td>2,886</td><td>2,379</td><td>2,041</td><td>1,618</td></tr>
+                        <tr><td>iPad Air (M3) Cellular 13" 256 GB</td><td>5,610</td><td>33,690</td><td>6,027</td><td>4,148</td><td>3,208</td><td>2,644</td><td>2,269</td><td>1,799</td></tr>
+                        <!-- iPad Air (M4) -->
+                        <tr><td>iPad Air (M4) WiFi 11" 128 GB</td><td>4,410</td><td>26,890</td><td>4,815</td><td>3,314</td><td>2,563</td><td>2,113</td><td>1,813</td><td>1,437</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 11" 256 GB</td><td>5,010</td><td>30,290</td><td>5,421</td><td>3,731</td><td>2,886</td><td>2,379</td><td>2,041</td><td>1,618</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 11" 512 GB</td><td>6,060</td><td>36,240</td><td>6,481</td><td>4,460</td><td>3,450</td><td>2,844</td><td>2,440</td><td>1,934</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 11" 1 TB</td><td>7,710</td><td>46,165</td><td>8,256</td><td>5,682</td><td>4,395</td><td>3,623</td><td>3,108</td><td>2,464</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 13" 128 GB</td><td>5,460</td><td>32,840</td><td>5,875</td><td>4,043</td><td>3,127</td><td>2,578</td><td>2,212</td><td>1,754</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 13" 256 GB</td><td>6,060</td><td>36,240</td><td>6,481</td><td>4,460</td><td>3,450</td><td>2,844</td><td>2,440</td><td>1,934</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 13" 512 GB</td><td>7,110</td><td>42,765</td><td>7,651</td><td>5,265</td><td>4,072</td><td>3,357</td><td>2,880</td><td>2,283</td></tr>
+                        <tr><td>iPad Air (M4) WiFi 13" 1 TB</td><td>8,760</td><td>52,115</td><td>9,317</td><td>6,412</td><td>4,959</td><td>4,088</td><td>3,507</td><td>2,780</td></tr>
+                        <tr><td>iPad Air (M4) Cellular 11" 128 GB</td><td>5,310</td><td>31,990</td><td>5,724</td><td>3,939</td><td>3,047</td><td>2,511</td><td>2,155</td><td>1,708</td></tr>
+                        <tr><td>iPad Air (M4) Cellular 11" 256 GB</td><td>5,910</td><td>35,390</td><td>6,330</td><td>4,356</td><td>3,369</td><td>2,777</td><td>2,383</td><td>1,889</td></tr>
+                        <tr><td>iPad Air (M4) Cellular 13" 128 GB</td><td>6,360</td><td>38,515</td><td>6,893</td><td>4,744</td><td>3,669</td><td>3,025</td><td>2,595</td><td>2,057</td></tr>
+                        <tr><td>iPad Air (M4) Cellular 13" 256 GB</td><td>6,960</td><td>41,915</td><td>7,499</td><td>5,161</td><td>3,992</td><td>3,290</td><td>2,823</td><td>2,238</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary btn-full mt-4"><i class="fa-brands fa-line"></i> สนใจรุ่นนี้ ทักแอดมิน</a>
+        </div>
+    </div>
+
+    <!-- iPad Pro Series -->
+    <div id="modal-ipad-pro" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-ipad-pro')">
+        <div class="price-modal-content">
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-ipad-pro')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="price-modal-title"><i class="fa-solid fa-tablet-screen-button"></i> iPad Pro Series (M4 & M5) — ตารางราคาผ่อน (มือหนึ่ง)</h2>
+            <div class="price-table-wrap">
+                <table class="price-table">
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
+                    <tbody>
+                        <!-- iPad Pro (M4) -->
+                        <tr><td>iPad Pro (M4) WiFi 11" 256 GB</td><td>4,710</td><td>28,590</td><td>5,118</td><td>3,522</td><td>2,724</td><td>2,246</td><td>1,927</td><td>1,528</td></tr>
+                        <tr><td>iPad Pro (M4) Cellular 11" 256 GB</td><td>5,460</td><td>32,840</td><td>5,875</td><td>4,043</td><td>3,127</td><td>2,578</td><td>2,212</td><td>1,754</td></tr>
+                        <tr><td>iPad Pro (M4) WiFi 13" 256 GB</td><td>6,060</td><td>36,240</td><td>6,481</td><td>4,460</td><td>3,450</td><td>2,844</td><td>2,440</td><td>1,934</td></tr>
+                        <!-- iPad Pro (M5) -->
+                        <tr><td>iPad Pro (M5) WiFi 11" 256 GB</td><td>6,660</td><td>40,215</td><td>7,196</td><td>4,953</td><td>3,831</td><td>3,158</td><td>2,709</td><td>2,148</td></tr>
+                        <tr><td>iPad Pro (M5) WiFi 11" 512 GB</td><td>7,710</td><td>46,165</td><td>8,256</td><td>5,682</td><td>4,395</td><td>3,623</td><td>3,108</td><td>2,464</td></tr>
+                        <tr><td>iPad Pro (M5) WiFi 11" 1 TB</td><td>11,010</td><td>66,415</td><td>11,884</td><td>8,178</td><td>6,326</td><td>5,214</td><td>4,473</td><td>3,547</td></tr>
+                        <tr><td>iPad Pro (M5) WiFi 13" 256 GB</td><td>8,460</td><td>50,415</td><td>9,014</td><td>6,203</td><td>4,798</td><td>3,955</td><td>3,393</td><td>2,690</td></tr>
+                        <tr><td>iPad Pro (M5) WiFi 13" 512 GB</td><td>9,510</td><td>57,915</td><td>10,369</td><td>7,136</td><td>5,519</td><td>4,550</td><td>3,903</td><td>3,095</td></tr>
+                        <tr><td>iPad Pro (M5) Cellular 11" 256 GB</td><td>7,710</td><td>46,165</td><td>8,256</td><td>5,682</td><td>4,395</td><td>3,623</td><td>3,108</td><td>2,464</td></tr>
+                        <tr><td>iPad Pro (M5) Cellular 13" 256 GB</td><td>9,510</td><td>57,915</td><td>10,369</td><td>7,136</td><td>5,519</td><td>4,550</td><td>3,903</td><td>3,095</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="https://lin.ee/s3jHf19" target="_blank" class="btn btn-primary btn-full mt-4"><i class="fa-brands fa-line"></i> สนใจรุ่นนี้ ทักแอดมิน</a>
+        </div>
+    </div>
+
+    <!-- MacBook Series -->
+    <div id="modal-macbook" class="price-modal-overlay" onclick="closePriceModal(event, 'modal-macbook')">
+        <div class="price-modal-content">
+            <button class="price-modal-close" onclick="closePriceModalBtn('modal-macbook')"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="price-modal-title"><i class="fa-solid fa-laptop"></i> MacBook NEO — ตารางราคาผ่อน (มือหนึ่ง)</h2>
+            <div class="price-table-wrap">
+                <table class="price-table">
+                    <thead><tr><th>รุ่น / รายละเอียด</th><th>เงินดาวน์ 15%</th><th>ยอดจัด</th><th>6 เดือน</th><th>9 เดือน</th><th>12 เดือน</th><th>15 เดือน</th><th>18 เดือน</th><th>24 เดือน</th></tr></thead>
+                    <tbody>
+                        <tr><td>Macbook NEO 13 256 GB</td><td>3,735</td><td>23,065</td><td>4,134</td><td>2,845</td><td>2,200</td><td>1,814</td><td>1,556</td><td>1,234</td></tr>
+                        <tr><td>Macbook NEO 13 512 GB</td><td>4,185</td><td>25,615</td><td>4,588</td><td>3,157</td><td>2,442</td><td>2,013</td><td>1,727</td><td>1,369</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1012,12 +1220,12 @@
                         <i class="fa-solid fa-calendar-days"></i>
                         <span>ระยะเวลาผ่อน</span>
                         <select id="compare-months-select">
-                            <option value="12">12 เดือน</option>
-                            <option value="10" selected>10 เดือน</option>
+                            <option value="24">24 เดือน</option>
+                            <option value="18">18 เดือน</option>
+                            <option value="15">15 เดือน</option>
+                            <option value="12" selected>12 เดือน</option>
                             <option value="9">9 เดือน</option>
                             <option value="6">6 เดือน</option>
-                            <option value="4">4 เดือน</option>
-                            <option value="3">3 เดือน</option>
                         </select>
                     </div>
                 </div>
